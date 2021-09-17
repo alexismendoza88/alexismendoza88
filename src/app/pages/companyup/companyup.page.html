@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mi Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  id="signup" fullscreen class="backgeneral" >
+  <div class="section_two ion-padding">
+  <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
+    <input type="hidden" formControlName="id">
+    <input type="hidden" formControlName="userId">
+    <input type="hidden" formControlName="creationDate">
+    <input type="hidden" formControlName="lat">
+    <input type="hidden" formControlName="lng">
+    <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+          <ion-item class="itemcolor1">
+            <ion-select multiple="true" placeholder="Seleccione Categorías"  cancelText="Cancelar" okText="Aceptar"  [formControl]="form.controls.categoriesid"  >
+              <ion-select-option   *ngFor="let item of items" [value]="item.id" >{{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }"></ion-auto-complete>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="name" type="text" placeholder="Nombre"  required></ion-input>
+          </ion-item>
+
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="phone"  type="text" placeholder="Teléfono"  required></ion-input>
+          </ion-item>
+
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="ubication" readonly="readonly"   type="text" placeholder="Ubicación"  required></ion-input>
+            <ion-button (click)="presentMap()" color="secondary" slot="end" ><ion-icon name="map-outline"></ion-icon></ion-button>
+          </ion-item>  
+
+            <ion-item class="itemcolor1">
+             <ion-label>Domicilio</ion-label>
+              <ion-toggle   formControlName="hasDelivery" ></ion-toggle>
+            </ion-item> 
+
+            <ion-item class="itemcolor1">
+              <ion-input formControlName="email" readonly="readonly" type="text" placeholder="Correo"  required></ion-input>
+          <div class="buttons ion-padding-top">
+            <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Actualizar</ion-button>
+          </div>
+  </form>
+</div>
+</ion-content>

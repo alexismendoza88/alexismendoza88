@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <p style="color: white; font-size: 16px; font-weight: bold;" >DETALLE RESPUESTA</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-item class="itemcolor1">
+    <ion-label>Precio</ion-label>
+    <p *ngIf="item?.finalAmount!=item?.amount" style="color:#50c8ff;text-decoration: line-through">{{item?.amount | currency:'USD':'symbol':'1.0-0'}}&nbsp;  -</p>&nbsp; <p style="color: yellow;">{{item?.finalAmount | currency:'USD':'symbol':'1.0-0'}}</p>
+  </ion-item>
+  <ion-item class="itemcolor1" *ngIf="item?.note!='' && item?.note!='null' ">
+    <ion-text>
+      <p style="color: yellow;">{{item?.note}}</p>
+     </ion-text>
+    </ion-item>
+  <ion-item  *ngIf="item?.fileUrl!=null && item?.fileUrl!=''"  >
+    <img src="{{item?.fileUrl}}" (click)="photoview(item?.fileUrl)" style="width:100%;height: 300px;">
+  </ion-item>
+  <ion-item class="itemcolor1"  style="display: none;">
+    <ion-label><ion-icon name="time-outline"></ion-icon></ion-label>
+    <p>{{item?.delivery}}</p>
+  </ion-item>
+  <ion-grid *ngIf="item?.status=='I'">
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <h4 style="color:#50c8ff;font-weight: bold;">Contacto</h4>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  <ion-item  *ngIf="role=='Customer' && item?.status=='I'">
+    <ion-label style="color: white !important;"><ion-icon name="person-outline"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.company.name}}</p>
+  </ion-item>
+  <ion-item  *ngIf="role=='Customer'  && item?.status=='I'" button (click)="call(item?.company.phone)">
+    <ion-label style="color: white !important;"><ion-icon name="call-outline"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.company.phone}}</p>
+  </ion-item>
+  <ion-item  *ngIf="role=='Customer'  && item?.status=='I'" button href="https://api.whatsapp.com/send?phone=+57{{item?.company.phone}}">
+    <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.company.phone}}</p>
+  </ion-item>
+  <ion-item  *ngIf="role=='Company'  && item?.status=='I'">
+    <ion-label style="color: white !important;"><ion-icon name="person-outline"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.solicitude.customer.name}}</p>
+  </ion-item>
+  <ion-item  *ngIf="role=='Company'  && item?.status=='I'" button (click)="call(item?.solicitude.customer.phone)">
+    <ion-label style="color: white !important;"><ion-icon name="call-outline"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.solicitude.customer.phone}}</p>
+  </ion-item>
+  <ion-item  *ngIf="role=='Company'  && item?.status=='I'" button href="https://api.whatsapp.com/send?phone=+57{{item?.solicitude.customer.phone}}">
+    <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
+    <p class="itemcolor2">{{item?.solicitude.customer.phone}}</p>
+  </ion-item>
+  <ion-grid *ngIf="role=='Company'  && item?.status=='P'">
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-button shape="round" color="secondary" (click)="edit()" ><ion-icon name="create-outline"></ion-icon>Editar</ion-button><ion-button shape="round" color="danger" (click)="delete()" ><ion-icon slot="start" name="trash-outline"></ion-icon>Eliminar</ion-button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="role=='Customer'  && item?.status=='P'">
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-button shape="round" color="secondary" (click)="Interested(null,null)" ><ion-icon name="heart-outline"></ion-icon>Me interesa</ion-button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="role=='Customer'  && item?.status=='I' && item?.company?.lat!=null && item?.company?.lng!=null">
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-button shape="round" color="secondary" (click)="navigate()" ><ion-icon name="map-outline"></ion-icon> ¿Como llegar?</ion-button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

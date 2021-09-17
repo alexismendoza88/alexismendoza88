@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">      
+      <p style="color: white; font-size: 16px; font-weight: bold;" >CREAR CUENTA - EMPRESA</p>
+    </ion-title>    
+  </ion-toolbar>
+</ion-header>
+<ion-content  id="signup" fullscreen class="backgeneral" >
+  <div class="section_two ion-padding">   
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
+    </ion-col>
+  </ion-row>   
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row>  
+  <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
+    <input type="hidden" formControlName="lat">
+    <input type="hidden" formControlName="lng">
+    <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+          <ion-item class="itemcolor1">
+            <ion-select multiple="true" formControlName="name"  placeholder="Selecciona la(s) Categoría(s)" cancelText="Cancelar" okText="Aceptar"  [formControl]="form.controls.categoriesid" >
+              <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Escribe la Ciudad ó Pueblo' }"></ion-auto-complete>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="name" type="text" placeholder="Nombre de Empresa, Negocio o Servicio"  required></ion-input>
+          </ion-item>
+
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="phone"  type="text" placeholder="Número de Celular"  required></ion-input>
+          </ion-item>
+
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="ubication" (click)="focus()" readonly="readonly"  type="text" placeholder="Elegir Ubicación"  required></ion-input>            
+          </ion-item>  
+
+          <ion-item class="itemcolor1">
+            <ion-icon name="logo-facebook"></ion-icon> 
+            <ion-input formControlName="phone"  type="text" placeholder=" Facebook"  required></ion-input>
+            
+          </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-icon name="logo-youtube"></ion-icon>
+            <ion-input formControlName="phone"  type="text" placeholder=" Youtube"  required></ion-input>
+          </ion-item>
+          
+          <ion-item class="itemcolor1">
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-input formControlName="phone"  type="text" placeholder=" Instagram"  required></ion-input>
+          </ion-item>
+
+            <ion-item class="itemcolor1">
+             <ion-label>¿Cuenta con Domicilio?</ion-label>
+              <ion-toggle   formControlName="hasDelivery" ></ion-toggle>
+            </ion-item> 
+
+            <ion-item class="itemcolor1">
+              <ion-input formControlName="email" type="text" placeholder="Correo Electrónico"  required></ion-input>
+            </ion-item>
+            <ion-item class="itemcolor1">
+              <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres"  required></ion-input>
+            </ion-item>
+
+            <ion-item class="itemcolor1">
+              <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave"  required></ion-input>
+            </ion-item>  
+
+          <div class="buttons ion-padding-top">
+            <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Guardar Información</ion-button>
+          </div>
+  </form>
+</div>
+</ion-content>

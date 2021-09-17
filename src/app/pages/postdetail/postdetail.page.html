@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Detalle Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-item class="itemcolor1" *ngIf="note!=null">
+    <ion-text style="color:yellow">
+      <p >{{note}}</p>
+     </ion-text>
+  </ion-item>
+  <ion-item class="itemcolor1"  button (click)="call(phone)">
+    <ion-label style="color: white !important;"><ion-icon name="call-outline"></ion-icon></ion-label> 
+    <p >{{phone}}</p>
+  </ion-item>
+  <ion-item class="itemcolor1" button href="https://api.whatsapp.com/send?phone=+57{{phone}}">
+    <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
+    <p >{{phone}}</p>
+  </ion-item> 
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of images"> 
+          <ion-thumbnail button (click)="photoview(item)">
+            <img [src]="item">
+          </ion-thumbnail>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>

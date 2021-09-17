@@ -1,0 +1,37 @@
+
+.backgeneral{
+  //--background: url('../assets/backgeneral.png')0 0/100% 100% no-repeat;
+  --background: none ;
+background: url('../assets/backgeneral.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+--ion-background-color:rgba(0,0,0,0);
+} 
+
+.itemcolor1{
+
+  color:white;
+}
+
+.itemcolor2{
+
+  color:yellow
+}
+
+ion-textarea{
+  color:yellow !important;
+  --placeholder-color: white !important;
+
+}
+
+ion-searchbar {
+  color:white !important;
+  --placeholder-color: white !important;
+
+}
+ion-title{
+  font-size: 15px !important;
+}
+
+
+

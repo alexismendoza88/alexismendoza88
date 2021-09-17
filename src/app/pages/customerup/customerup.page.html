@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mi Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  id="signup" fullscreen  class="backgeneral">
+  <div class="section_two ion-padding">
+  <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
+    <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+    <input type="hidden" formControlName="id">
+    <input type="hidden" formControlName="userId">
+         <ion-item class="itemcolor1">
+            <ion-input formControlName="name" type="text" placeholder="Nombres"  required></ion-input>
+          </ion-item>
+
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="phone"  type="text" placeholder="Teléfono"  required></ion-input>
+          </ion-item>
+              
+            <ion-item class="itemcolor1">
+              <ion-input formControlName="email" readonly="readonly" type="text" placeholder="Correo"  required></ion-input>
+            </ion-item> 
+
+          <div class="buttons ion-padding-top">
+            <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Actualizar</ion-button>
+          </div>
+  </form>
+</div>
+</ion-content>

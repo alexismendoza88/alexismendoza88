@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border backgeneral">
+  <ion-toolbar>
+    <ion-title ></ion-title>
+    <ion-buttons slot="end">
+      <ion-button href="https://api.whatsapp.com/send?phone=+573005316396" >
+        <p style="color: white;">Ayuda</p><ion-icon color="success" name="logo-whatsapp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col  class="ion-text-center">
+        <ion-text >
+          <span style="color: white;font-size: 12px;">Ofrece o busca un</span>&nbsp;<span style="color:yellow;;font-size: 12px;">Producto ó Servicio </span>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-button  size="small"  (click)="company()" [disabled]="working" shape="round" color="secondary" ><ion-icon slot="start" name="cube-outline"></ion-icon>Ofrecer</ion-button> <ion-text color="secondary">  </ion-text> <ion-button size="small"  (click)="customer()" [disabled]="working" shape="round" color="secondary" ><ion-icon slot="start" name="create-outline"></ion-icon>Buscar</ion-button>
+  </ion-col>
+</ion-row>
+<ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-text color="warning">
+      <h4> </h4>
+    </ion-text>
+  </ion-col>
+</ion-row>
+</ion-grid>
+<ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+
+</ion-content>

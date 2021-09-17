@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border backgeneral">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" >
+      <p style="color: white; font-size: 20px; font-weight: bold;" >¡BIENVENIDO - QPRICE!</p>
+    </ion-title>           
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-left">
+        <ion-text>
+          <span style="font-size: 14px;color:yellow;font-weight:lighter;">{{result}}</span>          
+        </ion-text>
+      </ion-col>
+    </ion-row>  
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-right">
+        <ion-button  size="small"  (click)="iniciar_sesion()" shape="round" color="secondary" ><ion-icon slot="start" name="cube-outline"></ion-icon><p style="color: white; font-size: 14px; font-weight: bold;" >Iniciar Sesión</p></ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <hr style="background-color: white;">
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-left">
+        <ion-text color="warning" >
+          <span style="font-size: 16px;color:yellow;font-weight: bold;">¿ERES USUARIO NUEVO?</span> 
+          
+          <span style="color: white; font-size: 14px; font-weight: bold;" > REGÍSTRATE PARA OFRECER </span>
+          <span style="font-size: 12px;color: yellow; font-weight: bold;" > o</span>
+          <span style="color: white; font-size: 14px; font-weight: bold;" >BUSCAR</span>     
+          <span style="font-size: 12px;color:yellow;font-weight: lighter;">UN PRODUCTO O SERVICIO</span>      
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">     
+      <ion-col size="12" class="ion-text-right">
+        <ion-button  size="small"  (click)="company()" shape="round" color="secondary" ><ion-icon slot="start" name="cube-outline"></ion-icon><p style="color: white; font-size: 14px; font-weight: bold;" >REGISTRO OFRECER</p></ion-button>
+      </ion-col>     
+    </ion-row> 
+   
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-right">
+        <i class="bi bi-arrow-bar-right"></i>
+        <ion-button  size="small"  (click)="customer()" shape="round" color="secondary" ><ion-icon slot="start" name="cube-outline" ></ion-icon><p style="color: white; font-size: 14px; font-weight: bold;" >REGISTRO BUSCAR</p></ion-button>
+      </ion-col>
+    </ion-row>
+
+    
+</ion-grid>
+</ion-content>

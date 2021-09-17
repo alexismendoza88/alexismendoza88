@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <p style="color: white; font-size: 16px; font-weight: bold;" >VERIFCAR CÓDIGO</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="code"     placeholder="Código" ></ion-input>
+  </ion-item>
+  <ion-item class="itemcolor1">
+    <ion-input type="password" [(ngModel)]="passWord"     placeholder="Clave" ></ion-input>
+  </ion-item>
+  <ion-item class="itemcolor1">
+    <ion-input type="password" [(ngModel)]="confirm"     placeholder="Confirmar Clave" ></ion-input>
+  </ion-item>
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12"  class="ion-text-center">
+   <ion-button [disabled]="working || mail=='' || password=='' || confirm=='' || code==''" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Cambiar Clave</ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

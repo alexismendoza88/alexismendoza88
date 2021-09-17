@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button  (click)="close()">
+        <ion-icon style="color:white"  name="close-circle-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>¿Como LLegar?</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div #map id="map" ></div>
+</ion-content>
+<ion-footer no-border >
+  <ion-toolbar  color="secondary" >
+    <ion-title style="font-size: 10px !important;color:white !important">Distancia: {{distance}} | Duración: {{duration}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

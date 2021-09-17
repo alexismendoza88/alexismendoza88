@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border backgeneral">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button  (click)='home()'>
+        <ion-icon style="color:white" name="home-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Contents -->
+<ion-content id="signin" fullscreen style="text-align: center !important" class="backgeneral">
+  <img class="" src="assets/images/logo.png" style="height: 150px;" />
+  <div style="margin-top: -20px;">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
+      </ion-col>
+    </ion-row>  
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <hr style="background-color: white;">
+      </ion-col>
+    </ion-row>    
+    <!-- SignIn Form -->
+    <form class="ion-padding" #form="ngForm" [formGroup]="validations_form"  (ngSubmit)="login(validations_form.value)">
+      <!-- Email -->
+      <ion-item class="itemcolor1">
+        <ion-label>
+          <ion-icon name="mail" style="color:white"></ion-icon>
+        </ion-label>
+        <ion-input type="email"  formControlName="email"  placeholder="Correo" ></ion-input>
+      </ion-item>
+
+      <!-- Password -->
+      <ion-item class="ion-padding-top" class="itemcolor1">
+        <ion-label>
+          <ion-icon name="key" style="color:white"></ion-icon>
+        </ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Clave" ></ion-input>
+      </ion-item>
+      <ion-item class="itemcolor1">
+        <ion-label>Recordar Clave</ion-label>
+         <ion-toggle   formControlName="remenber" ></ion-toggle>
+       </ion-item>      
+      <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+      <!-- SignIn Buttons -->
+      <div class="buttons">
+        <ion-button type="submit" [disabled]="form.invalid"  expand="block" color="secondary"  shape="round" routerDirection="root">
+          <ion-text><strong>Iniciar</strong></ion-text>
+        </ion-button>
+      <!-- Forget Passw
+        ord Button -->        
+      <ion-button expand="block" style="color:white;" fill="clear" slot="end" (click)="resetpass()"
+        routerDirection="root">
+       ¿Olvidaste tu clave?
+      </ion-button>
+      </div>
+    </form>
+  </div>
+
+</ion-content>

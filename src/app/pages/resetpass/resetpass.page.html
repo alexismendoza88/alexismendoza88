@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+        
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <p style="color: white; font-size: 16px; font-weight: bold;" >CAMBIAR CLAVE</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa el Correo Electrónico.</p>
+    </ion-col>
+  </ion-row>  
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row>   
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="mail" placeholder="Correo Electrónico" ></ion-input>
+  </ion-item>
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12"  class="ion-text-center">
+   <ion-button [disabled]="working || mail==''" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Enviar</ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

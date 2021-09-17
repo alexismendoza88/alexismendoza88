@@ -1,0 +1,7 @@
+{
+  "name": "cotvendmovi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

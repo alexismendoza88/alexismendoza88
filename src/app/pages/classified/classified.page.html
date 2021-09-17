@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle menu="pages">
+        <ion-button >
+          <ion-icon name="menu-outline"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>
+      Clasificados
+    </ion-title>
+    <ion-buttons slot="end" >
+      <ion-button [routerLink]="['/classifiedadd']">
+        <ion-icon  name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+    <ion-list>
+      <ion-item button *ngFor="let item of items" (click)="details(item)">
+        <ion-thumbnail slot="start" *ngIf="item.img1 != null">
+          <img  [src]="item.img1"  >
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" *ngIf="item.img1 == null">
+          <img  [src]="'/assets/images/empty.png'"  >
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text> <h3 style="font-weight: bold; text-transform: capitalize;color:white">{{item.creationDate | timeAgo}}</h3></ion-text>
+          <p  style="color: yellow;">{{item.description}}</p>
+          <p *ngIf="item.price!=null" style="font-weight: bold;color: #0ae70a" >{{item.price | currency:'USD':'symbol':'1.0-0'}}</p> 
+        </ion-label>
+        <ion-icon slot="end" style="color:white" name="chevron-forward"></ion-icon>
+      </ion-item>
+    </ion-list>
+</ion-content>

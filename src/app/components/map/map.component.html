@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button  (click)="close()">
+        <ion-icon style="color:white"  name="close-circle-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar (ionClear)="onClear($event)"   autofocus="true" placeholder="Buscar Dirección" #googleplaces id="googleplaces" type="text"></ion-searchbar> 
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div #map id="map" ></div>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar class="ion-padding" >
+      <!-- Checkout Button Option -->
+      <ion-button color="secondary" expand="block" (click)="addToCordinates()"  *ngIf="lat!=null && lng!=null">
+          Agregar dirección
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

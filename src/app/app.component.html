@@ -1,0 +1,52 @@
+<ion-app>
+  <ion-menu side="start" menuId="pages" type="overlay" contentId="mainContent">
+    <ion-content class="backgeneral"> 
+      <ion-list class="ion-padding" lines="none">
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item *ngIf="p.available && p.url!=null" [routerLink]="[p.url]">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="p.available==false" (click)="info()">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="p.title=='Mi cuenta'" (click)="account()">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="p.title=='Solicitudes'" (click)="sol()">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="p.title=='Pedidos'" (click)="pedidos()" id="pedidos">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <!-- Footer -->
+    <ion-footer no-border class="backgeneral">
+      <div class="ion-padding">
+        <ion-button color="secondary" expand="block" (click)="signout()">SALIR</ion-button>
+      </div>
+    </ion-footer>
+  </ion-menu>
+  <div id="divsuperpuesto" [style.display]="splash ? 'flex' : 'none'">
+    <div id="divsplashs">
+      <img id="splash" src="../assets/images/animacion.gif" alt="Qprice">
+    </div>
+  </div>
+  <ion-router-outlet id="mainContent"></ion-router-outlet>
+</ion-app>

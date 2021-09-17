@@ -1,0 +1,23 @@
+ion-item{
+    font-size: 12px !important;
+}
+#divsuperpuesto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: rgb(28, 28, 58);
+}
+
+#divsplashs {
+    --background: none;
+    background: url(../assets/images/animacion.gif) no-repeat center / cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

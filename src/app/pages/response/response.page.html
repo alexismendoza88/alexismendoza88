@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <p style="color: white; font-size: 16px; font-weight: bold;" >RESPUESTA SOLICITUD</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <div class="section_two ion-padding" >
+    <p style="color: yellow; text-align: center;">Ingresa la siguiente Información</p>
+  </div>  
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="amount" placeholder="Precio del Producto ó Servicio" (ngModelChange)="tocurrency($event)"></ion-input>
+    <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
+  </ion-item>
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Último Precio ó Descuento"></ion-input>
+    <p  style="color: yellow; font-weight: bold;">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>
+  </ion-item>
+  <ion-item class="itemcolor1">
+    <ion-textarea [(ngModel)]="note" maxlength="800" (ngModelChange)="get($event)" rows="6" cols="20" placeholder="¿Alguna Observación o Sugerencia?"></ion-textarea>
+  </ion-item>
+  <ion-item class="itemcolor1" *ngIf="note != '' && note !=null" >
+    <p>{{leng}}</p><p>/800</p>
+  </ion-item>
+  <ion-item class="itemcolor1"  button (click)="pickfile()">
+    <ion-label>Adjuntar PDF o Foto</ion-label>
+    <ion-icon slot="end" class="itemcolor1" name="document-attach-outline"></ion-icon>
+  </ion-item>
+  <ion-item  *ngIf="fileUrl!=''" >
+    <ion-img [src]="fileUrl"></ion-img>
+    <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>
+  </ion-item>
+  <ion-item class="itemcolor1" style="display: none;">
+    <ion-input [(ngModel)]="delivery" placeholder="Tiempo de Entrega"></ion-input>
+  </ion-item>
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <ion-button *ngIf="responseId!=null"  [disabled]="working" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Actualizar y Responder</ion-button>
+    <ion-button *ngIf="responseId==null" [disabled]="working" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Responder</ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

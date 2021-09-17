@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Clasificado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgeneral">
+  <ion-auto-complete [(ngModel)]="provinceName" (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }"></ion-auto-complete>
+  <ion-item class="itemcolor1">
+    <ion-textarea [(ngModel)]="note" rows="6" cols="20" placeholder="Describe la oferta" (ngModelChange)="get($event)"></ion-textarea>
+  </ion-item>
+  <ion-item *ngIf="note != '' && note !=null" class="itemcolor1">
+    <p>{{leng}}</p><p>/800</p>
+  </ion-item>
+  <ion-item class="itemcolor1" style="display: none;">
+    <ion-input [(ngModel)]="amount"     placeholder="Precio" (ngModelChange)="tocurrency($event)"></ion-input>
+    <p  style="color: yellow;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
+  </ion-item>
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="phone"     placeholder="Teléfono" ></ion-input>
+  </ion-item>
+  <ion-grid >
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12" class="ion-text-center">
+    <h5 style="color:#50c8ff;font-weight: bold;">Agregar Imágenes</h5>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile1()">
+            <img [src]="imgurl1">
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile2()">
+            <img [src]="imgurl2">
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile3()">
+            <img [src]="imgurl3" >
+          </ion-thumbnail>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile4()">
+            <img [src]="imgurl4" >
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile5()">
+            <img [src]="imgurl5" >
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col>
+          <ion-thumbnail button (click)="pickfile6()">
+            <img [src]="imgurl6">
+          </ion-thumbnail>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+  <ion-col size="12"  class="ion-text-center">
+    <ion-button *ngIf="id!=0" [disabled]="working" shape="round" color="danger" (click)="delete()" ><ion-icon slot="start" name="trash"></ion-icon>Eliminar</ion-button> <ion-button [disabled]="working" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Publicar</ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

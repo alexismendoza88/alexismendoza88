@@ -1,0 +1,62 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "call-number": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-firebase-messaging": {
+      "ANDROID_FIREBASE_MESSAGING_VERSION": "22.0.+",
+      "ANDROIDX_CORE_VERSION": "1.6.+",
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "ANALYTICS_COLLECTION_ENABLED": "true",
+      "AUTOMATIC_SCREEN_REPORTING_ENABLED": "true",
+      "ANDROID_FIREBASE_ANALYTICS_VERSION": "19.0.+",
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
+    }
+  }
+}
