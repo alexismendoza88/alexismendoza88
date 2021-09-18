@@ -94,7 +94,7 @@ export class AppComponent {
     this.appPages= [
       {
         title: 'Inicio',
-        url: 'home',
+        url: '/inicio',
         icon: 'home',
         available:true
       },

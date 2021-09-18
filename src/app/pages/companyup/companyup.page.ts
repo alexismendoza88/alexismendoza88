@@ -33,6 +33,9 @@ export class CompanyupPage implements OnInit {
         userId: [''],
         creationDate: [''],
         ubication: [''],
+        facebook:[''],
+        youtube:[''],
+        instagram:[''],
         provinceName: [''],
         categoriesid: [[],[Validators.required]],
         hasDelivery: new FormControl(false),
@@ -61,6 +64,7 @@ export class CompanyupPage implements OnInit {
    return await modal.present();
    }
   ionViewWillEnter(){
+    
     this.userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
     this.working=true;
     this.apiService.Get("Categories").then(res=>{
@@ -75,6 +79,7 @@ export class CompanyupPage implements OnInit {
     return o1 && o2 ? o1.id === o2.id : o1 === o2;
   };
 getdata(){
+  
   this.working=true;
   this.apiService.Get("Companies/CompanyUser/"+this.userinfo.id ).then(res=>{
     this.working=false;
@@ -82,6 +87,9 @@ getdata(){
      this.form.get("name").setValue(res.name);
      this.form.get("phone").setValue(res.phone);
      this.form.get("ubication").setValue(res.ubication);
+     this.form.get("facebook").setValue(res.facebook);
+     this.form.get("youtube").setValue(res.youtube);
+     this.form.get("instagram").setValue(res.instagram);
      this.form.get("categoriesid").setValue(res.categoriesid);
      this.form.get("provinceName").setValue(res.provinceName);
      this.provinceId=res.provinceId;

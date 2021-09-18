@@ -33,6 +33,15 @@
             <ion-input formControlName="ubication" readonly="readonly"   type="text" placeholder="Ubicación"  required></ion-input>
             <ion-button (click)="presentMap()" color="secondary" slot="end" ><ion-icon name="map-outline"></ion-icon></ion-button>
           </ion-item>  
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="facebook" type="text" placeholder="Facebook"></ion-input>
+          </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="youtube" type="text" placeholder="Youtube"></ion-input>
+          </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="instagram" type="text" placeholder="Instagram"></ion-input>
+          </ion-item>
 
             <ion-item class="itemcolor1">
              <ion-label>Domicilio</ion-label>
@@ -41,9 +50,10 @@
 
             <ion-item class="itemcolor1">
               <ion-input formControlName="email" readonly="readonly" type="text" placeholder="Correo"  required></ion-input>
-          <div class="buttons ion-padding-top">
-            <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Actualizar</ion-button>
-          </div>
+              <div class="buttons ion-padding-top">
+              <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Actualizar</ion-button>
+              </div>
+            </ion-item> 
   </form>
 </div>
 </ion-content>
