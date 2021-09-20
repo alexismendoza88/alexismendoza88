@@ -28,10 +28,10 @@ export class AppComponent {
   ) {
     this.initializeApp();
     this.getPages();
-    
     setTimeout(() => {
-      this.splash = false;
-    }, 3090);
+      this.splash = false
+    }, 6000);
+  
   }
 
   initializeApp() {
@@ -43,9 +43,7 @@ export class AppComponent {
         this.ontoken();
         this.router.navigate(['/home']); 
       });
-      setTimeout(() => {
-        this.splashScreen.hide();
-      }, 1000);
+      
     });
   }
   ontoken()
