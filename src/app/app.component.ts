@@ -30,7 +30,7 @@ export class AppComponent {
     this.getPages();
     setTimeout(() => {
       this.splash = false
-    }, 6000);
+    }, 5500);
   
   }
 
