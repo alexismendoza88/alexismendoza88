@@ -3,6 +3,25 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+   /** personalizado **/
+   --ion-color-btnfav: #ffffff;
+   --ion-color-btnfav-rgb: 255,255,255;
+   --ion-color-btnfav-contrast: #000000;
+   --ion-color-btnfav-contrast-rgb: 0,0,0;
+   --ion-color-btnfav-shade: #e0e0e0;
+   --ion-color-btnfav-tint: #ffffff;
+ 
+   .ion-color-btnfav {
+     --ion-color-base: var(--ion-color-btnfav);
+     --ion-color-base-rgb: var(--ion-color-btnfav-rgb);
+     --ion-color-contrast: var(--ion-color-btnfav-contrast);
+     --ion-color-contrast-rgb: var(--ion-color-btnfav-contrast-rgb);
+     --ion-color-shade: var(--ion-color-btnfav-shade);
+     --ion-color-tint: var(--ion-color-btnfav-tint);
+   }
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -225,4 +244,9 @@
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+.btntam{
+  width: 240px;
+  height: 35px;
 }
