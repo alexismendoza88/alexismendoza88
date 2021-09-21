@@ -38,26 +38,32 @@
     <ion-label style="color: white !important;"><ion-icon name="person-outline"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.company.name}}</p>
   </ion-item>
+
   <ion-item  *ngIf="role=='Customer'  && item?.status=='I'" button (click)="call(item?.company.phone)">
     <ion-label style="color: white !important;"><ion-icon name="call-outline"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.company.phone}}</p>
   </ion-item>
+
   <ion-item  *ngIf="role=='Customer'  && item?.status=='I'" button href="https://api.whatsapp.com/send?phone=+57{{item?.company.phone}}">
     <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.company.phone}}</p>
   </ion-item>
+
   <ion-item  *ngIf="role=='Company'  && item?.status=='I'">
     <ion-label style="color: white !important;"><ion-icon name="person-outline"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.solicitude.customer.name}}</p>
   </ion-item>
+
   <ion-item  *ngIf="role=='Company'  && item?.status=='I'" button (click)="call(item?.solicitude.customer.phone)">
     <ion-label style="color: white !important;"><ion-icon name="call-outline"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.solicitude.customer.phone}}</p>
   </ion-item>
+
   <ion-item  *ngIf="role=='Company'  && item?.status=='I'" button href="https://api.whatsapp.com/send?phone=+57{{item?.solicitude.customer.phone}}">
     <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
     <p class="itemcolor2">{{item?.solicitude.customer.phone}}</p>
   </ion-item>
+  
   <ion-grid *ngIf="role=='Company'  && item?.status=='P'">
     <ion-row class="ion-align-items-center">
   <ion-col size="12" class="ion-text-center">
