@@ -37,6 +37,7 @@ export class CompanyPage implements OnInit {
         confirm: ['',[Validators.required]],
         name: [''],
         phone: [''],
+        fijo:[''],
         ubication: [''],
         facebook:[''],
         youtube:[''],

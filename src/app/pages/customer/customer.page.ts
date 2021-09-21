@@ -25,6 +25,7 @@ export class CustomerPage implements OnInit {
           required: false,
         }],
         phone: [''],
+        fijo: [''],
       },);
     }
 

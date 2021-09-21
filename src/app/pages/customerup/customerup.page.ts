@@ -26,6 +26,7 @@ export class CustomerupPage implements OnInit {
           required: false,
         }],
         phone: [''],
+        fijo: [''],
       },);
     }
 
@@ -44,6 +45,7 @@ export class CustomerupPage implements OnInit {
        this.form.get("email").setValue(res.email);
        this.form.get("name").setValue(res.name);
        this.form.get("phone").setValue(res.phone);
+       this.form.get("fijo").setValue(res.fijo);
        this.form.get("userId").setValue(res.userId);
        this.form.get("id").setValue(res.id);  
     }, err => {

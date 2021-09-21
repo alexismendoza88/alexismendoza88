@@ -30,6 +30,7 @@ export class CompanyupPage implements OnInit {
         email: ['' , [Validators.required]],
         name: [''],
         phone: [''],
+        fijo:[''],
         userId: [''],
         creationDate: [''],
         ubication: [''],
@@ -86,6 +87,7 @@ getdata(){
      this.form.get("email").setValue(res.email);
      this.form.get("name").setValue(res.name);
      this.form.get("phone").setValue(res.phone);
+     this.form.get("fijo").setValue(res.fijo);
      this.form.get("ubication").setValue(res.ubication);
      this.form.get("facebook").setValue(res.facebook);
      this.form.get("youtube").setValue(res.youtube);
