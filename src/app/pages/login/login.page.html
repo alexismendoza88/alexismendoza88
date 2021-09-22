@@ -36,7 +36,8 @@
         <ion-label>
           <ion-icon name="key" style="color:white"></ion-icon>
         </ion-label>
-        <ion-input formControlName="password" type="password" placeholder="Clave" ></ion-input>
+        <ion-input formControlName="password" [type]="passwordType" clearOnEdit="false" ></ion-input>
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
       </ion-item>
       <ion-item class="itemcolor1">
         <ion-label>¿Recordar Clave?</ion-label>

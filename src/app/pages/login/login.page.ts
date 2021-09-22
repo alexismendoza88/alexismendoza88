@@ -3,6 +3,8 @@ import { ApiService } from '../../services/api.service';
 import { Router} from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { BusyService } from '../../services/busy.service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -14,6 +16,13 @@ export class LoginPage implements OnInit {
   working:boolean;
   constructor(private router:Router, private formBuilder: FormBuilder,private busyService:BusyService,private apiService:ApiService) { }
 
+  passwordType: string = 'password';
+ passwordIcon: string = 'eye-off';
+
+ hideShowPassword() {
+     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+ }
   ngOnInit() {
     var recordar=true;
     var pass=  window.localStorage.getItem("passwordMoney");
@@ -46,6 +55,7 @@ export class LoginPage implements OnInit {
       ])),
     });
   }
+  
   login(value){
     this.working=true;
     value.msToken= window.localStorage.getItem("msToken");
@@ -98,4 +108,5 @@ export class LoginPage implements OnInit {
   {
     this.router.navigate(['/resetpass']);
   }
+  
 }
