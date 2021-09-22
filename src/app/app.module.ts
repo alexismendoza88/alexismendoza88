@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BusyService } from './services/busy.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { FCM } from '@ionic-native/fcm/ngx';
-import { FirebaseMessaging } from '@ionic-native/firebase-messaging/ngx';
 import { IonicGestureConfig } from './HammerGestureConfig';
 
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
@@ -25,6 +24,9 @@ import { MapComponent } from './components/map/map.component';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { RouteComponent } from './components/route/route.component';
+
+import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+
 @NgModule({
   declarations: [AppComponent,MapComponent,RouteComponent],
   entryComponents: [MapComponent,RouteComponent],
@@ -34,7 +36,7 @@ import { RouteComponent } from './components/route/route.component';
     NativeGeocoder,
     CallNumber,
     PhotoViewer,
-    FirebaseMessaging,
+    FirebaseX,
     //FCM,
     BusyService, 
     ApiService,

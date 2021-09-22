@@ -12,7 +12,7 @@
   <div class="section_two ion-padding">   
   <ion-row class="ion-align-items-center">
     <ion-col size="12" class="ion-text-center">
-      <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
+      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
     </ion-col>
   </ion-row>   
   <ion-row class="ion-align-items-center">
@@ -29,55 +29,47 @@
               <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Escribe la Ciudad ó Pueblo' }"></ion-auto-complete>
+          <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Ciudad Residencia (*)' }"></ion-auto-complete>
           <ion-item class="itemcolor1">
-            <ion-input formControlName="name" type="text" placeholder="Nombre de Empresa, Negocio o Servicio"  required></ion-input>
+            <ion-input formControlName="name" type="text" placeholder="Nombre Empresa  (*)"  required></ion-input>
           </ion-item>
-
           <ion-item class="itemcolor1">
-            <ion-input formControlName="phone"  type="text" placeholder="Número de Celular"  required></ion-input>
+            <ion-input formControlName="email" type="text" placeholder="Correo Electrónico  (*)"  required></ion-input>
           </ion-item>
-
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres  (*)"  required></ion-input>
+          </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave  (*)"  required></ion-input>
+          </ion-item> 
+          
+          
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="phone"  type="text" placeholder="N° Celular"  required></ion-input>
+          </ion-item>
           <ion-item class="itemcolor1">
             <ion-icon name="call-outline"></ion-icon>
-            <ion-input formControlName="fijo"  type="text" placeholder="telefono fijo"  ></ion-input>
+            <ion-input formControlName="fijo"  type="text" placeholder=" N° Fijo"  ></ion-input>
           </ion-item>
-
           <ion-item class="itemcolor1">
             <ion-input formControlName="ubication" (click)="focus()" readonly="readonly"  type="text" placeholder="Elegir Ubicación"  required></ion-input>            
           </ion-item>  
-
           <ion-item class="itemcolor1">
             <ion-icon name="logo-facebook"></ion-icon> 
-            <ion-input formControlName="facebook"  type="text" placeholder=" Facebook"  ></ion-input>
-            
+            <ion-input formControlName="facebook"  type="text" placeholder=" Facebook"  ></ion-input>            
           </ion-item>
           <ion-item class="itemcolor1">
             <ion-icon name="logo-youtube"></ion-icon>
             <ion-input formControlName="youtube"  type="text" placeholder=" Youtube"  ></ion-input>
-          </ion-item>
-          
+          </ion-item>          
           <ion-item class="itemcolor1">
             <ion-icon name="logo-instagram"></ion-icon>
             <ion-input formControlName="instagram"  type="text" placeholder=" Instagram"  ></ion-input>
           </ion-item>
-
             <ion-item class="itemcolor1">
              <ion-label>¿Cuenta con Domicilio?</ion-label>
               <ion-toggle   formControlName="hasDelivery" ></ion-toggle>
-            </ion-item> 
-
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="email" type="text" placeholder="Correo Electrónico"  required></ion-input>
-            </ion-item>
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres"  required></ion-input>
-            </ion-item>
-
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave"  required></ion-input>
             </ion-item>  
-
           <div class="buttons ion-padding-top">
             <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Guardar Información</ion-button>
           </div>

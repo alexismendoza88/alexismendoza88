@@ -18,13 +18,13 @@ export class InicioPage implements AfterViewInit,OnInit {
     var hora=ahora.getHours();
    
     if(hora>=0 && hora<12){
-      texto="Hola, Buenos dias";
+      texto="Hola, Buenos Días.";
     }
     else if (hora>=12 && hora<18){
-      texto="Hola, Buenas Tardes";
+      texto="Hola, Buenas Tardes.";
     }
     else{
-      texto="Hola, buenas noches";
+      texto="Hola, Buenas Noches.";
     }
     this.result = texto;
 

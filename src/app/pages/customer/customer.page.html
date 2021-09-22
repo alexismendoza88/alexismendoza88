@@ -14,7 +14,7 @@
     <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>    
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
-        <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
+        <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
       </ion-col>
     </ion-row>  
     <ion-row class="ion-align-items-center">
@@ -23,30 +23,26 @@
       </ion-col>
     </ion-row>    
          <ion-item class="itemcolor1">
-            <ion-input formControlName="name" type="text" placeholder="Nombres y Apellidos"  required></ion-input>
+            <ion-input formControlName="name" type="text" placeholder="Nombres y Apellidos  (*)"  required></ion-input>
           </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="email" type="text" placeholder="Correo Electrónico  (*)"  required></ion-input>
+          </ion-item>               
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres  (*)"  required></ion-input>
+          </ion-item>
+          <ion-item class="itemcolor1">
+            <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave  (*)"  required></ion-input>
+          </ion-item> 
 
           <ion-item class="itemcolor1">
-            <ion-input formControlName="phone"  type="text" placeholder="Número de Celular"  required></ion-input>
+            <ion-input formControlName="phone"  type="text" placeholder="N° Celular"  required></ion-input>
           </ion-item>
-
           <ion-item class="itemcolor1">
             <ion-icon name="call-outline"></ion-icon>
-            <ion-input formControlName="fijo"  type="text" placeholder=" telefono fijo"  ></ion-input>
+            <ion-input formControlName="fijo"  type="text" placeholder=" N° Fijo"  ></ion-input>
           </ion-item>    
-
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="email" type="text" placeholder="Correo Electrónico"  required></ion-input>
-            </ion-item> 
-              
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres"  required></ion-input>
-            </ion-item>
-
-            <ion-item class="itemcolor1">
-              <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave"  required></ion-input>
-            </ion-item>  
-
+          
           <div class="buttons ion-padding-top">
             <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Guardar Información</ion-button>
           </div>

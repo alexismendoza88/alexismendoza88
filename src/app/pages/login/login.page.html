@@ -1,19 +1,19 @@
-<ion-header class="ion-no-border backgeneral">
-  <ion-toolbar >
+<ion-header>
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-button  (click)='home()'>
-        <ion-icon style="color:white" name="home-outline" slot="start"></ion-icon>
-      </ion-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-title class="ion-text-center">      
+      <p style="color: white; font-size: 16px; font-weight: bold;" >ACCESO A QPRICE</p>
+    </ion-title>    
   </ion-toolbar>
 </ion-header>
 <!-- Contents -->
-<ion-content id="signin" fullscreen style="text-align: center !important" class="backgeneral">
-  <img class="" src="assets/images/logo.png" style="height: 150px;" />
+<ion-content id="signin" fullscreen style="text-align: center !important" class="backgeneral">  
   <div style="margin-top: -20px;">
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
-        <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
+        <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
       </ion-col>
     </ion-row>  
     <ion-row class="ion-align-items-center">
@@ -28,7 +28,7 @@
         <ion-label>
           <ion-icon name="mail" style="color:white"></ion-icon>
         </ion-label>
-        <ion-input type="email"  formControlName="email"  placeholder="Correo" ></ion-input>
+        <ion-input type="email"  formControlName="email"  placeholder="Correo Electrónico" ></ion-input>
       </ion-item>
 
       <!-- Password -->
@@ -39,20 +39,20 @@
         <ion-input formControlName="password" type="password" placeholder="Clave" ></ion-input>
       </ion-item>
       <ion-item class="itemcolor1">
-        <ion-label>Recordar Clave</ion-label>
+        <ion-label>¿Recordar Clave?</ion-label>
          <ion-toggle   formControlName="remenber" ></ion-toggle>
        </ion-item>      
       <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
       <!-- SignIn Buttons -->
       <div class="buttons">
         <ion-button type="submit" [disabled]="form.invalid"  expand="block" color="secondary"  shape="round" routerDirection="root">
-          <ion-text><strong>Iniciar</strong></ion-text>
+          <ion-text><strong>Entrar</strong></ion-text>
         </ion-button>
       <!-- Forget Passw
         ord Button -->        
       <ion-button expand="block" style="color:white;" fill="clear" slot="end" (click)="resetpass()"
         routerDirection="root">
-       ¿Olvidaste tu clave?
+       ¿Olvidaste Clave?
       </ion-button>
       </div>
     </form>

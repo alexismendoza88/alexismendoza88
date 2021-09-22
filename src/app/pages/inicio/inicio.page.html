@@ -7,18 +7,20 @@
 </ion-header>
 
 <ion-content class="backgeneral">
+<!--   <div id="logodiv" style="text-align: center;">
+    <img src="../../../assets/images/qprice.png" style="width: 200px; height: 200px;" alt="Qprice">
+  </div> -->
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-left">
         <ion-text>
-          <span style="font-size: 14px;color:yellow;font-weight:lighter;">{{result}}</span>          
+          <span style="font-size: 14px;color:yellow;font-weight:lighter;font-family: Verdana, Geneva, Tahoma, sans-serif;">{{result}}</span>          
         </ion-text>
       </ion-col>
     </ion-row>  
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-right">
-        <ion-button  class="btntam" (click)="iniciar_sesion()" shape="round" color="btnfav" ><ion-icon slot="start" name="enter-outline"></ion-icon><p style="color: #000; font-size: 14px; font-weight: bold;" >Iniciar Sesión</p></ion-button>
-        
+        <ion-button  class="btntam" (click)="iniciar_sesion()" shape="round" color="btnfav" ><ion-icon slot="start" name="enter-outline"></ion-icon><p style="color: #000; font-size: 10px; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Iniciar Sesión</p></ion-button>        
       </ion-col>
     </ion-row>
     <ion-row class="ion-align-items-center">
@@ -29,30 +31,22 @@
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-left">
         <ion-text color="warning" >
-          <span style="font-size: 14px;color:yellow;font-weight: bold;">¿ERES USUARIO NUEVO Y DESAS
-             <u style="color: white; font-size: 14px; font-weight: bold;" > REGÍSTRARTE? </u> </span> 
-          
-          
-              
+          <span style="font-size: 16px;color:yellow;font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">¿ERES USUARIO NUEVO?</span>
         </ion-text>
       </ion-col>
     </ion-row>
     <ion-row class="ion-align-items-center">     
       <ion-col size="12" class="ion-text-right">
-        <ion-button class="btntam"  (click)="company()" shape="round" color="btnfav" ><ion-icon slot="start" name="cash-outline"></ion-icon><p style="color: #000; font-size: 14px; font-weight: bold;" >REGISTRO OFRECER</p></ion-button>
+        <ion-button class="btntam"  (click)="company()" shape="round" color="btnfav" ><ion-icon slot="start" name="cash-outline"></ion-icon><p style="color: #000; font-size: 10px; font-family: Verdana, Geneva, Tahoma, sans-serif;" >REGÍSTRATE PARA OFRECER</p></ion-button>
       </ion-col>     
     </ion-row> 
    
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-right">
         <i class="bi bi-arrow-bar-right"></i>
-        <ion-button class="btntam" (click)="customer()" shape="round" color="btnfav" ><ion-icon slot="start" name="search-circle-outline" ></ion-icon><p style="color: #000; font-size: 14px; font-weight: bold;" >REGISTRO BUSCAR</p></ion-button>
+        <ion-button class="btntam" (click)="customer()" shape="round" color="btnfav" ><ion-icon slot="start" name="search-circle-outline" ></ion-icon><p style="color: #000; font-size: 10px; font-family: Verdana, Geneva, Tahoma, sans-serif;" >REGÍSTRATE PARA BUSCAR</p></ion-button>
       </ion-col>
     </ion-row>
-
-    <div id="logodiv">
-      <img src="../../../assets/images/qprice.png" alt="Qprice">
-    </div>
 
 </ion-grid>
 </ion-content>

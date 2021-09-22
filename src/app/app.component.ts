@@ -5,10 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 //import { FCM } from '@ionic-native/fcm/ngx';
-import { FirebaseMessaging } from '@ionic-native/firebase-messaging/ngx';
+import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { BusyService } from './services/busy.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -22,7 +23,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private fcm :FirebaseMessaging,
+    private firebaseX :FirebaseX,
     private router:Router,
     private busyService:BusyService
   ) {
@@ -37,57 +38,53 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-
-      this.ontoken();
-      this.fcm.onTokenRefresh().subscribe(token => {
-        this.ontoken();
-        this.router.navigate(['/home']); 
-      });
-      
+           
     });
   }
-  ontoken()
-  {
-    this.fcm.getToken().then(async token=>{
-      window.localStorage.removeItem("msToken");
-      window.localStorage.setItem("msToken",token);
-    });
-
-  }
+  
   notifications(){
-    this.fcm.onBackgroundMessage().subscribe(data => {
-      if(data.wasTapped)
-      {
-        if(data.a=='customer'){
-          window.localStorage.removeItem("solicitudeId")
-          window.localStorage.setItem("solicitudeId",data.id);
-          this.router.navigate(['/solicitude-detail']);
-        }
-        else
-        {
-          window.localStorage.removeItem("responseId")
-          window.localStorage.setItem("responseId",data.id);
-          this.router.navigate(['/response-detail']);
-        }     
-      } 
-    });
-    this.fcm.onMessage().subscribe(data => {
-      if(data.wasTapped)
-      {
-        if(data.a=='customer'){
-          window.localStorage.removeItem("solicitudeId")
-          window.localStorage.setItem("solicitudeId",data.id);
-          this.router.navigate(['/solicitude-detail']);
-        }
-        else
-        {
-          window.localStorage.removeItem("responseId")
-          window.localStorage.setItem("responseId",data.id);
-          this.router.navigate(['/response-detail']);
-        }     
-      } 
-    });
+
+    this.firebaseX.getToken()
+  .then(token => {
+
+    window.localStorage.removeItem("msToken");
+    window.localStorage.setItem("msToken",token);
+
+  }) // save the token server-side and use it to push notifications to this device
+  .catch(error => console.log(error));
+  this.onNotificationOpen().subscribe((data :any)=> {
+    if(data.a=='customer'){
+      window.localStorage.removeItem("solicitudeId")
+      window.localStorage.setItem("solicitudeId",data.id);
+      this.router.navigate(['/solicitude-detail']);
+    }
+    else
+    {
+      window.localStorage.removeItem("responseId")
+      window.localStorage.setItem("responseId",data.id);
+      this.router.navigate(['/response-detail']);
+    }  
+    
+  });
+
+
+this.firebaseX.onTokenRefresh()
+  .subscribe((token: string) =>{
+
+    window.localStorage.removeItem("msToken");
+    window.localStorage.setItem("msToken",token);
+
+  });
+
   }
+  onNotificationOpen() {
+    return new Observable(observer => {
+          (window as any).FirebasePlugin.onMessageReceived((response) => {
+              observer.next(response);
+          });
+     });
+}
+  
   getPages() {
     this.appPages= [
       {
