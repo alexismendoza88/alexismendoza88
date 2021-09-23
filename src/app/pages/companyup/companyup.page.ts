@@ -6,6 +6,7 @@ import { BusyService } from '../../services/busy.service';
 import { AutoprovinceService } from '../../services/autoprovince.service';
 import { MapComponent } from '../../components/map/map.component';
 import { ModalController } from '@ionic/angular';
+import { async } from '@angular/core/testing';
 @Component({
   selector: 'app-companyup',
   templateUrl: './companyup.page.html',
@@ -13,13 +14,17 @@ import { ModalController } from '@ionic/angular';
 })
 export class CompanyupPage implements OnInit {
   errorMessage: string = '';
+  
   successMessage: string = '';
   form : FormGroup;
   working:boolean=false;
   items:any=[];
   provinceId:number=0;
+  note:string=null;
+  file:File=null;
   provinceName:string="";
   userinfo:any;
+  leng:number=0;
   id:any="";
   categoriesple:any="";
   compareWith :any;
@@ -39,6 +44,8 @@ export class CompanyupPage implements OnInit {
         instagram:[''],
         provinceName: [''],
         categoriesid: [[],[Validators.required]],
+        notifications: [],
+        RtpaInmediata:[''],
         hasDelivery: new FormControl(false),
         lat: [''],
         lng: [''],
@@ -84,6 +91,7 @@ getdata(){
   this.working=true;
   this.apiService.Get("Companies/CompanyUser/"+this.userinfo.id ).then(res=>{
     this.working=false;
+    var formData= new FormData();
      this.form.get("email").setValue(res.email);
      this.form.get("name").setValue(res.name);
      this.form.get("phone").setValue(res.phone);
@@ -97,6 +105,8 @@ getdata(){
      this.provinceId=res.provinceId;
      this.form.get("hasDelivery").setValue(res.hasDelivery);
      this.form.get("creationDate").setValue(res.creationDate);
+     this.form.get("notifications").setValue(res.notifications);
+     this.form.get("RtpaInmediata").setValue(res.RtpaInmediata);
      this.form.get("userId").setValue(res.userId);
      this.form.get("id").setValue(res.id);
      this.form.get("lat").setValue(res.lat);
@@ -108,6 +118,7 @@ getdata(){
        this.busyService.presentAlert("¡Información!","Error al consultar información de su cuenta");
    });
 }
+
 itemRemoved(event)
 {
   this.provinceId=0;
@@ -128,3 +139,4 @@ itemRemoved(event)
      });
   }
 }
+
