@@ -15,7 +15,7 @@
     </ion-title>
     <ion-buttons slot="end" >
       <ion-button [routerLink]="['/solicitude']" *ngIf="selecctedItems.length ==0">        
-        <p style="color:navy; font-size: 50px; font-weight: bold;" >+</p>      
+        <div class="iconagregar"><ion-icon class="tamagregar" name="add-circle" style="color:white"></ion-icon></div>      
       </ion-button>
       <ion-button (click)="delete()" *ngIf="selecctedItems.length > 0">
         <ion-icon name="trash-outline"></ion-icon>

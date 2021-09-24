@@ -22,44 +22,55 @@
           </ion-item>
           <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }"></ion-auto-complete>
           <ion-item class="itemcolor1">
+            <div class="divide" id="lgempresa"><ion-icon class="allicon" name="storefront-outline" style="color:white"></ion-icon></div>
             <ion-input formControlName="name" type="text" placeholder="Nombre"  ></ion-input>
           </ion-item>
 
           <ion-item class="itemcolor1">
+            <div class="divide" id="lgcelular"><ion-icon class="allicon" name="phone-portrait-outline" style="color:white"></ion-icon></div>
             <ion-input formControlName="phone"  type="text" placeholder="Teléfono"  ></ion-input>
           </ion-item> 
           <ion-item class="itemcolor1">
+            <div class="divide"><ion-icon class="allicon" name="call-outline" style="color:white"></ion-icon></div>
             <ion-input formControlName="fijo"  type="text" placeholder="Teléfono fijo"  ></ion-input>
           </ion-item>
 
           <ion-item class="itemcolor1">
+            <div class="divide" id="lgubicacion"><ion-icon class="allicon" name="location-outline" style="color:white"></ion-icon></div>
             <ion-input formControlName="ubication" readonly="readonly"   type="text" placeholder="Ubicación"  ></ion-input>
             <ion-button (click)="presentMap()" color="secondary" slot="end" ><ion-icon name="map-outline"></ion-icon></ion-button>
           </ion-item>  
           <ion-item class="itemcolor1">
+            <div class="divide" id="lgfacebook"><ion-icon class="allicon" name="logo-facebook" style="color:white"></ion-icon> </div>
             <ion-input formControlName="facebook" type="text" placeholder="Facebook"></ion-input>
           </ion-item>
           <ion-item class="itemcolor1">
+            <div class="divide" id="lgyoutube"><ion-icon class="allicon" name="logo-youtube" style="color:white"></ion-icon></div>
             <ion-input formControlName="youtube" type="text" placeholder="Youtube"></ion-input>
           </ion-item>
           <ion-item class="itemcolor1">
+            <div class="divide" id="lginstagram"><ion-icon class="allicon" name="logo-instagram" style="color:white"></ion-icon></div>
             <ion-input formControlName="instagram" type="text" placeholder="Instagram"></ion-input>
           </ion-item>
 
             <ion-item class="itemcolor1">
+              <div class="divide" id="lgdomicilio"><ion-icon class="allicon" name="id-card-outline" style="color:white"></ion-icon></div>
              <ion-label>Domicilio</ion-label>
               <ion-toggle   formControlName="hasDelivery" ></ion-toggle>
             </ion-item> 
 
             <ion-item class="itemcolor1">
+              <div class="divide"><ion-icon class="allicon" name="construct" style="color:white"></ion-icon></div>
               <ion-label>¿Desactivar Notificaciones?</ion-label>
                <ion-toggle   formControlName="notifications" ></ion-toggle>
              </ion-item> 
 
             <ion-item class="itemcolor1">
+              <div class="divide" id="lgcorreo"><ion-icon class="allicon" name="mail-outline" style="color:white"></ion-icon></div>
               <ion-input formControlName="email" readonly="readonly" type="text" placeholder="Correo"  ></ion-input>
             </ion-item> 
             <ion-item class="itemcolor1">
+              <div class="divide" id="lgmegafono"><ion-icon class="allicon" name="megaphone" style="color:white"></ion-icon></div>
               <ion-textarea formControlName="RtpaInmediata" rows="6" cols="20" placeholder="Respuesta rapida al cliente" ></ion-textarea>
             </ion-item>
          

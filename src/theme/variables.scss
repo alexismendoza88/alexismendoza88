@@ -246,7 +246,78 @@
   }
 }
 
+/** tamaño de boton **/
 .btntam{
   width: 240px;
   height: 35px;
+}
+
+/** tamaño y colores de los iconos **/
+
+.divide {
+  padding-right: 10px;
+  margin: 7px;
+  height: 31px;
+  width: 30px;
+  background: rgb(45, 142, 252);
+  border-radius: 50%;
+}
+
+.allicon {
+  padding: 6px;
+  height: 18px;
+  width: 18px;
+  margin-block: 1px;
+
+}
+
+#lgfacebook {
+  background: #00f;
+}
+
+#lginstagram {
+  background: linear-gradient(218deg, #2a0ef8, #f00, #ffc409)
+}
+
+#lgyoutube {
+  background: #f00;
+}
+
+#lgubicacion {
+  background: rgb(28, 189, 23);
+}
+
+#lgpassword {
+  background: #4d14d6;
+}
+
+#lgempresa {
+  background: rgb(121, 66, 41);
+}
+
+#lgcorreo {
+  background: #f93c3c;
+}
+
+#lgcelular{
+  background: linear-gradient(200deg, rgb(11, 142, 230), rgb(37, 247, 18));
+}
+
+#lgdomicilio {
+  background: #f50;
+}
+
+#lgmegafono {
+  background: rgb(0, 255, 42);
+}
+
+#lgpersona {
+  background: #0042fb;
+}
+
+/** icono agregar page solicitudes */
+
+.tamagregar {
+  height: 35px;
+  width: 50px;
 }
