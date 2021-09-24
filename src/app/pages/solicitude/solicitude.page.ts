@@ -4,6 +4,7 @@ import { BusyService } from '../../services/busy.service';
 import { HttpEventType,HttpResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AutoprovinceService } from '../../services/autoprovince.service';
+// import {Storage}from '@ionic/storage';
 @Component({
   selector: 'app-solicitude',
   templateUrl: './solicitude.page.html',

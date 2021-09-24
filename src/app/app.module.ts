@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Query } from '@angular/core';
+// import { IonicStorageModule } from 'ionic/store';
 import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
