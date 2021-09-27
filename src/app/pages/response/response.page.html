@@ -10,9 +10,16 @@
 </ion-header>
 
 <ion-content class="backgeneral">
-  <div class="section_two ion-padding" >
-    <p style="color: yellow; text-align: center;">Ingresa la siguiente Información</p>
-  </div>  
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
+    </ion-col>
+  </ion-row> 
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row> 
   <ion-item class="itemcolor1">
     <ion-input [(ngModel)]="amount" placeholder="Precio del Producto ó Servicio" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>

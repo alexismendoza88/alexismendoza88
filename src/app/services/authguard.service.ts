@@ -15,10 +15,21 @@ export class AuthguardService implements CanActivate{
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree {
       let uid= window.localStorage.getItem('tokenpd');
       if (uid=='' || uid==null) {
-        return this.router.parseUrl("/login");
+  console.log("ok");
+        return true;
       }
     else{
-      return true;
+      console.log("ok2");
+      var data= JSON.parse(uid);
+      if(data.role=="Customer")
+      {
+        document.getElementById("pedidos").style.display = 'none';
+        return this.router.parseUrl("/solicitudelist");
+      }
+      else
+      {
+        return this.router.parseUrl("/companysol");
+      } 
     }
 
   }

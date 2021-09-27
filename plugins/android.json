@@ -19,11 +19,6 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.futuresoft.cotvend"
     },
-    "cordova-plugin-firebase-messaging": {
-      "ANDROID_FIREBASE_MESSAGING_VERSION": "22.0.+",
-      "ANDROIDX_CORE_VERSION": "1.6.+",
-      "PACKAGE_NAME": "com.futuresoft.cotvend"
-    },
     "cordova-plugin-geolocation": {
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.futuresoft.cotvend"
@@ -71,15 +66,6 @@
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "com.futuresoft.cotvend"
-    },
-    "cordova-support-android-plugin": {
-      "PACKAGE_NAME": "com.futuresoft.cotvend"
-    },
-    "cordova-plugin-firebase-analytics": {
-      "ANALYTICS_COLLECTION_ENABLED": "true",
-      "AUTOMATIC_SCREEN_REPORTING_ENABLED": "true",
-      "ANDROID_FIREBASE_ANALYTICS_VERSION": "19.0.+",
       "PACKAGE_NAME": "com.futuresoft.cotvend"
     }
   }

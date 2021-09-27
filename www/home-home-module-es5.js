@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header class=\"ion-no-border backgeneral\">\n  <ion-toolbar>\n    <ion-title ></ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button href=\"https://api.whatsapp.com/send?phone=+573005316396\" >\n        <p style=\"color: white;\">Ayuda</p><ion-icon color=\"success\" name=\"logo-whatsapp\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"backgeneral\">\n  <ion-grid>\n    <ion-row class=\"ion-align-items-center\">\n      <ion-col  class=\"ion-text-center\">\n        <ion-text >\n          <span style=\"color: white;font-size: 12px;\">Ofrece o busca un</span>&nbsp;<span style=\"color:yellow;;font-size: 12px;\">Producto ó Servicio </span>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"ion-align-items-center\">\n  <ion-col size=\"12\" class=\"ion-text-center\">\n    <ion-button  size=\"small\"  (click)=\"company()\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" ><ion-icon slot=\"start\" name=\"cube-outline\"></ion-icon>Ofrecer</ion-button> <ion-text color=\"secondary\">  </ion-text> <ion-button size=\"small\"  (click)=\"customer()\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" ><ion-icon slot=\"start\" name=\"create-outline\"></ion-icon>Buscar</ion-button>\n  </ion-col>\n</ion-row>\n<ion-row class=\"ion-align-items-center\">\n  <ion-col size=\"12\" class=\"ion-text-center\">\n    <ion-text color=\"warning\">\n      <h4> </h4>\n    </ion-text>\n  </ion-col>\n</ion-row>\n</ion-grid>\n<ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\n\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header class=\"ion-no-border backgeneral\">\r\n  <ion-toolbar>\r\n    <ion-title ></ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button href=\"https://api.whatsapp.com/send?phone=+573005316396\" >\r\n        <p style=\"color: white;\">Ayuda</p><ion-icon color=\"success\" name=\"logo-whatsapp\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n      <ion-col  class=\"ion-text-center\">\r\n        <ion-text >\r\n          <span style=\"color: white;font-size: 12px;\">Ofrece o busca un</span>&nbsp;<span style=\"color:yellow;;font-size: 12px;\">Producto ó Servicio </span>\r\n        </ion-text>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button  size=\"small\"  (click)=\"company()\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" ><ion-icon slot=\"start\" name=\"cube-outline\"></ion-icon>Ofrecer</ion-button> <ion-text color=\"secondary\">  </ion-text> <ion-button size=\"small\"  (click)=\"customer()\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" ><ion-icon slot=\"start\" name=\"create-outline\"></ion-icon>Buscar</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n<ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-text color=\"warning\">\r\n      <h4> </h4>\r\n    </ion-text>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n<ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -142,7 +142,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXEl2YW5jaG9cXHNvdXJjZVxccmVwb3NcXENvdGl6YVZlbmRGcm9udC9zcmNcXGFwcFxcaG9tZVxcaG9tZS5wYWdlLnNjc3MiLCJzcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUNBRjs7QURHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUVBLFNBQUE7QUNGRjs7QURLQTtFQUNFLHFCQUFBO0FDRkYiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG5cbiAgY29sb3I6ICM4YzhjOGM7XG5cbiAgbWFyZ2luOiAwO1xufVxuXG4jY29udGFpbmVyIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbiIsIiNjb250YWluZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XG59XG5cbiNjb250YWluZXIgc3Ryb25nIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBsaW5lLWhlaWdodDogMjZweDtcbn1cblxuI2NvbnRhaW5lciBwIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBsaW5lLWhlaWdodDogMjJweDtcbiAgY29sb3I6ICM4YzhjOGM7XG4gIG1hcmdpbjogMDtcbn1cblxuI2NvbnRhaW5lciBhIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufSJdfQ== */";
+    __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXEl2YW5jaG9cXERvY3VtZW50c1xcUFJZX1FQUklDRVxcUVBSSUNFL3NyY1xcYXBwXFxob21lXFxob21lLnBhZ2Uuc2NzcyIsInNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBRUEsa0JBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLFFBQUE7RUFDQSwyQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0FDQUY7O0FER0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFFQSxjQUFBO0VBRUEsU0FBQTtBQ0ZGOztBREtBO0VBQ0UscUJBQUE7QUNGRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxufVxyXG5cclxuI2NvbnRhaW5lciBzdHJvbmcge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBsaW5lLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBwIHtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgbGluZS1oZWlnaHQ6IDIycHg7XHJcblxyXG4gIGNvbG9yOiAjOGM4YzhjO1xyXG5cclxuICBtYXJnaW46IDA7XHJcbn1cclxuXHJcbiNjb250YWluZXIgYSB7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG4iLCIjY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG4gIGNvbG9yOiAjOGM4YzhjO1xuICBtYXJnaW46IDA7XG59XG5cbiNjb250YWluZXIgYSB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn0iXX0= */";
     /***/
   },
 
@@ -186,22 +186,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-    /* harmony import */
-
-
-    var _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @ionic-native/firebase-messaging/ngx */
-    "./node_modules/@ionic-native/firebase-messaging/__ivy_ngcc__/ngx/index.js"); //import { FCM } from '@ionic-native/fcm/ngx';
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js"); //import { FCM } from '@ionic-native/fcm/ngx';
 
 
     var HomePage = /*#__PURE__*/function () {
-      function HomePage(apiService, router, fmc, platform) {
+      function HomePage(apiService, router, platform) {
         _classCallCheck(this, HomePage);
 
         this.apiService = apiService;
         this.router = router;
-        this.fmc = fmc;
         this.platform = platform;
         this.working = false;
       }
@@ -209,40 +202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(HomePage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
-
-          this.platform.ready().then(function () {
-            _this.fmc.onBackgroundMessage().subscribe(function (data) {
-              if (data.wasTapped) {
-                if (data.a == 'customer') {
-                  window.localStorage.removeItem("solicitudeId");
-                  window.localStorage.setItem("solicitudeId", data.id);
-
-                  _this.router.navigate(['/solicitude-detail']);
-                } else {
-                  window.localStorage.removeItem("responseId");
-                  window.localStorage.setItem("responseId", data.id);
-
-                  _this.router.navigate(['/response-detail']);
-                }
-              }
-            });
-          });
-          this.fmc.onMessage().subscribe(function (data) {
-            if (data.wasTapped) {
-              if (data.a == 'customer') {
-                window.localStorage.removeItem("solicitudeId");
-                window.localStorage.setItem("solicitudeId", data.id);
-
-                _this.router.navigate(['/solicitude-detail']);
-              } else {
-                window.localStorage.removeItem("responseId");
-                window.localStorage.setItem("responseId", data.id);
-
-                _this.router.navigate(['/response-detail']);
-              }
-            }
-          });
+          this.platform.ready().then(function () {});
         }
       }, {
         key: "customer",
@@ -280,8 +240,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
-      }, {
-        type: _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_5__["FirebaseMessaging"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
       }];

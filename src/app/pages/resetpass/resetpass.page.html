@@ -1,6 +1,5 @@
 <ion-header>
-  <ion-toolbar color="secondary" >
-        
+  <ion-toolbar color="secondary" >        
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -13,7 +12,7 @@
 <ion-content class="backgeneral">
   <ion-row class="ion-align-items-center">
     <ion-col size="12" class="ion-text-center">
-      <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa el Correo Electrónico.</p>
+      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa el Correo Electrónico.</p>
     </ion-col>
   </ion-row>  
   <ion-row class="ion-align-items-center">
@@ -22,6 +21,7 @@
     </ion-col>
   </ion-row>   
   <ion-item class="itemcolor1">
+    <div class="divide" id="lgcorreo"><ion-icon class="allicon" name="mail-outline" style="color:white"></ion-icon></div>
     <ion-input [(ngModel)]="mail" placeholder="Correo Electrónico" ></ion-input>
   </ion-item>
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
