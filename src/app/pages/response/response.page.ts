@@ -80,7 +80,7 @@ export class ResponsePage implements OnInit {
    }
 tocurrency()
 {
-  this.currency= this.amount;
+  this.currency= this.amount; 
 }
 tocurrency2()
 {
