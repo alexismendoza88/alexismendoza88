@@ -38,10 +38,10 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-           
+      this.notifications();
     });
   }
-  
+
   notifications(){
 
     this.firebaseX.getToken()
@@ -148,7 +148,8 @@ this.firebaseX.onTokenRefresh()
   }
     // Signout Button
     signout() {
-      this.router.navigate(['/login']);
+      window.localStorage.removeItem("userinfo");
+      this.router.navigate(['/inicio']);
       this.menuController.enable(false); // Make Sidemenu disable
     }
     async info()

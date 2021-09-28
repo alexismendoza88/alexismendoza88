@@ -270,7 +270,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" menuId=\"pages\" type=\"overlay\" contentId=\"mainContent\">\n    <ion-content class=\"backgeneral\"> \n      <ion-list class=\"ion-padding\" lines=\"none\">\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\n          <ion-item *ngIf=\"p.available && p.url!=null\" [routerLink]=\"[p.url]\">\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\n            <ion-label style=\"color: white;\" >\n              {{p.title}}\n            </ion-label>\n          </ion-item>\n          <ion-item *ngIf=\"p.available==false\" (click)=\"info()\">\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\n            <ion-label style=\"color: white;\" >\n              {{p.title}}\n            </ion-label>\n          </ion-item>\n          <ion-item *ngIf=\"p.title=='Mi cuenta'\" (click)=\"account()\">\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\n            <ion-label style=\"color: white;\" >\n              {{p.title}}\n            </ion-label>\n          </ion-item>\n          <ion-item *ngIf=\"p.title=='Solicitudes'\" (click)=\"sol()\">\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\n            <ion-label style=\"color: white;\" >\n              {{p.title}}\n            </ion-label>\n          </ion-item>\n          <ion-item *ngIf=\"p.title=='Pedidos'\" (click)=\"pedidos()\" id=\"pedidos\">\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\n            <ion-label style=\"color: white;\" >\n              {{p.title}}\n            </ion-label>\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-content>\n    <!-- Footer -->\n    <ion-footer no-border class=\"backgeneral\">\n      <div class=\"ion-padding\">\n        <ion-button color=\"secondary\" expand=\"block\" (click)=\"signout()\">SALIR</ion-button>\n      </div>\n    </ion-footer>\n  </ion-menu>\n  <ion-router-outlet id=\"mainContent\"></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-menu side=\"start\" menuId=\"pages\" type=\"overlay\" contentId=\"mainContent\">\r\n    <ion-content class=\"backgeneral\"> \r\n      <ion-list class=\"ion-padding\" lines=\"none\">\r\n        <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\r\n          <ion-item *ngIf=\"p.available && p.url!=null\" [routerLink]=\"[p.url]\">\r\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n            <ion-label style=\"color: white;\" >\r\n              {{p.title}}\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item *ngIf=\"p.available==false\" (click)=\"info()\">\r\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n            <ion-label style=\"color: white;\" >\r\n              {{p.title}}\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item *ngIf=\"p.title=='Mi cuenta'\" (click)=\"account()\">\r\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n            <ion-label style=\"color: white;\" >\r\n              {{p.title}}\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item *ngIf=\"p.title=='Solicitudes'\" (click)=\"sol()\">\r\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n            <ion-label style=\"color: white;\" >\r\n              {{p.title}}\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item *ngIf=\"p.title=='Pedidos'\" (click)=\"pedidos()\" id=\"pedidos\">\r\n            <ion-icon style=\"color: white;\" slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n            <ion-label style=\"color: white;\" >\r\n              {{p.title}}\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n    </ion-content>\r\n    <!-- Footer -->\r\n    <ion-footer no-border class=\"backgeneral\">\r\n      <div class=\"ion-padding\">\r\n        <ion-button color=\"secondary\" expand=\"block\" (click)=\"signout()\">CERRAR SESIÓN</ion-button>\r\n      </div>\r\n    </ion-footer>\r\n  </ion-menu>\r\n  <div id=\"divsuperpuesto\" [style.display]=\"splash ? 'flex' : 'none'\">\r\n    <div id=\"divsplashs\">\r\n      <img id=\"splash\" src=\"../assets/images/splash.gif\" alt=\"Qprice\">\r\n    </div>\r\n  </div>\r\n  <ion-router-outlet id=\"mainContent\"></ion-router-outlet>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -283,7 +283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"secondary\">\n    <ion-buttons slot=\"start\">\n      <ion-button  (click)=\"close()\">\n        <ion-icon style=\"color:white\"  name=\"close-circle-outline\" slot=\"start\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-searchbar (ionClear)=\"onClear($event)\"   autofocus=\"true\" placeholder=\"Buscar Dirección\" #googleplaces id=\"googleplaces\" type=\"text\"></ion-searchbar> \n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen>\n  <div #map id=\"map\" ></div>\n</ion-content>\n<ion-footer no-border>\n  <ion-toolbar class=\"ion-padding\" >\n      <!-- Checkout Button Option -->\n      <ion-button color=\"secondary\" expand=\"block\" (click)=\"addToCordinates()\"  *ngIf=\"lat!=null && lng!=null\">\n          Agregar dirección\n      </ion-button>\n  </ion-toolbar>\n</ion-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button  (click)=\"close()\">\r\n        <ion-icon style=\"color:white\"  name=\"close-circle-outline\" slot=\"start\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-searchbar (ionClear)=\"onClear($event)\"   autofocus=\"true\" placeholder=\"Buscar Dirección\" #googleplaces id=\"googleplaces\" type=\"text\"></ion-searchbar> \r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen>\r\n  <div #map id=\"map\" ></div>\r\n</ion-content>\r\n<ion-footer no-border>\r\n  <ion-toolbar class=\"ion-padding\" >\r\n      <!-- Checkout Button Option -->\r\n      <ion-button color=\"secondary\" expand=\"block\" (click)=\"addToCordinates()\"  *ngIf=\"lat!=null && lng!=null\">\r\n          Agregar dirección\r\n      </ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>");
 
 /***/ }),
 
@@ -296,7 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"secondary\">\n    <ion-buttons slot=\"start\">\n      <ion-button  (click)=\"close()\">\n        <ion-icon style=\"color:white\"  name=\"close-circle-outline\" slot=\"start\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-title>¿Como LLegar?</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen>\n  <div #map id=\"map\" ></div>\n</ion-content>\n<ion-footer no-border >\n  <ion-toolbar  color=\"secondary\" >\n    <ion-title style=\"font-size: 10px !important;color:white !important\">Distancia: {{distance}} | Duración: {{duration}}</ion-title>\n  </ion-toolbar>\n</ion-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button  (click)=\"close()\">\r\n        <ion-icon style=\"color:white\"  name=\"close-circle-outline\" slot=\"start\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>¿Como LLegar?</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen>\r\n  <div #map id=\"map\" ></div>\r\n</ion-content>\r\n<ion-footer no-border >\r\n  <ion-toolbar  color=\"secondary\" >\r\n    <ion-title style=\"font-size: 10px !important;color:white !important\">Distancia: {{distance}} | Duración: {{duration}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-footer>");
 
 /***/ }),
 
@@ -358,12 +358,12 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'home',
-        loadChildren: () => __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule),
     },
     {
         path: '',
         redirectTo: 'inicio',
-        pathMatch: 'full'
+        pathMatch: 'full',
     },
     {
         path: 'login',
@@ -486,7 +486,7 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-item {\n  font-size: 12px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxJdmFuY2hvXFxzb3VyY2VcXHJlcG9zXFxDb3RpemFWZW5kRnJvbnQvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksMEJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xyXG4gICAgZm9udC1zaXplOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbn0iLCJpb24taXRlbSB7XG4gIGZvbnQtc2l6ZTogMTJweCAhaW1wb3J0YW50O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-item {\n  font-size: 12px !important;\n}\n\n#divsuperpuesto {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  width: 100%;\n  background-color: #1c1c3a;\n}\n\n#divsplashs {\n  --background: none;\n  background: url('splash.gif') no-repeat center/cover;\n  height: 100%;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxJdmFuY2hvXFxEb2N1bWVudHNcXFBSWV9RUFJJQ0VcXFFQUklDRS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSwwQkFBQTtBQ0NKOztBRENBO0VBQ0ksZUFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0FDRUo7O0FEQ0E7RUFDSSxrQkFBQTtFQUNBLG9EQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtBQ0VKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW17XHJcbiAgICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcclxufVxyXG4jZGl2c3VwZXJwdWVzdG8ge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgei1pbmRleDogOTk5OTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI4LCAyOCwgNTgpO1xyXG59XHJcblxyXG4jZGl2c3BsYXNocyB7XHJcbiAgICAtLWJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vYXNzZXRzL2ltYWdlcy9zcGxhc2guZ2lmKSBuby1yZXBlYXQgY2VudGVyIC8gY292ZXI7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn0iLCJpb24taXRlbSB7XG4gIGZvbnQtc2l6ZTogMTJweCAhaW1wb3J0YW50O1xufVxuXG4jZGl2c3VwZXJwdWVzdG8ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgei1pbmRleDogOTk5OTtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxYzFjM2E7XG59XG5cbiNkaXZzcGxhc2hzIHtcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICBiYWNrZ3JvdW5kOiB1cmwoLi4vYXNzZXRzL2ltYWdlcy9zcGxhc2guZ2lmKSBuby1yZXBlYXQgY2VudGVyL2NvdmVyO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn0iXX0= */");
 
 /***/ }),
 
@@ -505,9 +505,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/firebase-messaging/ngx */ "./node_modules/@ionic-native/firebase-messaging/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/firebase-x/ngx */ "./node_modules/@ionic-native/firebase-x/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _services_busy_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/busy.service */ "./src/app/services/busy.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 
 
 
@@ -518,75 +519,67 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppComponent = class AppComponent {
-    constructor(menuController, platform, splashScreen, statusBar, fcm, router, busyService) {
+    constructor(menuController, platform, splashScreen, statusBar, firebaseX, router, busyService) {
         this.menuController = menuController;
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
-        this.fcm = fcm;
+        this.firebaseX = firebaseX;
         this.router = router;
         this.busyService = busyService;
+        this.splash = true;
         this.appPages = [];
         this.initializeApp();
         this.getPages();
+        setTimeout(() => {
+            this.splash = false;
+        }, 5500);
     }
     initializeApp() {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
-            this.ontoken();
-            this.fcm.onTokenRefresh().subscribe(token => {
-                this.ontoken();
-                this.router.navigate(['/home']);
-            });
-            setTimeout(() => {
-                this.splashScreen.hide();
-            }, 1000);
+            this.notifications();
         });
-    }
-    ontoken() {
-        this.fcm.getToken().then((token) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            window.localStorage.removeItem("msToken");
-            window.localStorage.setItem("msToken", token);
-        }));
     }
     notifications() {
-        this.fcm.onBackgroundMessage().subscribe(data => {
-            alert(JSON.stringify(data));
-            if (data.wasTapped) {
-                if (data.a == 'customer') {
-                    window.localStorage.removeItem("solicitudeId");
-                    window.localStorage.setItem("solicitudeId", data.id);
-                    this.router.navigate(['/solicitude-detail']);
-                }
-                else {
-                    window.localStorage.removeItem("responseId");
-                    window.localStorage.setItem("responseId", data.id);
-                    this.router.navigate(['/response-detail']);
-                }
+        this.firebaseX.getToken()
+            .then(token => {
+            window.localStorage.removeItem("msToken");
+            window.localStorage.setItem("msToken", token);
+        }) // save the token server-side and use it to push notifications to this device
+            .catch(error => console.log(error));
+        this.onNotificationOpen().subscribe((data) => {
+            if (data.a == 'customer') {
+                window.localStorage.removeItem("solicitudeId");
+                window.localStorage.setItem("solicitudeId", data.id);
+                this.router.navigate(['/solicitude-detail']);
+            }
+            else {
+                window.localStorage.removeItem("responseId");
+                window.localStorage.setItem("responseId", data.id);
+                this.router.navigate(['/response-detail']);
             }
         });
-        this.fcm.onMessage().subscribe(data => {
-            alert(JSON.stringify(data));
-            if (data.wasTapped) {
-                if (data.a == 'customer') {
-                    window.localStorage.removeItem("solicitudeId");
-                    window.localStorage.setItem("solicitudeId", data.id);
-                    this.router.navigate(['/solicitude-detail']);
-                }
-                else {
-                    window.localStorage.removeItem("responseId");
-                    window.localStorage.setItem("responseId", data.id);
-                    this.router.navigate(['/response-detail']);
-                }
-            }
+        this.firebaseX.onTokenRefresh()
+            .subscribe((token) => {
+            window.localStorage.removeItem("msToken");
+            window.localStorage.setItem("msToken", token);
+        });
+    }
+    onNotificationOpen() {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_8__["Observable"](observer => {
+            window.FirebasePlugin.onMessageReceived((response) => {
+                observer.next(response);
+            });
         });
     }
     getPages() {
         this.appPages = [
             {
                 title: 'Inicio',
-                url: 'home',
+                url: '/inicio',
                 icon: 'home',
                 available: true
             },
@@ -643,7 +636,8 @@ let AppComponent = class AppComponent {
     }
     // Signout Button
     signout() {
-        this.router.navigate(['/login']);
+        window.localStorage.removeItem("userinfo");
+        this.router.navigate(['/inicio']);
         this.menuController.enable(false); // Make Sidemenu disable
     }
     info() {
@@ -679,7 +673,7 @@ AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
     { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
     { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] },
-    { type: _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_5__["FirebaseMessaging"] },
+    { type: _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_5__["FirebaseX"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: _services_busy_service__WEBPACK_IMPORTED_MODULE_7__["BusyService"] }
 ];
@@ -719,15 +713,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _services_busy_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/busy.service */ "./src/app/services/busy.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/firebase-messaging/ngx */ "./node_modules/@ionic-native/firebase-messaging/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _HammerGestureConfig__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./HammerGestureConfig */ "./src/app/HammerGestureConfig.ts");
-/* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/call-number/ngx */ "./node_modules/@ionic-native/call-number/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ionic4-auto-complete */ "./node_modules/ionic4-auto-complete/__ivy_ngcc__/fesm2015/ionic4-auto-complete.js");
-/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
-/* harmony import */ var _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/native-geocoder/ngx */ "./node_modules/@ionic-native/native-geocoder/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _components_route_route_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/route/route.component */ "./src/app/components/route/route.component.ts");
+/* harmony import */ var _HammerGestureConfig__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./HammerGestureConfig */ "./src/app/HammerGestureConfig.ts");
+/* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/call-number/ngx */ "./node_modules/@ionic-native/call-number/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ionic4-auto-complete */ "./node_modules/ionic4-auto-complete/__ivy_ngcc__/fesm2015/ionic4-auto-complete.js");
+/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
+/* harmony import */ var _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/native-geocoder/ngx */ "./node_modules/@ionic-native/native-geocoder/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _components_route_route_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/route/route.component */ "./src/app/components/route/route.component.ts");
+/* harmony import */ var _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ionic-native/firebase-x/ngx */ "./node_modules/@ionic-native/firebase-x/__ivy_ngcc__/ngx/index.js");
 
 
 
@@ -756,15 +750,15 @@ let AppModule = class AppModule {
 };
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _components_map_map_component__WEBPACK_IMPORTED_MODULE_19__["MapComponent"], _components_route_route_component__WEBPACK_IMPORTED_MODULE_22__["RouteComponent"]],
-        entryComponents: [_components_map_map_component__WEBPACK_IMPORTED_MODULE_19__["MapComponent"], _components_route_route_component__WEBPACK_IMPORTED_MODULE_22__["RouteComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_18__["AutoCompleteModule"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _components_map_map_component__WEBPACK_IMPORTED_MODULE_18__["MapComponent"], _components_route_route_component__WEBPACK_IMPORTED_MODULE_21__["RouteComponent"]],
+        entryComponents: [_components_map_map_component__WEBPACK_IMPORTED_MODULE_18__["MapComponent"], _components_route_route_component__WEBPACK_IMPORTED_MODULE_21__["RouteComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_17__["AutoCompleteModule"]],
         providers: [
-            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_21__["Geolocation"],
-            _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_20__["NativeGeocoder"],
-            _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_17__["CallNumber"],
-            _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_16__["PhotoViewer"],
-            _ionic_native_firebase_messaging_ngx__WEBPACK_IMPORTED_MODULE_14__["FirebaseMessaging"],
+            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_20__["Geolocation"],
+            _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_19__["NativeGeocoder"],
+            _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_16__["CallNumber"],
+            _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_15__["PhotoViewer"],
+            _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_22__["FirebaseX"],
             //FCM,
             _services_busy_service__WEBPACK_IMPORTED_MODULE_12__["BusyService"],
             _services_api_service__WEBPACK_IMPORTED_MODULE_10__["ApiService"],
@@ -772,7 +766,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
-            { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HAMMER_GESTURE_CONFIG"], useClass: _HammerGestureConfig__WEBPACK_IMPORTED_MODULE_15__["IonicGestureConfig"] }
+            { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["HAMMER_GESTURE_CONFIG"], useClass: _HammerGestureConfig__WEBPACK_IMPORTED_MODULE_14__["IonicGestureConfig"] }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
@@ -791,7 +785,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-searchbar {\n  color: black !important;\n  --placeholder-color: black !important;\n}\nion-searchbar input {\n  border-radius: 30px !important;\n  height: 30px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tYXAvQzpcXFVzZXJzXFxJdmFuY2hvXFxzb3VyY2VcXHJlcG9zXFxDb3RpemFWZW5kRnJvbnQvc3JjXFxhcHBcXGNvbXBvbmVudHNcXG1hcFxcbWFwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21wb25lbnRzL21hcC9tYXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFLSSx1QkFBQTtFQUNBLHFDQUFBO0FDSEo7QURGSTtFQUNFLDhCQUFBO0VBQ0EsdUJBQUE7QUNJTiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWFwL21hcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1zZWFyY2hiYXIge1xyXG4gICAgaW5wdXQge1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAzMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAgIGhlaWdodDogMzBweCAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gICAgY29sb3I6YmxhY2sgIWltcG9ydGFudDtcclxuICAgIC0tcGxhY2Vob2xkZXItY29sb3I6IGJsYWNrICFpbXBvcnRhbnQ7XHJcbiAgfSIsImlvbi1zZWFyY2hiYXIge1xuICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcbiAgLS1wbGFjZWhvbGRlci1jb2xvcjogYmxhY2sgIWltcG9ydGFudDtcbn1cbmlvbi1zZWFyY2hiYXIgaW5wdXQge1xuICBib3JkZXItcmFkaXVzOiAzMHB4ICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogMzBweCAhaW1wb3J0YW50O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-searchbar {\n  color: black !important;\n  --placeholder-color: black !important;\n}\nion-searchbar input {\n  border-radius: 30px !important;\n  height: 30px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tYXAvQzpcXFVzZXJzXFxJdmFuY2hvXFxEb2N1bWVudHNcXFBSWV9RUFJJQ0VcXFFQUklDRS9zcmNcXGFwcFxcY29tcG9uZW50c1xcbWFwXFxtYXAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvbWFwL21hcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUtJLHVCQUFBO0VBQ0EscUNBQUE7QUNISjtBREZJO0VBQ0UsOEJBQUE7RUFDQSx1QkFBQTtBQ0lOIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9tYXAvbWFwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNlYXJjaGJhciB7XHJcbiAgICBpbnB1dCB7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDMwcHggIWltcG9ydGFudDtcclxuICAgICAgaGVpZ2h0OiAzMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgICBjb2xvcjpibGFjayAhaW1wb3J0YW50O1xyXG4gICAgLS1wbGFjZWhvbGRlci1jb2xvcjogYmxhY2sgIWltcG9ydGFudDtcclxuICB9IiwiaW9uLXNlYXJjaGJhciB7XG4gIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xuICAtLXBsYWNlaG9sZGVyLWNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xufVxuaW9uLXNlYXJjaGJhciBpbnB1dCB7XG4gIGJvcmRlci1yYWRpdXM6IDMwcHggIWltcG9ydGFudDtcbiAgaGVpZ2h0OiAzMHB4ICFpbXBvcnRhbnQ7XG59Il19 */");
 
 /***/ }),
 
@@ -1288,10 +1282,19 @@ let AuthguardService = class AuthguardService {
     canActivate(next, state) {
         let uid = window.localStorage.getItem('tokenpd');
         if (uid == '' || uid == null) {
-            return this.router.parseUrl("/login");
+            console.log("ok");
+            return true;
         }
         else {
-            return true;
+            console.log("ok2");
+            var data = JSON.parse(uid);
+            if (data.role == "Customer") {
+                document.getElementById("pedidos").style.display = 'none';
+                return this.router.parseUrl("/solicitudelist");
+            }
+            else {
+                return this.router.parseUrl("/companysol");
+            }
         }
     }
 };
@@ -1464,7 +1467,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false,
+    production: true,
     apiurl: 'http://apicotvend.aujaminversiones.com/api/',
     fileurl: 'http://apicotvend.aujaminversiones.com/'
     /*apiurl:'https://localhost:44352/api/',
@@ -1518,7 +1521,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Ivancho\source\repos\CotizaVendFront\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Ivancho\Documents\PRY_QPRICE\QPRICE\src\main.ts */"./src/main.ts");
 
 
 /***/ })

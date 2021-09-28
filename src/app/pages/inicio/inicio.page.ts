@@ -48,7 +48,25 @@ export class InicioPage implements AfterViewInit,OnInit {
     window.localStorage.setItem("iscustomer","no");
     this.router.navigate(['/login']);
   }  
-
-  
+  ionViewWillEnter(){
+    this.autologin();
+  }
+  autologin()
+  {
+    var userinfo=    window.localStorage.getItem("userinfo");
+    if(userinfo!=null)
+    {
+      var data= JSON .parse(window.localStorage.getItem("userinfo"));
+      if(data.role=="Customer")
+      {
+        document.getElementById("pedidos").style.display = 'none';
+        this.router.navigate(['/solicitudelist']);
+      }
+      else
+      {
+        this.router.navigate(['/companysol']);
+      } 
+  }
+  }
 
 }
