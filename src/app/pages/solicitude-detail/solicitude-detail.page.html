@@ -12,15 +12,17 @@
 <ion-content class="backgeneral">
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
   <ion-item class="itemcolor1">
-    <ion-label>Categoría</ion-label>
+    <ion-label>Categoría:</ion-label>
     <p style="color:yellow">{{item?.category.name}}</p>
   </ion-item>
   <ion-item >
 
-    <ion-label>Alguien solicita</ion-label>
+    <ion-label>Alguien Solicita:</ion-label>
     <p style="color:yellow">{{item?.mostrar_nombre}}</p>
     <label *ngIf="role!='Company'" style="color:white;font-weight: bold;">Estás buscando:</label>
   </ion-item>
+
+
 
   <ion-item class="itemcolor1" *ngIf="item?.note!='' && item?.note!='null' ">
     <ion-text style="color:yellow">
@@ -28,14 +30,36 @@
      </ion-text>
     </ion-item>
 
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <hr style="background-color: white;">
+      </ion-col>
+    </ion-row> 
+  
+  
+    <ion-label style="color:yellow; font-size: 16px; font-weight: bold; padding: 62px;">¿PUEDES OFRECERLO?</ion-label>
+    
+    <ion-row class="ion-align-items-center" > 
+      <ion-col size="12">
+        <hr style="background-color: white;">
+      </ion-col>
+    </ion-row>   
+
   <ion-item  *ngIf="item?.fileUrl!=null && item?.fileUrl!=''"  >
     <img src="{{item?.fileUrl}}" (click)="photoview(item?.fileUrl)" style="width:100%;height: 300px;">  
   </ion-item>
   <ion-grid *ngIf="role=='Company'  && responId==0">
     <ion-row class="ion-align-items-center">
   <ion-col size="12" class="ion-text-center">
-    <ion-button shape="round" color="secondary" (click)="response()" ><ion-icon slot="start" name="send"></ion-icon>Responder</ion-button>
+    <ion-button shape="round" color="secondary" (click)="response()" ><ion-icon slot="start" name="send"></ion-icon>SI</ion-button>
   </ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid *ngIf="role=='Company'  && responId==0">
+  <ion-row class="ion-align-items-center">
+<ion-col size="12" class="ion-text-center">
+  <ion-button shape="round" color="secondary" (click)="rtaNo()" ><ion-icon slot="start" name="send"></ion-icon>NO</ion-button>
+</ion-col>
 </ion-row>
 </ion-grid>
 <ion-grid *ngIf="role=='Company' && responId!=0">

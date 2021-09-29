@@ -22,15 +22,20 @@
   </ion-row> 
 
 
-  <ion-label *ngIf="descuento == 0"   style="color:yellow; font-size: 16px; font-weight: bold"></ion-label>
+  <ion-label *ngIf="descuento == 0"   style="color:yellow; font-size: 16px; font-weight: bold; padding: 62px;"> !OJO¡<span style="color: white;">NO APLICA DESCUENTO</span></ion-label>
   
+  <ion-row class="ion-align-items-center" *ngIf="descuento == 0"> 
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row> 
   
   <ion-item class="itemcolor1">
     <ion-input [(ngModel)]="amount" placeholder="Precio del Producto ó Servicio" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
-  <ion-item class="itemcolor1">
-    <ion-input [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Último Precio ó Descuento"></ion-input>
+  <ion-item *ngIf="descuento == 1" class="itemcolor1">
+    <ion-input  [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Último Precio ó Descuento"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
   <ion-item class="itemcolor1">

@@ -5,6 +5,11 @@ import { HttpEventType,HttpResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { alertController } from '@ionic/core';
+import { AlertController, IonButtons } from '@ionic/angular';
+import { async } from '@angular/core/testing';
+import { present } from '@ionic/core/dist/types/utils/overlays';
+import { Button } from 'selenium-webdriver';
+import { ok } from 'assert';
 
 @Component({
   selector: 'app-response',
@@ -32,7 +37,9 @@ export class ResponsePage implements OnInit {
 
   ngOnInit() {
   }
+
   ionViewWillEnter(){
+
     
     this.solicitudeId= window.localStorage.getItem('solicitudeId');
     this.responseId= window.localStorage.getItem("responseId");
@@ -52,6 +59,11 @@ export class ResponsePage implements OnInit {
       this.currency2= null;
       this.descuento = window.localStorage.getItem('Incluir_Descuento');
     }
+
+    if(this.descuento == "0") {
+      this.busyService.presentAlert("¡Información!","!OJO¡ NO APLICA DESCUENTO.");
+    }
+    
    }
    detailsolicitude(){
     this.router.navigate(['/solicitude-detail']);

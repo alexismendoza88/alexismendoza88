@@ -15,6 +15,7 @@ working:boolean=false;
 userid:any=null;
 role:any=null;
 responId:number=0;
+disponibilidad:any=null;
   constructor(private photoViewer: PhotoViewer,public apiService:ApiService,public router:Router) { }
 
   ngOnInit() {
@@ -32,7 +33,7 @@ responId:number=0;
     this.working=true;
     this.apiService.Get("Solicitudes/"+ window.localStorage.getItem("solicitudeId")).then(res=>{
     this.working=false;
-    window.localStorage.setItem('Incluir_Descuento',  res.descuento);
+    window.localStorage.setItem('Incluir_Descuento',  res.descuento);    
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
@@ -63,5 +64,11 @@ responId:number=0;
       window.localStorage.setItem('solicitudeId',this.item.id);
       this.router.navigate(['/response']);
     }
+  }
+
+  rtaNo()
+  {
+
+      this.router.navigate(['/companysol']);
   }
 }
