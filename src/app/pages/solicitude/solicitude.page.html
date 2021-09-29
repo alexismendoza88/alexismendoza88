@@ -11,20 +11,20 @@
 <ion-content class="backgeneral">
   <ion-row class="ion-align-items-center">
     <ion-col size="12" class="ion-text-center">
-      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
+      <p style="color: yellow; font-size: 12px; font-weight: lighter;" >Ingresa la siguiente Información</p>
     </ion-col>
-  </ion-row> 
+  </ion-row>  
   <ion-row class="ion-align-items-center">
     <ion-col size="12">
       <hr style="background-color: white;">
     </ion-col>
-  </ion-row>    
+  </ion-row>   
   <ion-item class="itemcolor1" >
     <ion-select  interface="popover" [(ngModel)]="categoryId" placeholder="Selecciona una Categoría">
       <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-auto-complete [(ngModel)]="provinceName" (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : '¿En qué Ciudad desesas buscar?' }"></ion-auto-complete>
+  <ion-auto-complete [(ngModel)]="provinceName" (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }"></ion-auto-complete>
   <ion-item style="display: none;">
     <ion-label position="floating">Descripción</ion-label>
     <ion-input [(ngModel)]="description" placeholder="Describe lo que buscas ó deseas"></ion-input>
@@ -33,12 +33,24 @@
     <ion-textarea [(ngModel)]="note" rows="6" cols="20" placeholder="Describe lo que estás buscando" (ngModelChange)="get($event)"></ion-textarea>
   </ion-item>
   <ion-item *ngIf="note != '' && note !=null" class="itemcolor1">
-    <p>{{leng}}</p><p>/800</p>
+    <p>Usando {{leng}}</p><p>/800 Caracteres</p>
   </ion-item>
   <ion-item class="itemcolor1"  button (click)="pickfile()">
     <ion-label>Adjuntar PDF o Foto</ion-label>
     <ion-icon slot="end" class="itemcolor1" name="document-attach-outline"></ion-icon>
   </ion-item>
+
+  <ion-item class="itemcolor1">
+    <!-- <div class="divide" id="lgdomicilio"></div> -->
+   <ion-label>¿Incluir Descuento?</ion-label>
+    <ion-toggle checked={checked} [(ngModel)]="descuento" ></ion-toggle>
+  </ion-item> 
+
+  <ion-item class="itemcolor1">
+   <ion-label>¿Visualizar Nombre?</ion-label>
+    <ion-toggle [(ngModel)]="V_nombre" ></ion-toggle>
+  </ion-item> 
+
   <ion-item  *ngIf="fileUrl!=''" >
     <ion-img [src]="fileUrl"></ion-img>
     <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>

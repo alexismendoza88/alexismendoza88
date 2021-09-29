@@ -11,6 +11,7 @@ import { AutoprovinceService } from '../../services/autoprovince.service';
   styleUrls: ['./solicitude.page.scss'],
 })
 export class SolicitudePage implements OnInit {
+  
   items:any=[];
   description:string=null;
   file:File=null;
@@ -22,9 +23,12 @@ export class SolicitudePage implements OnInit {
   leng:number=0;
   provinceId:number=0;
   provinceName:string='';
+  descuento:boolean=null;
+  V_nombre:string=null;
   constructor(public autoprovinceService:AutoprovinceService,public apiService:ApiService,public busyService:BusyService,public router:Router) { }
 
   ngOnInit() {
+    this.descuento=true;
     this.apiService.Get("Categories").then(res=>{
       this.items=res;
     });
@@ -76,6 +80,8 @@ async send(){
  formData.append("note",this.note);
  formData.append("description",this.description);
  formData.append("provinceId",this.provinceId.toString());
+ formData.append("descuento",this.descuento.toString());
+ formData.append("V_nombre",this.V_nombre);
  this.apiService.upload("Solicitudes/Upload",formData).subscribe(
   event => {
     if (event.type == HttpEventType.UploadProgress) {

@@ -16,14 +16,18 @@
     <p style="color:yellow">{{item?.category.name}}</p>
   </ion-item>
   <ion-item >
-    <label *ngIf="role=='Company'" style="color:white;font-weight: bold;">Alguién solicita:</label>
+
+    <ion-label>Alguien solicita</ion-label>
+    <p style="color:yellow">{{item?.mostrar_nombre}}</p>
     <label *ngIf="role!='Company'" style="color:white;font-weight: bold;">Estás buscando:</label>
   </ion-item>
+
   <ion-item class="itemcolor1" *ngIf="item?.note!='' && item?.note!='null' ">
     <ion-text style="color:yellow">
       <p >{{item?.note}}</p>
      </ion-text>
     </ion-item>
+
   <ion-item  *ngIf="item?.fileUrl!=null && item?.fileUrl!=''"  >
     <img src="{{item?.fileUrl}}" (click)="photoview(item?.fileUrl)" style="width:100%;height: 300px;">  
   </ion-item>
