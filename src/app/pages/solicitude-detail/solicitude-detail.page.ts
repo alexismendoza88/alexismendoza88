@@ -22,7 +22,7 @@ responId:number=0;
   photoview(url:string){
     this.photoViewer.show(url);
   }
-  ionViewWillEnter(){
+  ionViewWillEnter(){    
     this.responId=0;
     this.item=null;
     let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
@@ -32,6 +32,7 @@ responId:number=0;
     this.working=true;
     this.apiService.Get("Solicitudes/"+ window.localStorage.getItem("solicitudeId")).then(res=>{
     this.working=false;
+    window.localStorage.setItem('Incluir_Descuento',  res.descuento);
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
@@ -40,7 +41,7 @@ responId:number=0;
     var filter= res.responses.filter(s=> s.company.userId== userinfo.id);
     if(filter.length > 0)
     {
-      this.responId=filter[0].id;
+      this.responId=filter[0].id;      
     }
   },err=>{
     this.working=false;

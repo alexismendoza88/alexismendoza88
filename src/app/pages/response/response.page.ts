@@ -4,6 +4,8 @@ import { BusyService } from '../../services/busy.service';
 import { HttpEventType,HttpResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { alertController } from '@ionic/core';
+
 @Component({
   selector: 'app-response',
   templateUrl: './response.page.html',
@@ -25,6 +27,7 @@ export class ResponsePage implements OnInit {
   currency2:string='';
   apifile:string='';
   responseId:any=null;
+  descuento:string='';
   constructor( public apiService:ApiService,public busyService:BusyService,public router:Router) { }
 
   ngOnInit() {
@@ -47,6 +50,7 @@ export class ResponsePage implements OnInit {
       this.fileUrl="";
       this.currency= null;
       this.currency2= null;
+      this.descuento = window.localStorage.getItem('Incluir_Descuento');
     }
    }
    detailsolicitude(){
@@ -170,4 +174,11 @@ clearimg(){
 this.fileUrl='';
 this.file=null;
 }
+
+async alert(){
+  await this.busyService.presentAlert("¡Información!","OJO ESTE PRODUCTO O SERVICIO NO OFRECE DESCUENTO.");
 }
+}
+
+
+

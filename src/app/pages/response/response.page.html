@@ -20,6 +20,11 @@
       <hr style="background-color: white;">
     </ion-col>
   </ion-row> 
+
+
+  <ion-label *ngIf="descuento == 0"   style="color:yellow; font-size: 16px; font-weight: bold"></ion-label>
+  
+  
   <ion-item class="itemcolor1">
     <ion-input [(ngModel)]="amount" placeholder="Precio del Producto ó Servicio" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
@@ -55,3 +60,5 @@
 </ion-row>
 </ion-grid>
 </ion-content>
+
+
