@@ -17,7 +17,7 @@
   </ion-item>
   <ion-item >
 
-    <ion-label>Alguien Solicita:</ion-label>
+    <ion-label style="color: white;">Alguien Solicita:</ion-label>
     <p style="color:yellow">{{item?.mostrar_nombre}}</p>
     <label *ngIf="role!='Company'" style="color:white;font-weight: bold;">Estás buscando:</label>
   </ion-item>
@@ -37,7 +37,7 @@
     </ion-row> 
   
   
-    <ion-label style="color:yellow; font-size: 16px; font-weight: bold; padding: 62px;">¿PUEDES OFRECERLO?</ion-label>
+    <ion-label style="color:yellow; font-size: 15px; font-weight: bold; position: relative; left: 2.5%;">¿PUEDES OFRECER ESTE PRODUCTO - SERVICIO?</ion-label>
     
     <ion-row class="ion-align-items-center" > 
       <ion-col size="12">
@@ -51,14 +51,14 @@
   <ion-grid *ngIf="role=='Company'  && responId==0">
     <ion-row class="ion-align-items-center">
   <ion-col size="12" class="ion-text-center">
-    <ion-button shape="round" color="secondary" (click)="response()" ><ion-icon slot="start" name="send"></ion-icon>SI</ion-button>
+    <ion-button shape="round" color="secondary" (click)="response()" style="position: absolute; right: 55%;"><ion-icon slot="start" name="checkmark-circle"></ion-icon>SI</ion-button>
   </ion-col>
 </ion-row>
 </ion-grid>
 <ion-grid *ngIf="role=='Company'  && responId==0">
   <ion-row class="ion-align-items-center">
 <ion-col size="12" class="ion-text-center">
-  <ion-button shape="round" color="secondary" (click)="rtaNo()" ><ion-icon slot="start" name="send"></ion-icon>NO</ion-button>
+  <ion-button shape="round" color="danger" (click)="rtaNo()" style="position: absolute; bottom: -18px; right: 25%;"><ion-icon slot="start" name="close-circle"></ion-icon>NO</ion-button>
 </ion-col>
 </ion-row>
 </ion-grid>

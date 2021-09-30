@@ -55,7 +55,7 @@
 
             <ion-item class="itemcolor1">
               <div class="divide" id="lgdomicilio"><ion-icon class="allicon" name="id-card-outline" style="color:white"></ion-icon></div>
-             <ion-label>Domicilio</ion-label>
+              <ion-label>¿Cuenta con Domicilio?</ion-label>
               <ion-toggle   formControlName="hasDelivery" ></ion-toggle>
             </ion-item> 
 
@@ -69,10 +69,16 @@
               <div class="divide" id="lgcorreo"><ion-icon class="allicon" name="mail-outline" style="color:white"></ion-icon></div>
               <ion-input formControlName="email" readonly="readonly" type="text" placeholder="Correo"  ></ion-input>
             </ion-item> 
+
             <ion-item class="itemcolor1">
+              <ion-label position = "floating" style="color: yellow;" >Respuesta Inmediata</ion-label> 
+              <ion-input type="text" [{ngModel}]="RtpaInmediata"></ion-input>
+            </ion-item> 
+
+            <!-- <ion-item class="itemcolor1">
               <div class="divide" id="lgmegafono"><ion-icon class="allicon" name="megaphone" style="color:white"></ion-icon></div>
-              <ion-textarea formControlName="RtpaInmediata" rows="6" cols="20" placeholder="Respuesta rapida al cliente" ></ion-textarea>
-            </ion-item>
+              <ion-label position = "floating"><ion-textarea formControlName="RtpaInmediata" rows="6" cols="20" placeholder="Respuesta rapida al cliente" ></ion-textarea></ion-label>
+            </ion-item> -->
          
             <div class="buttons ion-padding-top">
               <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Actualizar</ion-button>
