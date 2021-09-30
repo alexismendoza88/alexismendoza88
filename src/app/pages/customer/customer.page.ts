@@ -15,6 +15,7 @@ export class CustomerPage implements OnInit {
   successMessage: string = '';
   form : FormGroup;
   working:boolean;
+  ms:any=null;
   constructor(private router:Router,private apiService:ApiService,
     private formBuilder: FormBuilder,private busyService:BusyService) { 
       this.form = this.formBuilder.group({
@@ -50,6 +51,24 @@ export class CustomerPage implements OnInit {
       this.working=false;
        this.errorMessage = err.message;
          this.busyService.presentAlert("¡Información!","No fue posible crear la cuenta");
-     })
+         if (this.ms.indexOf("EMAIL"))
+      {
+       this.ms="La dirección de correo electrónico ya se encuentra registrada.";
+      }
+      else{
+       if (this.ms.indexOf("PHONE"))
+       {
+         this.ms="El número de Teléfono ya se encuentra registrado.";
+       }
+       else
+       {
+         this.ms="No fue posible crear la cuenta.";
+       }
+      }
+      this.busyService.presentAlert("¡Información!",this.ms);
+    });
+     };
   }
-}
+     
+  
+
