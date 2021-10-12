@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border backgeneral">
+  <ion-toolbar>
+    <!-- Side Menu Option -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-searchbar [(ngModel)]="paramSearch" 
+    (ngModelChange)="change()"
+  
+    (ionCancel)="onCancel($event)" placeholder="Buscar"></ion-searchbar>
+  
+  </ion-toolbar>
+</ion-header >
+
+<ion-content class="backgeneral">
+  <ion-item button class="itemcolor1" (click)="seleccionar(item)" *ngFor="let item of categories" >
+    <ion-label>
+        {{item.name}}
+    </ion-label>    
+  </ion-item>
+</ion-content>

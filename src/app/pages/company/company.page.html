@@ -23,13 +23,22 @@
   <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
     <input type="hidden" formControlName="lat">
     <input type="hidden" formControlName="lng">
+    <input type="hidden" formControlName="name">
+    <input type="hidden"  [formControl]="form.controls.categoriesid">
+    
+
     <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
+          
           <ion-item class="itemcolor1">
             <div class="divide"><ion-icon class="allicon" name="copy-outline" style="color:white"></ion-icon></div>
-            <ion-select multiple="true" formControlName="name"  placeholder=" Selecciona la(s) Categoría(s)" cancelText="Cancelar" okText="Aceptar"  [formControl]="form.controls.categoriesid" >
+            <!-- <ion-select multiple="true" formControlName="name"  placeholder=" Selecciona la(s) Categoría(s)" cancelText="Cancelar" okText="Aceptar"  [formControl]="form.controls.categoriesid" >
               <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option>
-            </ion-select>
-          </ion-item>
+            </ion-select> -->
+              <ion-item class="itemcolor1" >      
+                <ion-input placeholder="Seleccionar Categoría" formControlName="seleccion_categoria" (click)="onFocus($event)" ></ion-input>
+              </ion-item>            
+          </ion-item> 
+
           <ion-auto-complete  formControlName="provinceName"   (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Ciudad Residencia (*)' }"></ion-auto-complete>
           <ion-item class="itemcolor1">
             <div class="divide" id="lgempresa"><ion-icon class="allicon" name="storefront-outline" style="color:white"></ion-icon></div>

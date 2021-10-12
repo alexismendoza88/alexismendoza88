@@ -22,6 +22,9 @@ export class CompanyPage implements OnInit {
   provinceId:number=0;
   provinceName:string="";
   ms:any=null;
+
+  categoryId:string=null;
+  categoryDescr:string=null;
   constructor(public autoprovinceService:AutoprovinceService, public modalController: ModalController,private router:Router,private apiService:ApiService,
     private formBuilder: FormBuilder,private busyService:BusyService) { 
       this.form = this.formBuilder.group({
@@ -48,6 +51,7 @@ export class CompanyPage implements OnInit {
         hasDelivery: new FormControl(false),
         lat: [''],
         lng: [''],
+        seleccion_categoria:[''],        
       },);
     }
     async presentMap() {
@@ -81,6 +85,18 @@ export class CompanyPage implements OnInit {
     },err=>{
       this.working=false;
     });
+    if(localStorage.getItem("item")!=null)
+    {
+       let objCat=JSON.parse(window.localStorage.getItem("item"));     
+       this.categoryId=objCat.id;
+       this.categoryDescr=objCat.name;
+    }  
+    if(localStorage.getItem("categoria_seleccion")!=null)
+    {
+       let objCatSel=JSON.parse(window.localStorage.getItem("categoria_seleccion"));    
+      this.form.get("seleccion_categoria").setValue(objCatSel.map(s=>s.name).join('-'));
+      this.form.get("categoriesid").setValue(objCatSel.map(s=>s.id));
+    }                
   }
   async focus(){
     let res= await  this.busyService.AceptInfo("¡Información!","Recuerda activar la Ubicación");
@@ -125,6 +141,11 @@ export class CompanyPage implements OnInit {
       this.busyService.presentAlert("¡Información!",this.ms);
     });
      };
+
+     onFocus(event:any){
+      this.router.navigate(['/search-category-esp']);  
+      
+    }   
   }
 
 

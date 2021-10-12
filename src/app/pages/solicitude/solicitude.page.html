@@ -19,11 +19,15 @@
       <hr style="background-color: white;">
     </ion-col>
   </ion-row>   
+
+
   <ion-item class="itemcolor1" >
-    <ion-select  interface="popover" [(ngModel)]="categoryId" placeholder="Selecciona una Categoría">
-      <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option>
-    </ion-select>
-  </ion-item>
+    <input type="hidden" [(ngModel)]="categoryId" >
+    <ion-input [(ngModel)]="categoryDescr" placeholder="Seleccionar Categoría" (click)="onFocus($event)"></ion-input>
+    <!-- <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option> -->
+</ion-item>
+
+
   <ion-auto-complete [(ngModel)]="provinceName" (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }"></ion-auto-complete>
   <ion-item style="display: none;">
     <ion-label position="floating">Descripción</ion-label>

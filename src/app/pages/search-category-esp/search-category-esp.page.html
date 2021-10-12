@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border backgeneral">
+  <ion-toolbar>
+    <!-- Side Menu Option -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-searchbar [(ngModel)]="paramSearch" 
+    (ngModelChange)="change()"
+  
+    (ionCancel)="onCancel($event)" placeholder="Buscar"></ion-searchbar>
+  
+  </ion-toolbar>
+</ion-header >
+
+<ion-content class="backgeneral">
+
+<ion-list style="height: 200px; overflow-y: auto;">
+  <ion-item button class="itemcolor1" (click)="seleccion_categoria(item)" *ngFor="let item of categories" >
+    <ion-label>
+        {{item.name}}
+    </ion-label>    
+  </ion-item>
+</ion-list>
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row>  
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Categoría(s) Seleccionada(s)</p>
+    </ion-col>
+  </ion-row>   
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12">
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row> 
+  <ion-list style="height: 100px; overflow-y: auto;">
+  <ion-item button class="itemcolor1" *ngFor="let itemCatselec of selectedcategories" >
+    <ion-label>
+        {{itemCatselec.name}}
+    </ion-label>    
+  </ion-item>  
+</ion-list>
+
+<div class="buttons ion-padding-top">
+  <ion-button expand="block" color="secondary" (click)="enviar_categoria()" shape="round">Enviar</ion-button>
+</div>
+
+</ion-content>

@@ -4,6 +4,8 @@ import { BusyService } from '../../services/busy.service';
 import { HttpEventType,HttpResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AutoprovinceService } from '../../services/autoprovince.service';
+
+
 // import {Storage}from '@ionic/storage';
 @Component({
   selector: 'app-solicitude',
@@ -17,6 +19,7 @@ export class SolicitudePage implements OnInit {
   file:File=null;
   note:string=null;
   categoryId:string=null;
+  categoryDescr:string=null;
   userId:string=null;
   working:boolean=false;
   fileUrl:string='';
@@ -25,14 +28,16 @@ export class SolicitudePage implements OnInit {
   provinceName:string='';
   descuento:boolean=null;
   V_nombre:string=null;
-  constructor(public autoprovinceService:AutoprovinceService,public apiService:ApiService,public busyService:BusyService,public router:Router) { }
 
+  constructor(public autoprovinceService:AutoprovinceService,public apiService:ApiService,public busyService:BusyService,public router:Router) { }
+  
   ngOnInit() {
     this.descuento=true;
     this.apiService.Get("Categories").then(res=>{
       this.items=res;
     });
   }
+  
   get(event)
 {
   this.leng=event.length;
@@ -42,6 +47,7 @@ selectedItem(value){
  localStorage.removeItem("province");
  localStorage.setItem("province",JSON.stringify({id: value.id,name :this.provinceName}));
 }
+
 ionViewWillEnter(){
   if(localStorage.getItem("province")!=null)
   {
@@ -49,12 +55,21 @@ ionViewWillEnter(){
      this.provinceId=province.id;
      this,this.provinceName=province.name;
   }
+  if(localStorage.getItem("item")!=null)
+  {
+     let objCat=JSON.parse(window.localStorage.getItem("item"));     
+     this.categoryId=objCat.id;
+     this.categoryDescr=objCat.name;
+  }  
  }
+ 
+
 itemRemoved(event)
 {
   this.provinceId=0;
   localStorage.removeItem("province");
 }
+
 async send(){
   if(this.categoryId==null)
   {
@@ -82,6 +97,8 @@ async send(){
  formData.append("provinceId",this.provinceId.toString());
  formData.append("descuento",this.descuento.toString());
  formData.append("V_nombre",this.V_nombre);
+
+ 
  this.apiService.upload("Solicitudes/Upload",formData).subscribe(
   event => {
     if (event.type == HttpEventType.UploadProgress) {
@@ -106,6 +123,8 @@ async send(){
 );
 }
 
+
+
 pickfile(){
   let input = document.createElement('input');
   input.type = 'file';
@@ -120,6 +139,8 @@ pickfile(){
 };
 input.click();
 }
+
+
 loadimg(file){
   // setting up the reader
   var reader = new FileReader();
@@ -132,8 +153,13 @@ loadimg(file){
   }
 
 }
+
+
 clearimg(){
 this.fileUrl='';
 this.file=null;
+}
+onFocus(event:any){
+  this.router.navigate(['/search-category']);    
 }
 }

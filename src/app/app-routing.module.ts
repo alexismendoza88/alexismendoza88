@@ -108,6 +108,18 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'search-category',
+    loadChildren: () => import('./pages/search-category/search-category.module').then( m => m.SearchCategoryPageModule)
+  },
+  {
+    path: 'search-city',
+    loadChildren: () => import('./pages/search-city/search-city.module').then( m => m.SearchCityPageModule)
+  },
+  {
+    path: 'search-category-esp',
+    loadChildren: () => import('./pages/search-category-esp/search-category-esp.module').then( m => m.SearchCategoryEspPageModule)
   }
 ];
 
