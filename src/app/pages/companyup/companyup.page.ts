@@ -6,7 +6,7 @@ import { BusyService } from '../../services/busy.service';
 import { AutoprovinceService } from '../../services/autoprovince.service';
 import { MapComponent } from '../../components/map/map.component';
 import { ModalController } from '@ionic/angular';
-import { async } from '@angular/core/testing';
+
 @Component({
   selector: 'app-companyup',
   templateUrl: './companyup.page.html',
@@ -128,6 +128,9 @@ itemRemoved(event)
     form.provinceId=this.provinceId;
     this.apiService.Post(form,"Companies/CompanyUp")
      .then(res => {
+       alert(form.notifications);
+      localStorage.removeItem("notifications");
+       localStorage.setItem("notifications",form.notifications)
       this.working=false;
        this.errorMessage = "";     
         this.busyService.presentAlert("¡Información!","Cuenta actualizada exitosamente");

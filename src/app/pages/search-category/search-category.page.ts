@@ -24,7 +24,7 @@ export class SearchCategoryPage implements OnInit {
 
   ngOnInit() {
     this.apiService.Get("Categories").then(res=>{
-      this.categories=res;
+      this.categories=res.slice(0,10);
       this.previuscategories=res;
     });
   }
@@ -36,7 +36,7 @@ export class SearchCategoryPage implements OnInit {
      this.categories=this.previuscategories.filter(s=> s.name?.toLowerCase().indexOf(this.paramSearch.toLowerCase()) >= 0 );
     }
     else{
-      this.categories=this.previuscategories;
+      this.categories=this.previuscategories.slice(0,10);
     }
   }  
 

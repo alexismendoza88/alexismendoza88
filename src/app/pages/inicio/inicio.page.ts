@@ -1,5 +1,7 @@
 import { Component, OnInit ,AfterViewInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { BusyService } from '../../services/busy.service';
+import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -7,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class InicioPage implements AfterViewInit,OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router:Router,private busyService:BusyService, private apiService:ApiService) { }
   result:string='....';
   ngOnInit() {
 
@@ -51,11 +53,24 @@ export class InicioPage implements AfterViewInit,OnInit {
   ionViewWillEnter(){
     this.autologin();
   }
-  autologin()
+  async  autologin()
   {
+    // alert(localStorage.getItem("notifications"));
     var userinfo=    window.localStorage.getItem("userinfo");
     if(userinfo!=null)
     {
+      
+      if (localStorage.getItem("notifications")=="true"){
+
+        
+       var res= await this.busyService.presentAlertYesNo("¡Notificaciones desaptivadas!","desea activar las notificaciones");
+       if(res){
+        localStorage.removeItem("notifications");
+        this.apiService.Get("Companies/activar_notificaciones/"+ JSON.parse(userinfo).id);
+      
+       }
+       
+      }
       var data= JSON .parse(window.localStorage.getItem("userinfo"));
       if(data.role=="Customer")
       {
