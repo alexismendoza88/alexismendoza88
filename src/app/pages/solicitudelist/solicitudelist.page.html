@@ -42,7 +42,7 @@
       <ion-text > <h3 style="font-weight: bold; text-transform: capitalize;color: white;">{{item.creationDate | timeAgo}} - {{item.category.name}}</h3></ion-text>
       <p  style="color: yellow;" *ngIf="item.note!='null' && item.note!=''">{{item.note}}</p>
       <p  style="color: yellow;" *ngIf="item.note=='null' || item.note==''"><ion-icon style="color:yellow" name="document-attach-outline"></ion-icon></p>
-      <p style="font-weight: bold;color: #50c8ff"><ion-icon src="assets/icon/eye.svg"></ion-icon> {{item.responses.length}}</p>
+      <p style="font-weight: bold;color: #50c8ff"><ion-icon src="assets/icon/eye.svg"></ion-icon> {{item.responses.length}}/{{item.solicitude_Views.length}}</p>
     </ion-label>
     <ion-icon slot="end" style="color:white" name="chevron-forward-outline"></ion-icon>
   </ion-item>

@@ -33,12 +33,14 @@ disponibilidad:any=null;
     this.working=true;
     this.apiService.Get("Solicitudes/"+ window.localStorage.getItem("solicitudeId")).then(res=>{
     this.working=false;
+    
     window.localStorage.setItem('Incluir_Descuento',  res.descuento);    
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
     }
    this.item=res;
+   this.apiService.Get("Solicitudes/Solicitude_view/"+ this.item.id+ "/"+ this.userid);
     var filter= res.responses.filter(s=> s.company.userId== userinfo.id);
     if(filter.length > 0)
     {
@@ -56,6 +58,7 @@ disponibilidad:any=null;
       window.localStorage.removeItem('responseId');
       window.localStorage.setItem('responseId',  this.responId.toString());
       this.router.navigate(['/response-detail']);
+      
     }
     else
     {
@@ -68,7 +71,8 @@ disponibilidad:any=null;
 
   rtaNo()
   {
-
+      
       this.router.navigate(['/companysol']);
+      
   }
 }
