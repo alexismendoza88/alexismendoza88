@@ -34,6 +34,7 @@
     <ion-input [(ngModel)]="amount" placeholder="Precio del Producto ó Servicio" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
+
   <ion-item *ngIf="descuento == 1" class="itemcolor1">
     <ion-input  [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Último Precio ó Descuento"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>
@@ -44,6 +45,12 @@
   <ion-item class="itemcolor1" *ngIf="note != '' && note !=null" >
     <p>{{leng}}</p><p>/800</p>
   </ion-item>
+
+  <ion-item class="itemcolor1">
+    <ion-input [(ngModel)]="delivery" placeholder="Tiempo de Entrega" value="Entrega Inmediata"></ion-input>
+  </ion-item>
+
+  
   <ion-item class="itemcolor1"  button (click)="pickfile()">
     <ion-label>Adjuntar PDF o Foto</ion-label>
     <ion-icon slot="end" class="itemcolor1" name="document-attach-outline"></ion-icon>
@@ -52,9 +59,7 @@
     <ion-img [src]="fileUrl"></ion-img>
     <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>
   </ion-item>
-  <ion-item class="itemcolor1" style="display: none;">
-    <ion-input [(ngModel)]="delivery" placeholder="Tiempo de Entrega"></ion-input>
-  </ion-item>
+ 
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
   <ion-grid>
     <ion-row class="ion-align-items-center">
