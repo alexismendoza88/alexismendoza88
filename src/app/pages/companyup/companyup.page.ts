@@ -128,7 +128,7 @@ itemRemoved(event)
     form.provinceId=this.provinceId;
     this.apiService.Post(form,"Companies/CompanyUp")
      .then(res => {
-       alert(form.notifications);
+      //  alert(form.notifications);
       localStorage.removeItem("notifications");
        localStorage.setItem("notifications",form.notifications)
       this.working=false;
