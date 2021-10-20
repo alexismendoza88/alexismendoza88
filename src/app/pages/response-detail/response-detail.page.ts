@@ -19,6 +19,7 @@ export class ResponseDetailPage implements OnInit {
   working:boolean=false;
   userid:any=null;
   role:any=null;
+  companyid:any=null;
     constructor(private modalController:ModalController, private callNumber:CallNumber, private photoViewer: PhotoViewer,public apiService:ApiService,public router:Router,public busyService:BusyService,public alertController:AlertController) { }
   
     ngOnInit() {

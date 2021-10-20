@@ -81,11 +81,18 @@ export class LoginPage implements OnInit {
         }
       window.localStorage.removeItem("userinfo");
       window.localStorage.setItem("userinfo",JSON.stringify(res.data));
+     
+      if(res.data.createCategory!=1)
+      {
+        document.getElementById("categorias").style.display = 'none';
+      }
+
       if(res.data.role=="Customer")
       {
         document.getElementById("pedidos").style.display = 'none';
         this.router.navigate(['/solicitudelist']);
       }
+ 
       else
       {
         this.router.navigate(['/companysol']);

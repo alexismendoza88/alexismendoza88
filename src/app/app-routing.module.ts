@@ -120,7 +120,11 @@ const routes: Routes = [
   {
     path: 'search-category-esp',
     loadChildren: () => import('./pages/search-category-esp/search-category-esp.module').then( m => m.SearchCategoryEspPageModule)
+  },  {
+    path: 'categories',
+    loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
   }
+
 ];
 
 @NgModule({

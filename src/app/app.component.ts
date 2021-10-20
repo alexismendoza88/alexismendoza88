@@ -142,6 +142,12 @@ this.firebaseX.onTokenRefresh()
         url: '/about',
         icon: 'code-working',
         available:true
+      },
+      {
+        title: 'Categorias',
+        url: null,
+        icon: 'code-working',
+        available:true
       }
     ];
 
@@ -170,6 +176,10 @@ this.firebaseX.onTokenRefresh()
       {
         this.router.navigate(['/companysol']);
       } 
+    }
+    async Categoria()
+    {
+      this.router.navigate(['/categories']);
     }
     account(){
       let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
