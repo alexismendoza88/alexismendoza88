@@ -63,7 +63,7 @@ export class InicioPage implements AfterViewInit,OnInit {
       if (localStorage.getItem("notifications")=="true"){
 
         
-       var res= await this.busyService.presentAlertYesNo("¡Notificaciones desaptivadas!","desea activar las notificaciones");
+       var res= await this.busyService.presentAlertYesNo("¡Notificaciones desactivadas!","desea activar las notificaciones");
        if(res){
         localStorage.removeItem("notifications");
         this.apiService.Get("Companies/activar_notificaciones/"+ JSON.parse(userinfo).id);
