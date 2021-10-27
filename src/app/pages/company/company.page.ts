@@ -73,12 +73,12 @@ export class CompanyPage implements OnInit {
   selectedItem(value){
     this.provinceId=value.id;
    }
-  itemRemoved(event)
+  itemRemoved(event) 
   {
   this.provinceId=0;
   }
   ionViewWillEnter(){
-    this.working=true;
+    this.working=true;        
     this.apiService.Get("Categories").then(res=>{
       this.items=res;
       this.working=false;
@@ -124,12 +124,12 @@ export class CompanyPage implements OnInit {
       this.working=false;
       this.errorMessage = err.message;
       this.ms = JSON.stringify(err.error.message.Message);
-      if (this.ms.indexOf("EMAIL"))
+      if (this.ms.indexOf("EMAIL")>0)
       {
        this.ms="La dirección de correo electrónico ya se encuentra registrada.";
       }
       else{
-       if (this.ms.indexOf("PHONE"))
+       if (this.ms.indexOf("PHONE")>0)
        {
          this.ms="El número de Teléfono ya se encuentra registrado.";
        }
@@ -143,8 +143,7 @@ export class CompanyPage implements OnInit {
      };
 
      onFocus(event:any){
-      this.router.navigate(['/search-category-esp']);  
-      
+      this.router.navigate(['/search-category-esp']);        
     }   
   }
 

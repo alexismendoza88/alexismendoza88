@@ -22,22 +22,14 @@
     </ion-label>    
   </ion-item>
 </ion-list>
-
-  <ion-row class="ion-align-items-center">
-    <ion-col size="12">
-      <hr style="background-color: white;">
-    </ion-col>
-  </ion-row>  
+ 
   <ion-row class="ion-align-items-center">
     <ion-col size="12" class="ion-text-center">
+      <hr style="background-color: white;">
       <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Categoría(s) Seleccionada(s)</p>
-    </ion-col>
-  </ion-row>   
-  <ion-row class="ion-align-items-center">
-    <ion-col size="12">
       <hr style="background-color: white;">
     </ion-col>
-  </ion-row> 
+  </ion-row>    
   <ion-list style="height: 100px; overflow-y: auto;">
   <ion-item button class="itemcolor1" *ngFor="let itemCatselec of selectedcategories" >
     <ion-label>

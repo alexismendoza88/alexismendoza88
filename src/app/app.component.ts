@@ -144,7 +144,7 @@ this.firebaseX.onTokenRefresh()
         available:true
       },
       {
-        title: 'Categorias',
+        title: 'Categorías',
         url: null,
         icon: 'code-working',
         available:true

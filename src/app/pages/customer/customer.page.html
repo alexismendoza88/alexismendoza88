@@ -9,48 +9,44 @@
   </ion-toolbar>
 </ion-header>
 <ion-content  id="signup" fullscreen  class="backgeneral">
-  <div class="section_two ion-padding">
+
   <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
     <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>    
     <ion-row class="ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
         <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
-      </ion-col>
-    </ion-row>  
-    <ion-row class="ion-align-items-center">
-      <ion-col size="12">
         <hr style="background-color: white;">
       </ion-col>
     </ion-row>    
          <ion-item class="itemcolor1">
            <div class="divide" id="lgpersona"><ion-icon class="allicon" name="person" style="color: white;"></ion-icon></div>
-            <ion-input formControlName="name" type="text" placeholder=" Nombres y Apellidos  (*)"  required></ion-input>
+            <ion-input formControlName="name" type="text" placeholder="Nombres y Apellidos (*)"  required></ion-input>
           </ion-item>
           <ion-item class="itemcolor1">
             <div class="divide" id="lgcorreo"><ion-icon class="allicon" name="mail-outline" style="color:white"></ion-icon></div>
-            <ion-input formControlName="email" type="text" placeholder=" Correo Electrónico  (*)"  required></ion-input>
+            <ion-input formControlName="email" type="text" placeholder="Correo Electrónico (*)"  required></ion-input>
           </ion-item>               
           <ion-item class="itemcolor1">
             <div class="divide" id="lgpassword"><ion-icon class="allicon" name="key" style="color:white"></ion-icon></div>
-            <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres  (*)"  required></ion-input>
+            <ion-input formControlName="password" type="password" placeholder="Clave - Mínimo 6 caracteres (*)"  required></ion-input>
           </ion-item>
           <ion-item class="itemcolor1">
             <div class="divide" id="lgpassword"><ion-icon class="allicon" name="key" style="color:white"></ion-icon></div>
-            <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave  (*)"  required></ion-input>
+            <ion-input formControlName="confirm" type="password" placeholder="Confirmar Clave (*)"  required></ion-input>
           </ion-item> 
 
           <ion-item class="itemcolor1">
             <div class="divide" id="lgcelular"><ion-icon class="allicon" name="phone-portrait-outline" style="color:white"></ion-icon></div>
-            <ion-input formControlName="phone"  type="text" placeholder="N° Celular"  required></ion-input>
+            <ion-input formControlName="phone"  type="text" placeholder="N° Celular (*)"  required></ion-input>
           </ion-item>
           <ion-item class="itemcolor1">
             <div class="divide"><ion-icon class="allicon" name="call-outline" style="color:white"></ion-icon></div>
-            <ion-input formControlName="fijo"  type="text" placeholder=" N° Fijo"  ></ion-input>
+            <ion-input formControlName="fijo"  type="text" placeholder="N° Fijo"  ></ion-input>
           </ion-item>    
           
           <div class="buttons ion-padding-top">
             <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Guardar Información</ion-button>
           </div>
   </form>
-</div>
+
 </ion-content>

@@ -49,14 +49,15 @@ export class CustomerPage implements OnInit {
        this.router.navigate(['/login']);
      }, err => {
       this.working=false;
-       this.errorMessage = err.message;
-         this.busyService.presentAlert("¡Información!","No fue posible crear la cuenta");
-         if (this.ms.indexOf("EMAIL"))
+      this.errorMessage = err.message;
+      this.ms = JSON.stringify(err.error.message.Message);   
+      console.log("VANCHO: " + this.ms)   ;
+      if (this.ms.indexOf("EMAIL")>0)
       {
        this.ms="La dirección de correo electrónico ya se encuentra registrada.";
       }
       else{
-       if (this.ms.indexOf("PHONE"))
+       if (this.ms.indexOf("PHONE")>0)
        {
          this.ms="El número de Teléfono ya se encuentra registrado.";
        }

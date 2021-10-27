@@ -58,18 +58,13 @@ export class InicioPage implements AfterViewInit,OnInit {
     // alert(localStorage.getItem("notifications"));
     var userinfo=    window.localStorage.getItem("userinfo");
     if(userinfo!=null)
-    {
-      
-      if (localStorage.getItem("notifications")=="true"){
-
-        
-       var res= await this.busyService.presentAlertYesNo("¡Notificaciones desactivadas!","desea activar las notificaciones");
+    {      
+      if (localStorage.getItem("notifications")=="true"){        
+       var res= await this.busyService.presentAlertYesNo("¡Notificaciones Desactivadas!","¿Desea activar las notificaciones?");
        if(res){
         localStorage.removeItem("notifications");
-        this.apiService.Get("Companies/activar_notificaciones/"+ JSON.parse(userinfo).id);
-      
-       }
-       
+        this.apiService.Get("Companies/activar_notificaciones/"+ JSON.parse(userinfo).id);      
+       }       
       }
       var data= JSON .parse(window.localStorage.getItem("userinfo"));
       if(data.role=="Customer")
