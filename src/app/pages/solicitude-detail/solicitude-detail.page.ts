@@ -58,7 +58,6 @@ disponibilidad:any=null;
       window.localStorage.removeItem('responseId');
       window.localStorage.setItem('responseId',  this.responId.toString());
       this.router.navigate(['/response-detail']);
-      
     }
     else
     {
@@ -71,8 +70,6 @@ disponibilidad:any=null;
 
   rtaNo()
   {
-      
       this.router.navigate(['/companysol']);
-      
   }
 }

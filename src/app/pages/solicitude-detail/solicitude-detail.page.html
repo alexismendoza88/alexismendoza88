@@ -24,11 +24,7 @@
 
 
 
-  <ion-item class="itemcolor1" *ngIf="item?.note!='' && item?.note!='null' ">
-    <!-- <ion-text style="color:yellow"> -->
-      <!-- <p style="text-align: justify;">{{item?.note}}</p> -->
-     <!-- </ion-text> -->
-    </ion-item>
+
     <ion-textarea  rows="6" cols="20"  >{{item?.note}}</ion-textarea>
     <ion-row class="ion-align-items-center">
       <ion-col size="12">
@@ -37,9 +33,9 @@
     </ion-row> 
   
   
-    <ion-label style="color:yellow; font-size: 15px; font-weight: bold; position: relative; left: 2.5%;">¿PUEDES OFRECER ESTE PRODUCTO - SERVICIO?</ion-label>
+    <ion-label *ngIf="responId==0" style="color:yellow; font-size: 15px; font-weight: bold; position: relative; left: 2.5%;">¿PUEDES OFRECER ESTE PRODUCTO - SERVICIO?</ion-label>
     
-    <ion-row class="ion-align-items-center" > 
+    <ion-row *ngIf="responId==0" class="ion-align-items-center" > 
       <ion-col size="12">
         <hr style="background-color: white;">
       </ion-col>

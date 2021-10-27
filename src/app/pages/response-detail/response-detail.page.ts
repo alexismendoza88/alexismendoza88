@@ -42,13 +42,14 @@ export class ResponseDetailPage implements OnInit {
     this.role=userinfo.role;
     this.apifile=environment.fileurl + "responsefiles/";
     this.working=true;
-    this.apiService.Get("Responses/"+ window.localStorage.getItem("responseId")).then(res=>{
+    this.apiService.Get("Responses/"+ window.localStorage.getItem("responseId") +"/" + this.userid ).then(res=>{
     this.working=false;
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
     }
     this.item=res;
+    console.log(this.item);
     },err=>{
       this.working=false;
     });

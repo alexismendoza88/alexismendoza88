@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  splash = true;
+  splash = false;
  public appPages=[];
   constructor(
     private menuController:MenuController,

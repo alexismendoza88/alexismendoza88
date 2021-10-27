@@ -106,7 +106,7 @@ getdata(){
      this.form.get("hasDelivery").setValue(res.hasDelivery);
      this.form.get("creationDate").setValue(res.creationDate);
      this.form.get("notifications").setValue(res.notifications);
-     this.form.get("RtpaInmediata").setValue(res.RtpaInmediata);
+     this.form.get("RtpaInmediata").setValue(res.rtpaInmediata);
      this.form.get("userId").setValue(res.userId);
      this.form.get("id").setValue(res.id);
      this.form.get("lat").setValue(res.lat);
