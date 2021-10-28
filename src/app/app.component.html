@@ -15,12 +15,7 @@
               {{p.title}}
             </ion-label>
           </ion-item>
-          <ion-item *ngIf="p.title=='Mi cuenta'" (click)="account()">
-            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
-            <ion-label style="color: white;" >
-              {{p.title}}
-            </ion-label>
-          </ion-item>
+    
           <ion-item *ngIf="p.title=='Solicitudes'" (click)="sol()">
             <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
             <ion-label style="color: white;" >
@@ -67,6 +62,14 @@
               {{p.title}}
             </ion-label>
           </ion-item>
+
+          <ion-item *ngIf="p.title=='Mi cuenta'" (click)="account()">
+            <ion-icon style="color: white;" slot="start" [name]="p.icon"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          
           <ion-item *ngIf="p.title=='Categorías'" (click)="Categoria()" id="categorias">
             <ion-icon style="color: white;" slot="start" name="apps"></ion-icon>
             <ion-label style="color: white;" > 

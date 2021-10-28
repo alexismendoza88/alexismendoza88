@@ -131,19 +131,9 @@ this.firebaseX.onTokenRefresh()
         icon: 'clipboard',
         available:true
       },*/
-      {
-        title: 'Mi cuenta',
-        url: null,
-        icon: 'person',
-        available:true
-      },
+   
       
-      {
-        title: 'Desarrollador',
-        url: '/about',
-        icon: 'code-working',
-        available:true
-      },
+  
       {
         title: 'Categorías',
         url: null,
@@ -182,7 +172,20 @@ this.firebaseX.onTokenRefresh()
         url: null,
         icon: 'code-working',
         available:true
-      }
+      },
+      
+      {
+        title: 'Mi cuenta',
+        url: null,
+        icon: 'person',
+        available:true
+      },
+      {
+        title: 'Desarrollador',
+        url: '/about',
+        icon: 'code-working',
+        available:true
+      },
     ];
 
   }
