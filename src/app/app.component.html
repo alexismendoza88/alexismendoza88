@@ -33,6 +33,40 @@
               {{p.title}}
             </ion-label>
           </ion-item>
+          
+          <ion-item *ngIf="p.title=='Promociones'" (click)="promociones()" id="promociones">
+            <ion-icon style="color: white;" slot="start" name="pricetags"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="p.title=='Remates'" (click)="Remates()" id="remates">
+            <ion-icon style="color: white;" slot="start" name="hammer"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="p.title=='Fechas Especiales'" (click)="Fechas_Especiales()" id="fechas">
+            <ion-icon style="color: white;" slot="start" name="calendar"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item *ngIf="p.title=='Anuncios'" (click)="Anuncios()" id="anuncios">
+            <ion-icon style="color: white;" slot="start" name="megaphone"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="p.title=='Fin De Semana'" (click)="Fin_Semana()" id="f_semana">
+            <ion-icon style="color: white;" slot="start" name="umbrella"></ion-icon>
+            <ion-label style="color: white;" >
+              {{p.title}}
+            </ion-label>
+          </ion-item>
           <ion-item *ngIf="p.title=='Categorías'" (click)="Categoria()" id="categorias">
             <ion-icon style="color: white;" slot="start" name="apps"></ion-icon>
             <ion-label style="color: white;" > 

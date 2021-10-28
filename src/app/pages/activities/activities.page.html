@@ -8,7 +8,7 @@
       </ion-menu-toggle>
     </ion-buttons>
     <ion-title>
-      Actividades y Promociones
+      Actividades y Comidas
     </ion-title>
     <ion-buttons slot="end" >
       <ion-button [routerLink]="['/activityadd']">
@@ -20,7 +20,7 @@
 
 <ion-content class="backgeneral">
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
-    <ion-list>
+    <!-- <ion-list>
       <ion-item button *ngFor="let item of items" (click)="details(item)">
         <ion-thumbnail slot="start" *ngIf="item.img1 != null">
           <img  [src]="item.img1"  >
@@ -35,5 +35,5 @@
         </ion-label>
         <ion-icon slot="end" style="color:white" name="chevron-forward"></ion-icon>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
 </ion-content>
