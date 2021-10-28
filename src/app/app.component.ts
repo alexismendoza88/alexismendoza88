@@ -105,13 +105,14 @@ this.firebaseX.onTokenRefresh()
         icon: 'cart',
         available:true
       },      
-      /*
+      
       {
-        title: 'Actvidades y Promociones',
+        title: 'Actvidades y Comidas',
         url: '/activities',
         icon: 'fast-food',
         available:true
       },
+      /*
       {
         title: 'Clasificados',
         url: 'classified',
@@ -149,6 +150,39 @@ this.firebaseX.onTokenRefresh()
         icon: 'code-working',
         available:true
       }
+      ,
+      {
+        title: 'Promociones',
+        url: null,
+        icon: 'code-working',
+        available:true
+      }
+      ,
+      {
+        title: 'Remates',
+        url: null,
+        icon: 'code-working',
+        available:true
+      }
+      ,
+      {
+        title: 'Fechas Especiales',
+        url: null,
+        icon: 'code-working',
+        available:true
+      } ,
+      {
+        title: 'Anuncios',
+        url: null,
+        icon: 'code-working',
+        available:true
+      } ,
+      {
+        title: 'Fin De Semana',
+        url: null,
+        icon: 'code-working',
+        available:true
+      }
     ];
 
   }
@@ -181,6 +215,32 @@ this.firebaseX.onTokenRefresh()
     {
       this.router.navigate(['/categories']);
     }
+    async promociones()
+    {
+      await  this.busyService.presentAlert("¡Aviso!","¡Acción Promocion Proximamente Disponible!");
+      this.router.navigate(['/promotions']);
+    }
+    async Remates()
+    {
+      await  this.busyService.presentAlert("¡Aviso!","¡Acción Remates Proximamente Disponible!");
+      this.router.navigate(['/remates']);
+    }
+    async Fechas_Especiales()
+    {
+      await  this.busyService.presentAlert("¡Aviso!","¡Acción Fechas Especiales Proximamente Disponible!");
+      this.router.navigate(['/special']);
+    }
+    async Anuncios()
+    {
+      await  this.busyService.presentAlert("¡Aviso!","¡Acción Anuncios Proximamente Disponible!");
+      this.router.navigate(['/advertisements']);
+    }
+    async Fin_Semana()
+    {
+      await  this.busyService.presentAlert("¡Aviso!","¡Acción Fin De Semana Proximamente Disponible!");
+      this.router.navigate(['/weekend']);
+    }
+
     account(){
       let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
       if(userinfo.role=='Company')

@@ -123,6 +123,26 @@ const routes: Routes = [
   },  {
     path: 'categories',
     loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'promotions',
+    loadChildren: () => import('./pages/promotions/promotions.module').then( m => m.PromotionsPageModule)
+  },
+  {
+    path: 'remates',
+    loadChildren: () => import('./pages/remates/remates.module').then( m => m.RematesPageModule)
+  },
+  {
+    path: 'special',
+    loadChildren: () => import('./pages/special/special.module').then( m => m.SpecialPageModule)
+  },
+  {
+    path: 'advertisements',
+    loadChildren: () => import('./pages/advertisements/advertisements.module').then( m => m.AdvertisementsPageModule)
+  },
+  {
+    path: 'weekend',
+    loadChildren: () => import('./pages/weekend/weekend.module').then( m => m.WeekendPageModule)
   }
 
 ];

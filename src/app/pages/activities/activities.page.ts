@@ -20,6 +20,7 @@ export class ActivitiesPage implements OnInit {
    }
 
    activities(){
+     
     this.working=true;
     let provinceId= localStorage.getItem("province")==null ? -1 :(JSON.parse(localStorage.getItem("province"))).id;
     this.apiService.Get("Posts/PostsByType/A/"+ provinceId).then(async res=>{
