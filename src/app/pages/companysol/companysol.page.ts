@@ -20,6 +20,11 @@ export class CompanysolPage implements OnInit {
 
   ngOnInit() {
     this.menuController.enable(true);
+    if(window.localStorage.getItem("pv")==null)
+    {
+    this.busyService.presentAlert("¡Mensaje Informativo!","En esta sección se mostrarán los pedidos que harán los clientes durante el transcurso del día.");  
+    }
+    window.localStorage.setItem("pv","1");
   }
   ionViewWillEnter(){
    this.solicitudes();

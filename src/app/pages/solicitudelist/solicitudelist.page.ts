@@ -19,7 +19,13 @@ export class SolicitudelistPage implements OnInit {
   constructor(public menuController:MenuController,public apiService:ApiService,public router:Router,public busyService:BusyService) { }
 
   ngOnInit() {
+    
     this.menuController.enable(true);
+    if(window.localStorage.getItem("pv")==null)
+    {
+    this.busyService.presentAlert("¡Mensaje Informativo!","En esta sección se mostrarán las solicitudes que usted hará durante el transcurso del día.");  
+    }
+    window.localStorage.setItem("pv","1");
  
   }
   filter(e:string)
