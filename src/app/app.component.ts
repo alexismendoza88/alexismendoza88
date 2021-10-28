@@ -106,12 +106,12 @@ this.firebaseX.onTokenRefresh()
         available:true
       },      
       
-      {
-        title: 'Actvidades y Comidas',
-        url: '/activities',
-        icon: 'fast-food',
-        available:true
-      },
+      // {
+      //   title: 'Actvidades y Comidas',
+      //   url: '/activities',
+      //   icon: 'fast-food',
+      //   available:true
+      // },
       /*
       {
         title: 'Clasificados',

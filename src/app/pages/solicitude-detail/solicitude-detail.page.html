@@ -15,17 +15,17 @@
     <ion-label>Categoría:</ion-label>
     <p style="color:yellow">{{item?.category.name}}</p>
   </ion-item>
-  <ion-item >
 
-    <ion-label style="color: white;">Alguien Solicita:</ion-label>
+  <ion-item >
+    <ion-label style="color: white;">Alguien Solicita: </ion-label>
     <p style="color:yellow">{{item?.mostrar_nombre}}</p>
+  </ion-item>
+
+  <ion-item >
     <label *ngIf="role!='Company'" style="color:white;font-weight: bold;">Estás buscando:</label>
   </ion-item>
 
-
-
-
-    <ion-textarea  rows="6" cols="20"  >{{item?.note}}</ion-textarea>
+  <ion-textarea  rows="6" cols="20"  >{{item?.note}}</ion-textarea>
     <ion-row class="ion-align-items-center">
       <ion-col size="12">
         <hr style="background-color: white;">
@@ -33,9 +33,9 @@
     </ion-row> 
   
   
-    <ion-label *ngIf="responId==0" style="color:yellow; font-size: 15px; font-weight: bold; position: relative; left: 2.5%;">¿PUEDES OFRECER ESTE PRODUCTO - SERVICIO?</ion-label>
+    <ion-label *ngIf="responId==0 && role=='Company'" style="color:yellow; font-size: 15px; font-weight: bold; position: relative; left: 2.5%;">¿PUEDES OFRECER ESTE PRODUCTO - SERVICIO?</ion-label>
     
-    <ion-row *ngIf="responId==0" class="ion-align-items-center" > 
+    <ion-row *ngIf="responId==0 && role=='Company'" class="ion-align-items-center" > 
       <ion-col size="12">
         <hr style="background-color: white;">
       </ion-col>
