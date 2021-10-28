@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Crear Categoria</ion-title>
+    <ion-title class="ion-text-center">
+      <p style="color: white; font-size: 16px; font-weight: bold;" >CREAR CATEGORÍA</p>      
+    </ion-title>     
   </ion-toolbar>
 </ion-header>
 <ion-content  id="signup" fullscreen class="backgeneral" >
@@ -15,11 +17,11 @@
 
           <ion-item class="itemcolor1">
             <div class="divide" id="lgyoutube"><ion-icon class="allicon" name="copy-outline" style="color:white"></ion-icon></div>
-            <ion-input formControlName="name" type="text" placeholder="Nombre Categoria"></ion-input>
+            <ion-input formControlName="name" type="text" placeholder="Nombre Categoría"></ion-input>
           </ion-item>
          
             <div class="buttons ion-padding-top">
-              <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Crear</ion-button>
+              <ion-button expand="block" color="secondary"  shape="round" type="submit" [disabled]="form.invalid" >Guardar Información</ion-button>
             </div>
   </form>
 </div>

@@ -30,7 +30,9 @@
   <ion-grid *ngIf="item?.status=='I'">
     <ion-row class="ion-align-items-center">
   <ion-col size="12" class="ion-text-center">
-    <h4 style="color:#50c8ff;font-weight: bold;">Contacto</h4>
+    <hr style="background-color: white;">
+    <h4 style="color:white;font-weight: bold;">Contacto</h4>
+    <hr style="background-color: white;">
   </ion-col>
   </ion-row>
   </ion-grid>
@@ -76,7 +78,7 @@
  
   <ion-item  *ngIf="role=='Company' && item?.solicitude.customer.name==null  && item?.status=='I'" button href="https://api.whatsapp.com/send?phone=+57{{item?.solicitude.customer.phone}}">
     <ion-label ><ion-icon name="logo-whatsapp" color="success"></ion-icon></ion-label> 
-    <p class="itemcolor2">{{item?.solicitude.customer.phone}}}</p>
+    <p class="itemcolor2">{{item?.solicitude.customer.phone}}</p>
   </ion-item> -->
   
   
