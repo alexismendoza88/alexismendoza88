@@ -77,8 +77,7 @@ export class CompanysolPage implements OnInit {
     }
     this.items=[];
     this.working=true;
-    let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
-    console.log(window.localStorage.getItem("userinfo"));
+    let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));    
     this.apiService.Get("Solicitudes/CompanySolicitude/" + userinfo.id +"/" + userinfo.provinceId+ "/"+ filter).then(async res=>{
       this.working=false;
       this.items=res;

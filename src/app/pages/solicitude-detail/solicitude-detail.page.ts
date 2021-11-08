@@ -3,11 +3,12 @@ import { ApiService } from '../../services/api.service';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-solicitude-detail',
   templateUrl: './solicitude-detail.page.html',
   styleUrls: ['./solicitude-detail.page.scss'],
-})
+}) 
 export class SolicitudeDetailPage implements OnInit {
 item:any=null;
 apifile:string='';
@@ -15,6 +16,7 @@ working:boolean=false;
 userid:any=null;
 role:any=null;
 responId:number=0;
+ispdf:boolean=false;
 disponibilidad:any=null;
   constructor(private photoViewer: PhotoViewer,public apiService:ApiService,public router:Router) { }
 
@@ -38,6 +40,14 @@ disponibilidad:any=null;
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
+    var ext= res.fileUrl.split('/')[4];
+    ext= ext.split('.')[1];
+     if(ext=="pdf" || ext=="PDF")
+     {
+        this.ispdf=true;
+     }else{
+      this.ispdf=false;
+     }
     }
    this.item=res;
    this.apiService.Get("Solicitudes/Solicitude_view/"+ this.item.id+ "/"+ this.userid);

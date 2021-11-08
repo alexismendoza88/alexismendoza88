@@ -8,6 +8,13 @@
     </ion-title>     
   </ion-toolbar>
 </ion-header>
+<ion-content class="backgeneral">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row> 
 <ion-content  id="signup" fullscreen class="backgeneral" >
   <div class="section_two ion-padding">
   <form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">

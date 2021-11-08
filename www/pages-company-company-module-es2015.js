@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">      \r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >CREAR CUENTA - EMPRESA</p>\r\n    </ion-title>    \r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  id=\"signup\" fullscreen class=\"backgeneral\" >\r\n  <div class=\"section_two ion-padding\">   \r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n    </ion-col>\r\n  </ion-row>   \r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\">\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>  \r\n  <form [formGroup]=\"form\" (ngSubmit)=\"tryRegister(form.value)\">\r\n    <input type=\"hidden\" formControlName=\"lat\">\r\n    <input type=\"hidden\" formControlName=\"lng\">\r\n    <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"copy-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-select multiple=\"true\" formControlName=\"name\"  placeholder=\" Selecciona la(s) Categoría(s)\" cancelText=\"Cancelar\" okText=\"Aceptar\"  [formControl]=\"form.controls.categoriesid\" >\r\n              <ion-select-option  *ngFor=\"let item of items\" [value]=\"item.id\">{{item.name}}</ion-select-option>\r\n            </ion-select>\r\n          </ion-item>\r\n          <ion-auto-complete  formControlName=\"provinceName\"   (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Ciudad Residencia (*)' }\"></ion-auto-complete>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgempresa\"><ion-icon class=\"allicon\" name=\"storefront-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"name\" type=\"text\" placeholder=\"   Nombre Empresa  (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcorreo\"><ion-icon class=\"allicon\" name=\"mail-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"email\" type=\"text\" placeholder=\"   Correo Electrónico  (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgpassword\"><ion-icon class=\"allicon\" name=\"key\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"password\" type=\"password\" placeholder=\"   Clave - Mínimo 6 caracteres  (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgpassword\"><ion-icon class=\"allicon\" name=\"key\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"confirm\" type=\"password\" placeholder=\"    Confirmar Clave  (*)\"  required>   </ion-input>\r\n          </ion-item> \r\n          \r\n          \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcelular\"><ion-icon class=\"allicon\" name=\"phone-portrait-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"phone\"  type=\"text\" placeholder=\"   N° Celular\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"call-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"fijo\"  type=\"text\" placeholder=\"   N° Fijo\"  >   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgubicacion\"><ion-icon class=\"allicon\" name=\"location-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"ubication\" (click)=\"focus()\" readonly=\"readonly\"  type=\"text\" placeholder=\"   Elegir Ubicación\"  required>   </ion-input>            \r\n          </ion-item>  \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgfacebook\"><ion-icon class=\"allicon\" name=\"logo-facebook\" style=\"color:white\"></ion-icon> </div>\r\n            <ion-input formControlName=\"facebook\"  type=\"text\" placeholder=\"   Facebook\"  >   </ion-input>            \r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgyoutube\"><ion-icon class=\"allicon\" name=\"logo-youtube\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"youtube\"  type=\"text\" placeholder=\"   Youtube\"  >   </ion-input>\r\n          </ion-item>          \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lginstagram\"><ion-icon class=\"allicon\" name=\"logo-instagram\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"instagram\"  type=\"text\" placeholder=\"   Instagram\"  >   </ion-input>\r\n          </ion-item>\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgdomicilio\"><ion-icon class=\"allicon\" name=\"id-card-outline\" style=\"color:white\"></ion-icon></div>\r\n             <ion-label>   ¿Cuenta con Domicilio?</ion-label>\r\n              <ion-toggle   formControlName=\"hasDelivery\" ></ion-toggle>\r\n            </ion-item>  \r\n          <div class=\"buttons ion-padding-top\">\r\n            <ion-button expand=\"block\" color=\"secondary\"  shape=\"round\" type=\"submit\" [disabled]=\"form.invalid\" >Guardar Información</ion-button>\r\n          </div>\r\n  </form>\r\n</div>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">      \r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >CREAR CUENTA - EMPRESA</p>\r\n    </ion-title>    \r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  id=\"signup\" fullscreen class=\"backgeneral\" >\r\n  \r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>    \r\n  <form [formGroup]=\"form\" (ngSubmit)=\"tryRegister(form.value)\">\r\n    <input type=\"hidden\" formControlName=\"lat\">\r\n    <input type=\"hidden\" formControlName=\"lng\">\r\n    <input type=\"hidden\" formControlName=\"name\">\r\n    <input type=\"hidden\"  [formControl]=\"form.controls.categoriesid\">\r\n    \r\n\r\n    <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n          \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"copy-outline\" style=\"color:white\"></ion-icon></div>             \r\n            <ion-input placeholder=\"Seleccionar Categoría(s)\" formControlName=\"seleccion_categoria\" (click)=\"onFocus($event)\" ></ion-input>              \r\n          </ion-item> \r\n          <ion-auto-complete  formControlName=\"provinceName\"   (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Ciudad Residencia (*)' }\"></ion-auto-complete>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgempresa\"><ion-icon class=\"allicon\" name=\"storefront-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"name\" type=\"text\" placeholder=\"Nombre Empresa (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcorreo\"><ion-icon class=\"allicon\" name=\"mail-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"email\" type=\"text\" placeholder=\"Correo Electrónico (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgpassword\"><ion-icon class=\"allicon\" name=\"key\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"password\" type=\"password\" placeholder=\"Clave - Mínimo 6 caracteres (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgpassword\"><ion-icon class=\"allicon\" name=\"key\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"confirm\" type=\"password\" placeholder=\"Confirmar Clave (*)\"  required>   </ion-input>\r\n          </ion-item>                     \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcelular\"><ion-icon class=\"allicon\" name=\"phone-portrait-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"phone\"  type=\"text\" placeholder=\"N° Celular (*)\"  required>   </ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"call-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"fijo\"  type=\"text\" placeholder=\"N° Fijo\"  >   </ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgubicacion\"><ion-icon class=\"allicon\" name=\"location-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"ubication\" (click)=\"focus()\" readonly=\"readonly\"  type=\"text\" placeholder=\"Elegir Ubicación\"  >   </ion-input>            \r\n          </ion-item>  \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgfacebook\"><ion-icon class=\"allicon\" name=\"logo-facebook\" style=\"color:white\"></ion-icon> </div>\r\n            <ion-input formControlName=\"facebook\"  type=\"text\" placeholder=\"Cuenta En Facebook\"  >   </ion-input>            \r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgyoutube\"><ion-icon class=\"allicon\" name=\"logo-youtube\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"youtube\"  type=\"text\" placeholder=\"Cuenta En Youtube\"  >   </ion-input>\r\n          </ion-item>          \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lginstagram\"><ion-icon class=\"allicon\" name=\"logo-instagram\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"instagram\"  type=\"text\" placeholder=\"Cuenta En Instagram\"  >   </ion-input>\r\n          </ion-item>\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgdomicilio\"><ion-icon class=\"allicon\" name=\"id-card-outline\" style=\"color:white\"></ion-icon></div>\r\n             <ion-label>¿Servicio Domicilio?</ion-label>\r\n              <ion-toggle   formControlName=\"hasDelivery\" ></ion-toggle>\r\n            </ion-item>  \r\n          <div class=\"buttons ion-padding-top\">\r\n            <ion-button expand=\"block\" color=\"secondary\"  shape=\"round\" type=\"submit\" [disabled]=\"form.invalid\" >Guardar Información</ion-button>\r\n          </div>\r\n  </form>\r\n\r\n</ion-content>");
 
 /***/ }),
 
@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyPageRoutingModule", function() { return CompanyPageRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _company_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./company.page */ "./src/app/pages/company/company.page.ts");
 
 
@@ -61,13 +61,13 @@ CompanyPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyPageModule", function() { return CompanyPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 /* harmony import */ var _company_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./company-routing.module */ "./src/app/pages/company/company-routing.module.ts");
 /* harmony import */ var _company_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./company.page */ "./src/app/pages/company/company.page.ts");
-/* harmony import */ var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ionic4-auto-complete */ "./node_modules/ionic4-auto-complete/__ivy_ngcc__/fesm2015/ionic4-auto-complete.js");
+/* harmony import */ var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ionic4-auto-complete */ "./node_modules/ionic4-auto-complete/fesm2015/ionic4-auto-complete.js");
 
 
 
@@ -120,13 +120,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyPage", function() { return CompanyPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/api.service */ "./src/app/services/api.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _services_busy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/busy.service */ "./src/app/services/busy.service.ts");
 /* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/map/map.component */ "./src/app/components/map/map.component.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 /* harmony import */ var _services_autoprovince_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/autoprovince.service */ "./src/app/services/autoprovince.service.ts");
 
 
@@ -151,6 +151,9 @@ let CompanyPage = class CompanyPage {
         this.items = [];
         this.provinceId = 0;
         this.provinceName = "";
+        this.ms = null;
+        this.categoryId = null;
+        this.categoryDescr = null;
         this.form = this.formBuilder.group({
             email: ['',
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].compose([
@@ -175,6 +178,7 @@ let CompanyPage = class CompanyPage {
             hasDelivery: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](false),
             lat: [''],
             lng: [''],
+            seleccion_categoria: [''],
         });
     }
     presentMap() {
@@ -208,6 +212,16 @@ let CompanyPage = class CompanyPage {
         }, err => {
             this.working = false;
         });
+        if (localStorage.getItem("item") != null) {
+            let objCat = JSON.parse(window.localStorage.getItem("item"));
+            this.categoryId = objCat.id;
+            this.categoryDescr = objCat.name;
+        }
+        if (localStorage.getItem("categoria_seleccion") != null) {
+            let objCatSel = JSON.parse(window.localStorage.getItem("categoria_seleccion"));
+            this.form.get("seleccion_categoria").setValue(objCatSel.map(s => s.name).join('-'));
+            this.form.get("categoriesid").setValue(objCatSel.map(s => s.id));
+        }
     }
     focus() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -234,9 +248,25 @@ let CompanyPage = class CompanyPage {
             }, err => {
                 this.working = false;
                 this.errorMessage = err.message;
-                this.busyService.presentAlert("¡Información!", "No fue posible crear la cuenta");
+                this.ms = JSON.stringify(err.error.message.Message);
+                if (this.ms.indexOf("EMAIL") > 0) {
+                    this.ms = "La dirección de correo electrónico ya se encuentra registrada.";
+                }
+                else {
+                    if (this.ms.indexOf("PHONE") > 0) {
+                        this.ms = "El número de Teléfono ya se encuentra registrado.";
+                    }
+                    else {
+                        this.ms = "No fue posible crear la cuenta.";
+                    }
+                }
+                this.busyService.presentAlert("¡Información!", this.ms);
             });
         });
+    }
+    ;
+    onFocus(event) {
+        this.router.navigate(['/search-category-esp']);
     }
 };
 CompanyPage.ctorParameters = () => [

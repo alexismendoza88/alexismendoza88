@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >NUEVA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 12px; font-weight: lighter;\" >Ingresa la siguiente Información</p>\r\n    </ion-col>\r\n  </ion-row>  \r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\">\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>   \r\n  <ion-item class=\"itemcolor1\" >\r\n    <ion-select  interface=\"popover\" [(ngModel)]=\"categoryId\" placeholder=\"Selecciona una Categoría\">\r\n      <ion-select-option  *ngFor=\"let item of items\" [value]=\"item.id\">{{item.name}}</ion-select-option>\r\n    </ion-select>\r\n  </ion-item>\r\n  <ion-auto-complete [(ngModel)]=\"provinceName\" (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\"></ion-auto-complete>\r\n  <ion-item style=\"display: none;\">\r\n    <ion-label position=\"floating\">Descripción</ion-label>\r\n    <ion-input [(ngModel)]=\"description\" placeholder=\"Describe lo que buscas ó deseas\"></ion-input>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" rows=\"6\" cols=\"20\" placeholder=\"Describe lo que estás buscando\" (ngModelChange)=\"get($event)\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item *ngIf=\"note != '' && note !=null\" class=\"itemcolor1\">\r\n    <p>{{leng}}</p><p>/800</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img [src]=\"fileUrl\"></ion-img>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Consultar Información</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >NUEVA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>  \r\n\r\n  <ion-item class=\"itemcolor1\" >\r\n    <input type=\"hidden\" [(ngModel)]=\"categoryId\" >\r\n    <ion-input [(ngModel)]=\"categoryDescr\" placeholder=\"Seleccionar Categoría\" (click)=\"onFocus($event)\"></ion-input>\r\n    <!-- <ion-select-option  *ngFor=\"let item of items\" [value]=\"item.id\">{{item.name}}</ion-select-option> -->\r\n</ion-item>\r\n\r\n\r\n  <ion-auto-complete [(ngModel)]=\"provinceName\" (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\"></ion-auto-complete>\r\n  <ion-item style=\"display: none;\">\r\n    <ion-label position=\"floating\">Descripción</ion-label>\r\n    <ion-input [(ngModel)]=\"description\" placeholder=\"Describe lo que buscas ó deseas\"></ion-input>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" rows=\"6\" cols=\"20\" placeholder=\"Describe lo que estás buscando\" (ngModelChange)=\"get($event)\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item *ngIf=\"note != '' && note !=null\" class=\"itemcolor1\">\r\n    <p>Usando {{leng}}</p><p>/800 Caracteres</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n  <ion-item class=\"itemcolor1\">\r\n    <!-- <div class=\"divide\" id=\"lgdomicilio\"></div> -->\r\n   <ion-label>¿Incluir Descuento?</ion-label>\r\n    <ion-toggle checked={checked} [(ngModel)]=\"descuento\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item class=\"itemcolor1\">\r\n   <ion-label>¿Mostrar tu nombre al proveedor?</ion-label>\r\n    <ion-toggle [(ngModel)]=\"V_nombre\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img [src]=\"fileUrl\"></ion-img>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Consultar Información</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -127,7 +127,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ionic4-auto-complete */
-    "./node_modules/ionic4-auto-complete/__ivy_ngcc__/fesm2015/ionic4-auto-complete.js");
+    "./node_modules/ionic4-auto-complete/fesm2015/ionic4-auto-complete.js");
 
     var SolicitudePageModule = function SolicitudePageModule() {
       _classCallCheck(this, SolicitudePageModule);
@@ -174,7 +174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -192,19 +192,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
     var _services_autoprovince_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../services/autoprovince.service */
-    "./src/app/services/autoprovince.service.ts");
+    "./src/app/services/autoprovince.service.ts"); // import {Storage}from '@ionic/storage';
+
 
     var SolicitudePage = /*#__PURE__*/function () {
       function SolicitudePage(autoprovinceService, apiService, busyService, router) {
@@ -219,12 +220,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.file = null;
         this.note = null;
         this.categoryId = null;
+        this.categoryDescr = null;
         this.userId = null;
         this.working = false;
         this.fileUrl = '';
         this.leng = 0;
         this.provinceId = 0;
         this.provinceName = '';
+        this.descuento = null;
+        this.V_nombre = null;
       }
 
       _createClass(SolicitudePage, [{
@@ -232,6 +236,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this = this;
 
+          this.descuento = true;
           this.apiService.Get("Categories").then(function (res) {
             _this.items = res;
           });
@@ -258,6 +263,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var province = JSON.parse(window.localStorage.getItem("province"));
             this.provinceId = province.id;
             this, this.provinceName = province.name;
+          }
+
+          if (localStorage.getItem("item") != null) {
+            var objCat = JSON.parse(window.localStorage.getItem("item"));
+            this.categoryId = objCat.id;
+            this.categoryDescr = objCat.name;
           }
         }
       }, {
@@ -322,10 +333,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     formData.append("note", this.note);
                     formData.append("description", this.description);
                     formData.append("provinceId", this.provinceId.toString());
+                    formData.append("descuento", this.descuento.toString());
+                    formData.append("V_nombre", this.V_nombre);
                     this.apiService.upload("Solicitudes/Upload", formData).subscribe(function (event) {
                       if (event.type == _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].UploadProgress) {
                         var percentDone = Math.round(100 * event.loaded / event.total);
-                        console.log("File is ".concat(percentDone, "% loaded."));
                       } else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpResponse"]) {
                         if (event.body.ok) {
                           _this2.working = false;
@@ -345,7 +357,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       _this2.busyService.presentAlert("¡Información!", "Error al  enviar la Solicitud");
                     }, function () {});
 
-                  case 22:
+                  case 24:
                   case "end":
                     return _context.stop();
                 }
@@ -396,6 +408,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function clearimg() {
           this.fileUrl = '';
           this.file = null;
+        }
+      }, {
+        key: "onFocus",
+        value: function onFocus(event) {
+          this.router.navigate(['/search-category']);
         }
       }]);
 

@@ -625,7 +625,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
-  "./node_modules/ionic-long-press/__ivy_ngcc__/fesm2015/ionic-long-press.js": function node_modulesIonicLongPress__ivy_ngcc__Fesm2015IonicLongPressJs(module, __webpack_exports__, __webpack_require__) {
+  "./node_modules/ionic-long-press/fesm2015/ionic-long-press.js": function node_modulesIonicLongPressFesm2015IonicLongPressJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
@@ -652,7 +652,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -668,7 +668,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js"); // const LONG_PRESS_DEFAULT_TIMEOUT = 500;
+    "./node_modules/@angular/common/fesm2015/common.js"); // const LONG_PRESS_DEFAULT_TIMEOUT = 500;
     // const MIN_LONG_PRESS_TIMEOUT = 40;
 
 
@@ -889,13 +889,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 

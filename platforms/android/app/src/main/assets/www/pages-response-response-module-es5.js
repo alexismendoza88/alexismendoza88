@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >RESPUESTA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <div class=\"section_two ion-padding\" >\r\n    <p style=\"color: yellow; text-align: center;\">Ingresa la siguiente Información</p>\r\n  </div>  \r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-input [(ngModel)]=\"amount\" placeholder=\"Precio del Producto ó Servicio\" (ngModelChange)=\"tocurrency($event)\"></ion-input>\r\n    <p  style=\"color: yellow; font-weight: bold;\">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-input [(ngModel)]=\"finalamount\" (ngModelChange)=\"tocurrency2($event)\"  placeholder=\"Último Precio ó Descuento\"></ion-input>\r\n    <p  style=\"color: yellow; font-weight: bold;\">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" maxlength=\"800\" (ngModelChange)=\"get($event)\" rows=\"6\" cols=\"20\" placeholder=\"¿Alguna Observación o Sugerencia?\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" *ngIf=\"note != '' && note !=null\" >\r\n    <p>{{leng}}</p><p>/800</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img [src]=\"fileUrl\"></ion-img>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" style=\"display: none;\">\r\n    <ion-input [(ngModel)]=\"delivery\" placeholder=\"Tiempo de Entrega\"></ion-input>\r\n  </ion-item>\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button *ngIf=\"responseId!=null\"  [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Actualizar y Responder</ion-button>\r\n    <ion-button *ngIf=\"responseId==null\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Responder</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >RESPUESTA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row> \r\n\r\n  <ion-label *ngIf=\"descuento == 0\"   style=\"color:yellow; font-size: 16px; font-weight: bold; padding: 62px;\"> !OJO¡<span style=\"color: white;\"> NO APLICA DESCUENTO</span></ion-label>\r\n  \r\n  <ion-row class=\"ion-align-items-center\" *ngIf=\"descuento == 0\"> \r\n    <ion-col size=\"12\">\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row> \r\n  \r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-input [(ngModel)]=\"amount\" placeholder=\"Precio del Producto ó Servicio\" (ngModelChange)=\"tocurrency($event)\"></ion-input>\r\n    <p  style=\"color: yellow; font-weight: bold;\">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>\r\n  </ion-item>\r\n\r\n  <ion-item *ngIf=\"descuento == 1\" class=\"itemcolor1\">\r\n    <ion-input  [(ngModel)]=\"finalamount\" (ngModelChange)=\"tocurrency2($event)\"  placeholder=\"Último Precio ó Descuento\"></ion-input>\r\n    <p  style=\"color: yellow; font-weight: bold;\">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" maxlength=\"800\" (ngModelChange)=\"get($event)\" rows=\"6\" cols=\"20\" placeholder=\"¿Alguna Observación o Sugerencia?\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" *ngIf=\"note != '' && note !=null\" >\r\n    <p>{{leng}}</p><p>/800</p>\r\n  </ion-item>\r\n\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-label position=\"floating\">Tiempo De Entrega</ion-label>\r\n    <ion-input  [(ngModel)]=\"delivery\" placeholder=\"Entrega Inmediata\" ></ion-input>\r\n  </ion-item>\r\n\r\n  \r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img [src]=\"fileUrl\"></ion-img>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n \r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button *ngIf=\"responseId!=null\"  [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Actualizar y Responder</ion-button>\r\n    <ion-button *ngIf=\"responseId==null\" [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Responder</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n\r\n\r\n";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -168,7 +168,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -186,13 +186,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -222,6 +222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.currency2 = '';
         this.apifile = '';
         this.responseId = null;
+        this.descuento = '';
       }
 
       _createClass(ResponsePage, [{
@@ -244,6 +245,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.fileUrl = "";
             this.currency = null;
             this.currency2 = null;
+            this.descuento = window.localStorage.getItem('Incluir_Descuento');
+          }
+
+          if (this.descuento == "0") {
+            this.busyService.presentAlert("¡Información!", "!OJO¡ NO APLICA DESCUENTO.");
           }
         }
       }, {
@@ -329,7 +335,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
 
                     _context.next = 8;
-                    return this.busyService.presentAlert("¡Información!", "El campo Último Precio o Descuento debe ser menor ó igual que el Precio Original.");
+                    return this.busyService.presentAlert("¡Información!", "El campo Último Precio o Descuento debe ser menor ó igual al Precio Original.");
 
                   case 8:
                     return _context.abrupt("return");
@@ -420,6 +426,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function clearimg() {
           this.fileUrl = '';
           this.file = null;
+        }
+      }, {
+        key: "alert",
+        value: function alert() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.next = 2;
+                    return this.busyService.presentAlert("¡Información!", "OJO ESTE PRODUCTO O SERVICIO NO OFRECE DESCUENTO.");
+
+                  case 2:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
         }
       }]);
 

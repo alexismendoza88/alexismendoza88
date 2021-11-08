@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -168,19 +168,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _services_busy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../services/busy.service */
+    "./src/app/services/busy.service.ts");
+    /* harmony import */
+
+
+    var _services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../services/api.service */
+    "./src/app/services/api.service.ts");
 
     var InicioPage = /*#__PURE__*/function () {
-      function InicioPage(router) {
+      function InicioPage(router, busyService, apiService) {
         _classCallCheck(this, InicioPage);
 
         this.router = router;
+        this.busyService = busyService;
+        this.apiService = apiService;
         this.result = '....';
       }
 
@@ -233,18 +247,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "autologin",
         value: function autologin() {
-          var userinfo = window.localStorage.getItem("userinfo");
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var userinfo, res, data;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    // alert(localStorage.getItem("notifications"));
+                    userinfo = window.localStorage.getItem("userinfo");
 
-          if (userinfo != null) {
-            var data = JSON.parse(window.localStorage.getItem("userinfo"));
+                    if (!(userinfo != null)) {
+                      _context.next = 9;
+                      break;
+                    }
 
-            if (data.role == "Customer") {
-              document.getElementById("pedidos").style.display = 'none';
-              this.router.navigate(['/solicitudelist']);
-            } else {
-              this.router.navigate(['/companysol']);
-            }
-          }
+                    if (!(localStorage.getItem("notifications") == "true")) {
+                      _context.next = 7;
+                      break;
+                    }
+
+                    _context.next = 5;
+                    return this.busyService.presentAlertYesNo("¡Notificaciones Desactivadas!", "¿Desea activar las notificaciones?");
+
+                  case 5:
+                    res = _context.sent;
+
+                    if (res) {
+                      localStorage.removeItem("notifications");
+                      this.apiService.Get("Companies/activar_notificaciones/" + JSON.parse(userinfo).id);
+                    }
+
+                  case 7:
+                    data = JSON.parse(window.localStorage.getItem("userinfo"));
+
+                    if (data.role == "Customer") {
+                      document.getElementById("pedidos").style.display = 'none';
+                      this.router.navigate(['/solicitudelist']);
+                    } else {
+                      this.router.navigate(['/companysol']);
+                    }
+
+                  case 9:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
         }
       }]);
 
@@ -254,6 +303,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     InicioPage.ctorParameters = function () {
       return [{
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: _services_busy_service__WEBPACK_IMPORTED_MODULE_3__["BusyService"]
+      }, {
+        type: _services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
       }];
     };
 

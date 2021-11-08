@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">Mi Cuenta</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  id=\"signup\" fullscreen class=\"backgeneral\" >\r\n  <div class=\"section_two ion-padding\">\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"tryRegister(form.value)\">\r\n    <input type=\"hidden\" formControlName=\"id\">\r\n    <input type=\"hidden\" formControlName=\"userId\">\r\n    <input type=\"hidden\" formControlName=\"creationDate\">\r\n    <input type=\"hidden\" formControlName=\"lat\">\r\n    <input type=\"hidden\" formControlName=\"lng\">\r\n    <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n          <ion-item class=\"itemcolor1\">\r\n            <ion-select multiple=\"true\" placeholder=\"Seleccione Categorías\"  cancelText=\"Cancelar\" okText=\"Aceptar\"  [formControl]=\"form.controls.categoriesid\"  >\r\n              <ion-select-option   *ngFor=\"let item of items\" [value]=\"item.id\" >{{item.name}}</ion-select-option>\r\n            </ion-select>\r\n          </ion-item>\r\n          <ion-auto-complete  formControlName=\"provinceName\"   (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\"></ion-auto-complete>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgempresa\"><ion-icon class=\"allicon\" name=\"storefront-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"name\" type=\"text\" placeholder=\"Nombre\"  ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcelular\"><ion-icon class=\"allicon\" name=\"phone-portrait-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"phone\"  type=\"text\" placeholder=\"Teléfono\"  ></ion-input>\r\n          </ion-item> \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"call-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"fijo\"  type=\"text\" placeholder=\"Teléfono fijo\"  ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgubicacion\"><ion-icon class=\"allicon\" name=\"location-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"ubication\" readonly=\"readonly\"   type=\"text\" placeholder=\"Ubicación\"  ></ion-input>\r\n            <ion-button (click)=\"presentMap()\" color=\"secondary\" slot=\"end\" ><ion-icon name=\"map-outline\"></ion-icon></ion-button>\r\n          </ion-item>  \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgfacebook\"><ion-icon class=\"allicon\" name=\"logo-facebook\" style=\"color:white\"></ion-icon> </div>\r\n            <ion-input formControlName=\"facebook\" type=\"text\" placeholder=\"Facebook\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgyoutube\"><ion-icon class=\"allicon\" name=\"logo-youtube\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"youtube\" type=\"text\" placeholder=\"Youtube\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lginstagram\"><ion-icon class=\"allicon\" name=\"logo-instagram\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"instagram\" type=\"text\" placeholder=\"Instagram\"></ion-input>\r\n          </ion-item>\r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgdomicilio\"><ion-icon class=\"allicon\" name=\"id-card-outline\" style=\"color:white\"></ion-icon></div>\r\n             <ion-label>Domicilio</ion-label>\r\n              <ion-toggle   formControlName=\"hasDelivery\" ></ion-toggle>\r\n            </ion-item> \r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\"><ion-icon class=\"allicon\" name=\"construct\" style=\"color:white\"></ion-icon></div>\r\n              <ion-label>¿Desactivar Notificaciones?</ion-label>\r\n               <ion-toggle   formControlName=\"notifications\" ></ion-toggle>\r\n             </ion-item> \r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgcorreo\"><ion-icon class=\"allicon\" name=\"mail-outline\" style=\"color:white\"></ion-icon></div>\r\n              <ion-input formControlName=\"email\" readonly=\"readonly\" type=\"text\" placeholder=\"Correo\"  ></ion-input>\r\n            </ion-item> \r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgmegafono\"><ion-icon class=\"allicon\" name=\"megaphone\" style=\"color:white\"></ion-icon></div>\r\n              <ion-textarea formControlName=\"RtpaInmediata\" rows=\"6\" cols=\"20\" placeholder=\"Respuesta rapida al cliente\" ></ion-textarea>\r\n            </ion-item>\r\n         \r\n            <div class=\"buttons ion-padding-top\">\r\n              <ion-button expand=\"block\" color=\"secondary\"  shape=\"round\" type=\"submit\" [disabled]=\"form.invalid\" >Actualizar</ion-button>\r\n            </div>\r\n  </form>\r\n</div>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >MI CUENTA</p>      \r\n    </ion-title>    \r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  id=\"signup\" fullscreen class=\"backgeneral\" >\r\n  <div class=\"section_two ion-padding\">\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"tryRegister(form.value)\">\r\n    <input type=\"hidden\" formControlName=\"id\">\r\n    <input type=\"hidden\" formControlName=\"userId\">\r\n    <input type=\"hidden\" formControlName=\"creationDate\">\r\n    <input type=\"hidden\" formControlName=\"lat\">\r\n    <input type=\"hidden\" formControlName=\"lng\">\r\n    <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n          <ion-item class=\"itemcolor1\">\r\n            <ion-select multiple=\"true\" placeholder=\"Seleccione Categorías\"  cancelText=\"Cancelar\" okText=\"Aceptar\"  [formControl]=\"form.controls.categoriesid\"  >\r\n              <ion-select-option   *ngFor=\"let item of items\" [value]=\"item.id\" >{{item.name}}</ion-select-option>\r\n            </ion-select>\r\n          </ion-item>\r\n          <ion-auto-complete  formControlName=\"provinceName\"   (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\"></ion-auto-complete>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgempresa\"><ion-icon class=\"allicon\" name=\"storefront-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"name\" type=\"text\" placeholder=\"Nombre\"  ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgcelular\"><ion-icon class=\"allicon\" name=\"phone-portrait-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"phone\"  type=\"text\" placeholder=\"N° Celular\"  ></ion-input>\r\n          </ion-item> \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\"><ion-icon class=\"allicon\" name=\"call-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"fijo\"  type=\"text\" placeholder=\"N° Fijo\"  ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgubicacion\"><ion-icon class=\"allicon\" name=\"location-outline\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"ubication\" readonly=\"readonly\"   type=\"text\" placeholder=\"Ubicación\"  ></ion-input>\r\n            <ion-button (click)=\"presentMap()\" color=\"secondary\" slot=\"end\" ><ion-icon name=\"map-outline\"></ion-icon></ion-button>\r\n          </ion-item>  \r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgfacebook\"><ion-icon class=\"allicon\" name=\"logo-facebook\" style=\"color:white\"></ion-icon> </div>\r\n            <ion-input formControlName=\"facebook\" type=\"text\" placeholder=\"Cuenta Facebook\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lgyoutube\"><ion-icon class=\"allicon\" name=\"logo-youtube\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"youtube\" type=\"text\" placeholder=\"Cuenta Youtube\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"itemcolor1\">\r\n            <div class=\"divide\" id=\"lginstagram\"><ion-icon class=\"allicon\" name=\"logo-instagram\" style=\"color:white\"></ion-icon></div>\r\n            <ion-input formControlName=\"instagram\" type=\"text\" placeholder=\"Cuenta Instagram\"></ion-input>\r\n          </ion-item>\r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgdomicilio\"><ion-icon class=\"allicon\" name=\"id-card-outline\" style=\"color:white\"></ion-icon></div>\r\n              <ion-label>¿Servicio Domicilio?</ion-label>\r\n              <ion-toggle   formControlName=\"hasDelivery\" ></ion-toggle>\r\n            </ion-item> \r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\"><ion-icon class=\"allicon\" name=\"construct\" style=\"color:white\"></ion-icon></div>\r\n              <ion-label>¿Recibir Notificación?</ion-label>\r\n               <ion-toggle   formControlName=\"notifications\" ></ion-toggle>\r\n             </ion-item> \r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgcorreo\"><ion-icon class=\"allicon\" name=\"mail-outline\" style=\"color:white\"></ion-icon></div>\r\n              <ion-input formControlName=\"email\" readonly=\"readonly\" type=\"text\" placeholder=\"Correo\"  ></ion-input>\r\n            </ion-item> \r\n\r\n            <ion-item class=\"itemcolor1\">\r\n              <ion-label position = \"floating\" style=\"color: yellow;\" >Respuesta Inmediata</ion-label> \r\n              <ion-input formControlName=\"RtpaInmediata\" type=\"text\" ></ion-input>\r\n            </ion-item> \r\n\r\n            <!-- <ion-item class=\"itemcolor1\">\r\n              <div class=\"divide\" id=\"lgmegafono\"><ion-icon class=\"allicon\" name=\"megaphone\" style=\"color:white\"></ion-icon></div>\r\n              <ion-label position = \"floating\"><ion-textarea formControlName=\"RtpaInmediata\" rows=\"6\" cols=\"20\" placeholder=\"Respuesta rapida al cliente\" ></ion-textarea></ion-label>\r\n            </ion-item> -->\r\n         \r\n            <div class=\"buttons ion-padding-top\">\r\n              <ion-button expand=\"block\" color=\"secondary\"  shape=\"round\" type=\"submit\" [disabled]=\"form.invalid\" >ACTUALIZAR INFORMACIÓN</ion-button>\r\n            </div>\r\n  </form>\r\n</div>\r\n</ion-content>";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -127,7 +127,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var ionic4_auto_complete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ionic4-auto-complete */
-    "./node_modules/ionic4-auto-complete/__ivy_ngcc__/fesm2015/ionic4-auto-complete.js");
+    "./node_modules/ionic4-auto-complete/fesm2015/ionic4-auto-complete.js");
 
     var CompanyupPageModule = function CompanyupPageModule() {
       _classCallCheck(this, CompanyupPageModule);
@@ -174,7 +174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -186,13 +186,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
@@ -216,7 +216,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 
     var CompanyupPage = /*#__PURE__*/function () {
       function CompanyupPage(modalController, autoprovinceService, router, apiService, formBuilder, busyService) {
@@ -380,7 +380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this3.form.get("notifications").setValue(res.notifications);
 
-            _this3.form.get("RtpaInmediata").setValue(res.RtpaInmediata);
+            _this3.form.get("RtpaInmediata").setValue(res.rtpaInmediata);
 
             _this3.form.get("userId").setValue(res.userId);
 
@@ -416,6 +416,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     this.working = true;
                     form.provinceId = this.provinceId;
                     this.apiService.Post(form, "Companies/CompanyUp").then(function (res) {
+                      //  alert(form.notifications);
+                      localStorage.removeItem("notifications");
+                      localStorage.setItem("notifications", form.notifications);
                       _this4.working = false;
                       _this4.errorMessage = "";
 

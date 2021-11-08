@@ -119,7 +119,7 @@ get(event)
   }
   if(parseInt( this.finalamount)>parseInt( this.amount))
   {
-    await this.busyService.presentAlert("¡Información!","El campo Último Precio o Descuento debe ser menor ó igual que el Precio Original.");
+    await this.busyService.presentAlert("¡Información!","El campo Último Precio o Descuento debe ser menor ó igual al Precio Original.");
    return;
   }
  this.working=true;

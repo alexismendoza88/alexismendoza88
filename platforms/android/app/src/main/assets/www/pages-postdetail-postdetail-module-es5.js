@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">Detalle Publicación</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item class=\"itemcolor1\" *ngIf=\"note!=null\">\r\n    <ion-text style=\"color:yellow\">\r\n      <p >{{note}}</p>\r\n     </ion-text>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"call(phone)\">\r\n    <ion-label style=\"color: white !important;\"><ion-icon name=\"call-outline\"></ion-icon></ion-label> \r\n    <p >{{phone}}</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" button href=\"https://api.whatsapp.com/send?phone=+57{{phone}}\">\r\n    <ion-label ><ion-icon name=\"logo-whatsapp\" color=\"success\"></ion-icon></ion-label> \r\n    <p >{{phone}}</p>\r\n  </ion-item> \r\n  <ion-item>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col *ngFor=\"let item of images\"> \r\n          <ion-thumbnail button (click)=\"photoview(item)\">\r\n            <img [src]=\"item\">\r\n          </ion-thumbnail>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-item>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">DETALLE PUBLICACIÓN</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item class=\"itemcolor1\" *ngIf=\"note!=null\">\r\n    <ion-text style=\"color:yellow\">\r\n      <p >{{note}}</p>\r\n     </ion-text>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"call(phone)\">\r\n    <ion-label style=\"color: white !important;\"><ion-icon name=\"call-outline\"></ion-icon></ion-label> \r\n    <p >{{phone}}</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" button href=\"https://api.whatsapp.com/send?phone=+57{{phone}}\">\r\n    <ion-label ><ion-icon name=\"logo-whatsapp\" color=\"success\"></ion-icon></ion-label> \r\n    <p >{{phone}}</p>\r\n  </ion-item> \r\n  <ion-item>\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col *ngFor=\"let item of images\"> \r\n          <ion-thumbnail button (click)=\"photoview(item)\">\r\n            <img [src]=\"item\">\r\n          </ion-thumbnail>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-item>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -174,19 +174,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @ionic-native/call-number/ngx */
-    "./node_modules/@ionic-native/call-number/__ivy_ngcc__/ngx/index.js");
+    "./node_modules/@ionic-native/call-number/ngx/index.js");
     /* harmony import */
 
 
     var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @ionic-native/photo-viewer/ngx */
-    "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
+    "./node_modules/@ionic-native/photo-viewer/ngx/index.js");
     /* harmony import */
 
 

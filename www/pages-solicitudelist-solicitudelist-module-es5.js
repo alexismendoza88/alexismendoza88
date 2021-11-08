@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-toggle menu=\"pages\">\r\n        <ion-button >\r\n          <ion-icon name=\"menu-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-menu-toggle>\r\n      <ion-button (click)=\"cancel()\" *ngIf=\"selecctedItems.length > 0\">\r\n        <ion-icon name=\"close-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >SOLICITUDES</p>      \r\n    </ion-title>\r\n    <ion-buttons slot=\"end\" >\r\n      <ion-button [routerLink]=\"['/solicitude']\" *ngIf=\"selecctedItems.length ==0\">        \r\n        <div class=\"iconagregar\"><ion-icon class=\"tamagregar\" name=\"add-circle\" style=\"color:white\"></ion-icon></div>      \r\n      </ion-button>\r\n      <ion-button (click)=\"delete()\" *ngIf=\"selecctedItems.length > 0\">\r\n        <ion-icon name=\"trash-outline\"></ion-icon>\r\n        <ion-badge color=\"secondary\">{{selecctedItems.length}}</ion-badge>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n  <ion-tab-bar class=\"backgeneral\">\r\n    <ion-tab-button (click)=\"filter('f1')\" #tab1>\r\n      <ion-label [style.color]=\"color\" >HOY</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button (click)=\"filter('f2')\" #tab2>\r\n      <ion-label [style.color]=\"color2\" >AYER</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button (click)=\"filter('f3')\" #tab3>\r\n      <ion-label [style.color]=\"color3\" >ANTIGUAS</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item *ngFor=\"let item of items\" id=\"{{item.id}}\" ion-long-press [interval]=\"200\" (pressed)=\"pressed(item)\" (click)=\"click(item)\">\r\n    <ion-label>\r\n      <ion-text > <h3 style=\"font-weight: bold; text-transform: capitalize;color: white;\">{{item.creationDate | timeAgo}} - {{item.category.name}}</h3></ion-text>\r\n      <p  style=\"color: yellow;\" *ngIf=\"item.note!='null' && item.note!=''\">{{item.note}}</p>\r\n      <p  style=\"color: yellow;\" *ngIf=\"item.note=='null' || item.note==''\"><ion-icon style=\"color:yellow\" name=\"document-attach-outline\"></ion-icon></p>\r\n      <p style=\"font-weight: bold;color: #50c8ff\"><ion-icon src=\"assets/icon/eye.svg\"></ion-icon> {{item.responses.length}}</p>\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" style=\"color:white\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-toggle menu=\"pages\">\r\n        <ion-button >\r\n          <ion-icon name=\"menu-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-menu-toggle>\r\n      <ion-button (click)=\"cancel()\" *ngIf=\"selecctedItems.length > 0\">\r\n        <ion-icon name=\"close-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >SOLICITUDES</p>      \r\n    </ion-title>\r\n    <ion-buttons slot=\"end\" >\r\n      <ion-button [routerLink]=\"['/solicitude']\" *ngIf=\"selecctedItems.length ==0\">        \r\n        <div class=\"iconagregar\"><ion-icon class=\"tamagregar\" name=\"add-circle\" style=\"color:white\"></ion-icon></div>      \r\n      </ion-button>\r\n      <ion-button (click)=\"delete()\" *ngIf=\"selecctedItems.length > 0\">\r\n        <ion-icon name=\"trash-outline\"></ion-icon>\r\n        <ion-badge color=\"secondary\">{{selecctedItems.length}}</ion-badge>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n  <ion-tab-bar class=\"backgeneral\">\r\n    <ion-tab-button (click)=\"filter('f1')\" #tab1>\r\n      <ion-label [style.color]=\"color\" >HOY</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button (click)=\"filter('f2')\" #tab2>\r\n      <ion-label [style.color]=\"color2\" >AYER</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button (click)=\"filter('f3')\" #tab3>\r\n      <ion-label [style.color]=\"color3\" >ANTIGUAS</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item *ngFor=\"let item of items\" id=\"{{item.id}}\" ion-long-press [interval]=\"200\" (pressed)=\"pressed(item)\" (click)=\"click(item)\">\r\n    <ion-label>\r\n      <ion-text > <h3 style=\"font-weight: bold; text-transform: capitalize;color: white;\">{{item.creationDate | timeAgo}} - {{item.category.name}}</h3></ion-text>\r\n      <p  style=\"color: yellow;\" *ngIf=\"item.note!='null' && item.note!=''\">{{item.note}}</p>\r\n      <p  style=\"color: yellow;\" *ngIf=\"item.note=='null' || item.note==''\"><ion-icon style=\"color:yellow\" name=\"document-attach-outline\"></ion-icon></p>\r\n      <p style=\"font-weight: bold;color: #50c8ff\"><ion-icon src=\"assets/icon/eye.svg\"></ion-icon> {{item.responses.length}}/{{item.solicitude_Views.length}}</p>\r\n    </ion-label>\r\n    <ion-icon slot=\"end\" style=\"color:white\" name=\"chevron-forward-outline\"></ion-icon>\r\n  </ion-item>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -133,7 +133,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var ionic_long_press__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ionic-long-press */
-    "./node_modules/ionic-long-press/__ivy_ngcc__/fesm2015/ionic-long-press.js");
+    "./node_modules/ionic-long-press/fesm2015/ionic-long-press.js");
 
     var SolicitudelistPageModule = function SolicitudelistPageModule() {
       _classCallCheck(this, SolicitudelistPageModule);
@@ -180,7 +180,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -192,7 +192,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -204,7 +204,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 
     var SolicitudelistPage = /*#__PURE__*/function () {
       function SolicitudelistPage(menuController, apiService, router, busyService) {
@@ -226,6 +226,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {
           this.menuController.enable(true);
+
+          if (window.localStorage.getItem("pv") == null) {
+            this.busyService.presentAlert("¡Mensaje Informativo!", "En esta sección se mostrarán las solicitudes que usted hará durante el transcurso del día.");
+          }
+
+          window.localStorage.setItem("pv", "1");
         }
       }, {
         key: "filter",

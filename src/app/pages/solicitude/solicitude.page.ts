@@ -28,7 +28,7 @@ export class SolicitudePage implements OnInit {
   provinceName:string='';
   descuento:boolean=null;
   V_nombre:string=null;
-
+  ispdf:boolean=false;
   constructor(public autoprovinceService:AutoprovinceService,public apiService:ApiService,public busyService:BusyService,public router:Router) { }
   
   ngOnInit() {
@@ -102,8 +102,7 @@ async send(){
  this.apiService.upload("Solicitudes/Upload",formData).subscribe(
   event => {
     if (event.type == HttpEventType.UploadProgress) {
-      const percentDone = Math.round(100 * event.loaded / event.total);
-      console.log(`File is ${percentDone}% loaded.`);
+      const percentDone = Math.round(100 * event.loaded / event.total);      
     } else if (event instanceof HttpResponse) {
       if(event.body.ok){
         this.working=false;
@@ -148,8 +147,18 @@ loadimg(file){
 
   // here we tell the reader what to do when it's done reading...
   reader.onload = (event: any) => {
-    var content = event.target.result; // this is the content!
-    this.fileUrl =  content ;
+    console.log(event.target.result.indexOf("data:application/pdf"));
+    if(event.target.result.indexOf("data:application/pdf")>=0)
+    {
+      this.ispdf=true;
+      this.fileUrl ="PDF";
+    }
+    else{
+      this.ispdf=false;
+      var content = event.target.result; // this is the content!
+      this.fileUrl =  content ;
+    }
+
   }
 
 }

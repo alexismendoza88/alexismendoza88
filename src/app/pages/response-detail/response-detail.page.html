@@ -15,11 +15,13 @@
     <ion-label>Precio</ion-label>
     <p *ngIf="item?.finalAmount!=item?.amount" style="color:#50c8ff;text-decoration: line-through">{{item?.amount | currency:'USD':'symbol':'1.0-0'}}&nbsp;  -</p>&nbsp; <p style="color: yellow;">{{item?.finalAmount | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
+  
   <ion-item class="itemcolor1" *ngIf="item?.note!='' && item?.note!='null' ">
-    <ion-text>
+    <ion-textarea>
       <p style="color: yellow;">{{item?.note}}</p>
-     </ion-text>
+     </ion-textarea>
     </ion-item>
+
   <ion-item  *ngIf="item?.fileUrl!=null && item?.fileUrl!=''"  >
     <img src="{{item?.fileUrl}}" (click)="photoview(item?.fileUrl)" style="width:100%;height: 300px;">
   </ion-item>
@@ -106,7 +108,7 @@
   <ion-grid *ngIf="(role=='Customer' || item?.customerId!=userid ) && item?.status=='P'">
     <ion-row class="ion-align-items-center">
   <ion-col size="12" class="ion-text-center">
-    <ion-button shape="round" color="secondary" (click)="Interested(null,null)" ><ion-icon name="heart-outline"></ion-icon>Me interesa</ion-button>
+    <ion-button shape="round" color="secondary" (click)="Interested(null,null)" >Contactar Empresa ó Persona</ion-button>
   </ion-col>
   </ion-row>
   </ion-grid>

@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >DETALLE SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-label>Categoría</ion-label>\r\n    <p style=\"color:yellow\">{{item?.category.name}}</p>\r\n  </ion-item>\r\n  <ion-item >\r\n    <label *ngIf=\"role=='Company'\" style=\"color:white;font-weight: bold;\">Alguién solicita:</label>\r\n    <label *ngIf=\"role!='Company'\" style=\"color:white;font-weight: bold;\">Estás buscando:</label>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\" *ngIf=\"item?.note!='' && item?.note!='null' \">\r\n    <ion-text style=\"color:yellow\">\r\n      <p >{{item?.note}}</p>\r\n     </ion-text>\r\n    </ion-item>\r\n  <ion-item  *ngIf=\"item?.fileUrl!=null && item?.fileUrl!=''\"  >\r\n    <img src=\"{{item?.fileUrl}}\" (click)=\"photoview(item?.fileUrl)\" style=\"width:100%;height: 300px;\">  \r\n  </ion-item>\r\n  <ion-grid *ngIf=\"role=='Company'  && responId==0\">\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button shape=\"round\" color=\"secondary\" (click)=\"response()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Responder</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n<ion-grid *ngIf=\"role=='Company' && responId!=0\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n<ion-col size=\"12\" class=\"ion-text-center\">\r\n  <ion-button shape=\"round\" color=\"secondary\" (click)=\"response()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Ver Respuesta</ion-button>\r\n</ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >DETALLE SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-label>Categoría:</ion-label>\r\n    <p style=\"color:yellow\">{{item?.category.name}}</p>\r\n  </ion-item>\r\n\r\n  <ion-item >\r\n    <ion-label style=\"color: white;\">Alguien Solicita:</ion-label>\r\n    <p style=\"color:yellow\">{{item?.mostrar_nombre}}</p>\r\n  </ion-item>\r\n\r\n  <ion-item *ngIf=\"role!='Company'\">\r\n    <label style=\"color:white;font-weight: bold;\">Estás Buscando:</label>\r\n  </ion-item>\r\n\r\n  <ion-textarea  style=\"text-align:center\" rows=\"6\" cols=\"20\">{{item?.note}}</ion-textarea>\r\n    <ion-row class=\"ion-align-items-center\">\r\n      <ion-col size=\"12\">\r\n        <hr style=\"background-color: white;\">\r\n      </ion-col>\r\n    </ion-row> \r\n  \r\n  \r\n    <ion-label *ngIf=\"responId==0 && role=='Company'\" style=\"color:cyan; font-size: 15px; font-weight: bold; position: relative; left: 2.5%; \">¿TIENES ESTE PRODUCTO Ó SERVICIO?</ion-label>\r\n    \r\n    <ion-row *ngIf=\"responId==0 && role=='Company'\" class=\"ion-align-items-center\" > \r\n      <ion-col size=\"12\">\r\n        <hr style=\"background-color: white;\">\r\n      </ion-col>\r\n    </ion-row>   \r\n\r\n  <ion-item  *ngIf=\"item?.fileUrl!=null && item?.fileUrl!=''\"  >\r\n    <img *ngIf=\"ispdf==false\"   src=\"{{item?.fileUrl}}\" (click)=\"photoview(item?.fileUrl)\" style=\"width:100%;height: 300px;\">  \r\n     <a *ngIf=\"ispdf==true\"  href=\"{{item?.fileUrl}}\"><img src=\"./../../.././assets/pdf.png\" style=\"width:100%;height:100px;text-align:center\">  </a>\r\n  </ion-item>\r\n  <ion-grid *ngIf=\"role=='Company'  && responId==0\">\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button shape=\"round\" color=\"secondary\" (click)=\"response()\" style=\"position: absolute; right: 55%;\"><ion-icon slot=\"start\" name=\"checkmark-circle\"></ion-icon>SI</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n<ion-grid *ngIf=\"role=='Company'  && responId==0\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n<ion-col size=\"12\" class=\"ion-text-center\">\r\n  <ion-button shape=\"round\" color=\"danger\" (click)=\"rtaNo()\" style=\"position: absolute; bottom: -18px; right: 25%;\"><ion-icon slot=\"start\" name=\"close-circle\"></ion-icon>NO</ion-button>\r\n</ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n<ion-grid *ngIf=\"role=='Company' && responId!=0\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n<ion-col size=\"12\" class=\"ion-text-center\">\r\n  <ion-button shape=\"round\" color=\"secondary\" (click)=\"response()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Ver Respuesta</ion-button>\r\n</ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -39,13 +39,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -91,25 +91,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
@@ -168,7 +168,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -186,13 +186,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
     var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic-native/photo-viewer/ngx */
-    "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
+    "./node_modules/@ionic-native/photo-viewer/ngx/index.js");
 
     var SolicitudeDetailPage = /*#__PURE__*/function () {
       function SolicitudeDetailPage(photoViewer, apiService, router) {
@@ -207,6 +207,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.userid = null;
         this.role = null;
         this.responId = 0;
+        this.ispdf = false;
+        this.disponibilidad = null;
       }
 
       _createClass(SolicitudeDetailPage, [{
@@ -231,12 +233,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.working = true;
           this.apiService.Get("Solicitudes/" + window.localStorage.getItem("solicitudeId")).then(function (res) {
             _this.working = false;
+            window.localStorage.setItem('Incluir_Descuento', res.descuento);
+            console.log(res.fileUrl);
 
             if (res.fileUrl != null && res.fileUrl != '') {
               res.fileUrl = _this.apifile + res.fileUrl;
+              var ext = res.fileUrl.split('/')[4];
+              ext = ext.split('.')[1];
+
+              if (ext == "pdf" || ext == "PDF") {
+                _this.ispdf = true;
+              } else {
+                _this.ispdf = false;
+              }
             }
 
             _this.item = res;
+
+            _this.apiService.Get("Solicitudes/Solicitude_view/" + _this.item.id + "/" + _this.userid);
+
             var filter = res.responses.filter(function (s) {
               return s.company.userId == userinfo.id;
             });
@@ -263,6 +278,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             window.localStorage.setItem('solicitudeId', this.item.id);
             this.router.navigate(['/response']);
           }
+        }
+      }, {
+        key: "rtaNo",
+        value: function rtaNo() {
+          this.router.navigate(['/companysol']);
         }
       }]);
 
