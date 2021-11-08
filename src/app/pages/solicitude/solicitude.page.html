@@ -52,7 +52,7 @@
 
   <ion-item  *ngIf="fileUrl!=''" >
     <ion-img *ngIf="ispdf==false"  [src]="fileUrl"></ion-img>
-    <a *ngIf="ispdf==true"  ><img src="./../../.././assets/pdf.png" style="width:100%;height:50px;">  </a>
+    <a *ngIf="ispdf==true"  ><img src="./../../.././assets/pdfLogo.png" style="width:100%;height:50px;">  </a>
     <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>
   </ion-item>
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>

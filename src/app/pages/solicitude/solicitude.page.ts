@@ -147,7 +147,7 @@ loadimg(file){
 
   // here we tell the reader what to do when it's done reading...
   reader.onload = (event: any) => {
-    console.log(event.target.result.indexOf("data:application/pdf"));
+    console.log(event.target.result);
     if(event.target.result.indexOf("data:application/pdf")>=0)
     {
       this.ispdf=true;
