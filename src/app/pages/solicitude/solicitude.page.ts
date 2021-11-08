@@ -155,10 +155,9 @@ loadimg(file){
     }
     else{
       this.ispdf=false;
-      var content = event.target.result; // this is the content!
+      var content = event.target.result; // capturo el contenido del content
       this.fileUrl =  content ;
     }
-
   }
 
 }
