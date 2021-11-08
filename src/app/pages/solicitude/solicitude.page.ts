@@ -71,6 +71,7 @@ itemRemoved(event)
 }
 
 async send(){
+  console.log(localStorage.getItem("province"));
   if(this.categoryId==null)
   {
     await this.busyService.presentAlert("¡Información!","Debe seleccionar una Categoría.");
@@ -107,6 +108,10 @@ async send(){
       if(event.body.ok){
         this.working=false;
         this.busyService.presentAlert("¡Información","Solicitud Enviada");
+        
+        localStorage.removeItem("item");
+        localStorage.removeItem("province");
+        this.provinceId=0;
         this.router.navigate(['/solicitudelist']);
       }else{
         this.working=false;
