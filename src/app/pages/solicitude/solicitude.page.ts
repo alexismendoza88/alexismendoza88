@@ -107,10 +107,7 @@ async send(){
     } else if (event instanceof HttpResponse) {
       if(event.body.ok){
         this.working=false;
-        this.busyService.presentAlert("¡Información","Solicitud Enviada");
-        
-        localStorage.removeItem("item");
-        localStorage.removeItem("province");
+        this.busyService.presentAlert("¡Información","Solicitud Enviada");                      
         this.provinceId=0;
         this.router.navigate(['/solicitudelist']);
       }else{

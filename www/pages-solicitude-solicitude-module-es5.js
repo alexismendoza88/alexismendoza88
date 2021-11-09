@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >NUEVA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>  \r\n\r\n  <ion-item class=\"itemcolor1\" >\r\n    <input type=\"hidden\" [(ngModel)]=\"categoryId\" >\r\n    <ion-input [(ngModel)]=\"categoryDescr\" placeholder=\"Seleccionar Categoría\" (click)=\"onFocus($event)\"></ion-input>\r\n    <!-- <ion-select-option  *ngFor=\"let item of items\" [value]=\"item.id\">{{item.name}}</ion-select-option> -->\r\n</ion-item>\r\n\r\n\r\n  <ion-auto-complete [(ngModel)]=\"provinceName\" (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\"></ion-auto-complete>\r\n  <ion-item style=\"display: none;\">\r\n    <ion-label position=\"floating\">Descripción</ion-label>\r\n    <ion-input [(ngModel)]=\"description\" placeholder=\"Describe lo que buscas ó deseas\"></ion-input>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" rows=\"6\" cols=\"20\" placeholder=\"Describe lo que estás buscando\" (ngModelChange)=\"get($event)\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item *ngIf=\"note != '' && note !=null\" class=\"itemcolor1\">\r\n    <p>Usando {{leng}}</p><p>/800 Caracteres</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n  <ion-item class=\"itemcolor1\">\r\n    <!-- <div class=\"divide\" id=\"lgdomicilio\"></div> -->\r\n   <ion-label>¿Incluir Descuento?</ion-label>\r\n    <ion-toggle checked={checked} [(ngModel)]=\"descuento\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item class=\"itemcolor1\">\r\n   <ion-label>¿Mostrar tu nombre al proveedor?</ion-label>\r\n    <ion-toggle [(ngModel)]=\"V_nombre\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img [src]=\"fileUrl\"></ion-img>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Consultar Información</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"secondary\" >\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">\r\n      <p style=\"color: white; font-size: 16px; font-weight: bold;\" >NUEVA SOLICITUD</p>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"backgeneral\">\r\n  <ion-row class=\"ion-align-items-center\">\r\n    <ion-col size=\"12\" class=\"ion-text-center\">\r\n      <p style=\"color: yellow; font-size: 16px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;\" >Ingresa la siguiente Información</p>\r\n      <hr style=\"background-color: white;\">\r\n    </ion-col>\r\n  </ion-row>  \r\n\r\n  <ion-item class=\"itemcolor1\" >\r\n    <input type=\"hidden\" [(ngModel)]=\"categoryId\" >\r\n    <ion-input [(ngModel)]=\"categoryDescr\" placeholder=\"Seleccionar Categoría\" (click)=\"onFocus($event)\"></ion-input>\r\n    <!-- <ion-select-option  *ngFor=\"let item of items\" [value]=\"item.id\">{{item.name}}</ion-select-option> -->\r\n</ion-item>\r\n\r\n\r\n  <ion-auto-complete [(ngModel)]=\"provinceName\" (itemSelected)=\"selectedItem($event)\" (ionClear)=\"itemRemoved($event)\" [dataProvider]=\"autoprovinceService\" [options]=\"{ placeholder : 'Buscar Ciudad' }\" required></ion-auto-complete>\r\n  <ion-item style=\"display: none;\">\r\n    <ion-label position=\"floating\">Descripción</ion-label>\r\n    <ion-input [(ngModel)]=\"description\" placeholder=\"Describe lo que buscas ó deseas\"></ion-input>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\">\r\n    <ion-textarea [(ngModel)]=\"note\" rows=\"6\" cols=\"20\" placeholder=\"Describe lo que estás buscando\" (ngModelChange)=\"get($event)\"></ion-textarea>\r\n  </ion-item>\r\n  <ion-item *ngIf=\"note != '' && note !=null\" class=\"itemcolor1\">\r\n    <p>Usando {{leng}}</p><p>/800 Caracteres</p>\r\n  </ion-item>\r\n  <ion-item class=\"itemcolor1\"  button (click)=\"pickfile()\">\r\n    <ion-label>Adjuntar PDF o Foto</ion-label>\r\n    <ion-icon slot=\"end\" class=\"itemcolor1\" name=\"document-attach-outline\"></ion-icon>\r\n  </ion-item>\r\n\r\n  <ion-item class=\"itemcolor1\">\r\n    <!-- <div class=\"divide\" id=\"lgdomicilio\"></div> -->\r\n   <ion-label>¿Incluir Descuento?</ion-label>\r\n    <ion-toggle checked={checked} [(ngModel)]=\"descuento\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item class=\"itemcolor1\">\r\n   <ion-label>¿Mostrar tu nombre al proveedor?</ion-label>\r\n    <ion-toggle [(ngModel)]=\"V_nombre\" ></ion-toggle>\r\n  </ion-item> \r\n\r\n  <ion-item  *ngIf=\"fileUrl!=''\" >\r\n    <ion-img *ngIf=\"ispdf==false\"  [src]=\"fileUrl\"></ion-img>\r\n    <a *ngIf=\"ispdf==true\"  ><img src=\"./../../.././assets/pdfLogo.png\" style=\"width:100%;height:50px;\">  </a>\r\n    <ion-button (click)=\"clearimg()\" color=\"danger\" ><ion-icon slot=\"icon-only\" name=\"trash-bin-outline\"></ion-icon></ion-button>\r\n  </ion-item>\r\n  <ion-progress-bar *ngIf=\"working\" color=\"secondary\" type=\"indeterminate\"></ion-progress-bar>\r\n  <ion-grid>\r\n    <ion-row class=\"ion-align-items-center\">\r\n  <ion-col size=\"12\" class=\"ion-text-center\">\r\n    <ion-button [disabled]=\"working\" shape=\"round\" color=\"secondary\" (click)=\"send()\" ><ion-icon slot=\"start\" name=\"send\"></ion-icon>Consultar Información</ion-button>\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -229,6 +229,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.provinceName = '';
         this.descuento = null;
         this.V_nombre = null;
+        this.ispdf = false;
       }
 
       _createClass(SolicitudePage, [{
@@ -288,42 +289,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
+                    console.log(localStorage.getItem("province"));
+
                     if (!(this.categoryId == null)) {
-                      _context.next = 4;
+                      _context.next = 5;
                       break;
                     }
 
-                    _context.next = 3;
+                    _context.next = 4;
                     return this.busyService.presentAlert("¡Información!", "Debe seleccionar una Categoría.");
 
-                  case 3:
+                  case 4:
                     return _context.abrupt("return");
 
-                  case 4:
+                  case 5:
                     if (!(this.provinceId == 0)) {
-                      _context.next = 8;
+                      _context.next = 9;
                       break;
                     }
 
-                    _context.next = 7;
+                    _context.next = 8;
                     return this.busyService.presentAlert("¡Información!", "Debe escribir una Ciudad.");
 
-                  case 7:
+                  case 8:
                     return _context.abrupt("return");
 
-                  case 8:
+                  case 9:
                     if (!(this.file == null && this.note == null)) {
-                      _context.next = 12;
+                      _context.next = 13;
                       break;
                     }
 
-                    _context.next = 11;
+                    _context.next = 12;
                     return this.busyService.presentAlert("¡Información!", "¡Describa lo que busca o Adjunte un PDF / Imágen.");
 
-                  case 11:
+                  case 12:
                     return _context.abrupt("return");
 
-                  case 12:
+                  case 13:
                     this.working = true;
                     userinfo = JSON.parse(window.localStorage.getItem("userinfo"));
                     formData = new FormData();
@@ -344,6 +347,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                           _this2.busyService.presentAlert("¡Información", "Solicitud Enviada");
 
+                          _this2.provinceId = 0;
+
                           _this2.router.navigate(['/solicitudelist']);
                         } else {
                           _this2.working = false;
@@ -357,7 +362,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       _this2.busyService.presentAlert("¡Información!", "Error al  enviar la Solicitud");
                     }, function () {});
 
-                  case 24:
+                  case 25:
                   case "end":
                     return _context.stop();
                 }
@@ -398,9 +403,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // here we tell the reader what to do when it's done reading...
 
           reader.onload = function (event) {
-            var content = event.target.result; // this is the content!
+            console.log(event.target.result);
 
-            _this4.fileUrl = content;
+            if (event.target.result.indexOf("data:application/pdf") >= 0) {
+              _this4.ispdf = true;
+              _this4.fileUrl = "PDF";
+            } else {
+              _this4.ispdf = false;
+              var content = event.target.result; // capturo el contenido del content
+
+              _this4.fileUrl = content;
+            }
           };
         }
       }, {
