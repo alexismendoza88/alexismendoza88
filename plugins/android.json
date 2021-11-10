@@ -62,6 +62,9 @@
       "ANDROID_GSON_VERSION": "2.8.7",
       "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.0",
       "PACKAGE_NAME": "com.futuresoft.cotvend"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.futuresoft.cotvend"
     }
   },
   "dependent_plugins": {

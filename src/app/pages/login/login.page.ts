@@ -91,11 +91,12 @@ export class LoginPage implements OnInit {
       
       if(res.data.role=="Customer")
       {
-        document.getElementById("pedidos").style.display = 'none';
+        document.getElementById("pedidos").style.display="none";
         this.router.navigate(['/solicitudelist']);
       } 
       else
       {
+        document.getElementById("pedidos").style.display="inline";
         this.router.navigate(['/companysol']);
       } 
     }
