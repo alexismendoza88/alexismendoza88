@@ -20,6 +20,7 @@ export class ResponseDetailPage implements OnInit {
   userid:any=null;
   role:any=null;
   companyid:any=null;
+  ispdf:boolean=false;
     constructor(private modalController:ModalController, private callNumber:CallNumber, private photoViewer: PhotoViewer,public apiService:ApiService,public router:Router,public busyService:BusyService,public alertController:AlertController) { }
   
     ngOnInit() {
@@ -44,10 +45,25 @@ export class ResponseDetailPage implements OnInit {
     this.working=true;
     this.apiService.Get("Responses/"+ window.localStorage.getItem("responseId") +"/" + this.userid ).then(res=>{
     this.working=false;
+    
     if( res.fileUrl!=null &&  res.fileUrl!='')
     {
     res.fileUrl= this.apifile +  res.fileUrl;
+    var ext= res.fileUrl.split('/')[4];
+    ext= ext.split('.')[1];
+     if(ext=="pdf" || ext=="PDF")
+     {
+        this.ispdf=true;
+     }else{
+      this.ispdf=false;
+     }
     }
+
+    // if( res.fileUrl!=null &&  res.fileUrl!='')
+    // {
+    // res.fileUrl= this.apifile +  res.fileUrl;
+    // }
+
     this.item=res;
     console.log(this.item);
     },err=>{
@@ -69,7 +85,6 @@ export class ResponseDetailPage implements OnInit {
    }
  edit()
   {
-
       window.localStorage.setItem('responseId',window.localStorage.getItem("responseId"));
       this.router.navigate(['/response']);
   }

@@ -33,6 +33,7 @@ export class ResponsePage implements OnInit {
   apifile:string='';
   responseId:any=null;
   descuento:string='';
+  ispdf:boolean=false;
   constructor( public apiService:ApiService,public busyService:BusyService,public router:Router) { }
 
   ngOnInit() {
@@ -177,8 +178,16 @@ loadimg(idimg,file){
 
   // here we tell the reader what to do when it's done reading...
   reader.onload = (event: any) => {
-    var content = event.target.result; // this is the content!
-    this.fileUrl =  content ;
+    if(event.target.result.indexOf("data:application/pdf")>=0)
+    {
+      this.ispdf=true;
+      this.fileUrl ="PDF"; 
+    }
+    else{
+      this.ispdf=false;
+      var content = event.target.result; // capturo el contenido del content
+      this.fileUrl =  content ;
+    }
   }
 
 }

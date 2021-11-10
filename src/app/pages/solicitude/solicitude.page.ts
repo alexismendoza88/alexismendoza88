@@ -53,7 +53,7 @@ ionViewWillEnter(){
   {
      let province=JSON.parse(window.localStorage.getItem("province"));
      this.provinceId=province.id;
-     this,this.provinceName=province.name;
+     this.provinceName=province.name;
   }
   if(localStorage.getItem("item")!=null)
   {
@@ -63,7 +63,6 @@ ionViewWillEnter(){
   }  
  }
  
-
 itemRemoved(event)
 {
   this.provinceId=0;
@@ -71,7 +70,6 @@ itemRemoved(event)
 }
 
 async send(){
-  console.log(localStorage.getItem("province"));
   if(this.categoryId==null)
   {
     await this.busyService.presentAlert("¡Información!","Debe seleccionar una Categoría.");
@@ -149,11 +147,10 @@ loadimg(file){
 
   // here we tell the reader what to do when it's done reading...
   reader.onload = (event: any) => {
-    console.log(event.target.result);
     if(event.target.result.indexOf("data:application/pdf")>=0)
     {
       this.ispdf=true;
-      this.fileUrl ="PDF";
+      this.fileUrl ="PDF"; 
     }
     else{
       this.ispdf=false;

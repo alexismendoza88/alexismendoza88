@@ -51,11 +51,19 @@
     <ion-label>Adjuntar PDF o Foto</ion-label>
     <ion-icon slot="end" class="itemcolor1" name="document-attach-outline"></ion-icon>
   </ion-item>
+
+  <ion-item  *ngIf="fileUrl!=''" >
+    <ion-img *ngIf="ispdf==false"  [src]="fileUrl"></ion-img>
+    <a *ngIf="ispdf==true"  ><img src="./../../.././assets/pdfLogo.png" style="width:100%;height:50px;">  </a>
+    <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>
+  </ion-item>
+
+<!-- 
   <ion-item  *ngIf="fileUrl!=''" >
     <ion-img [src]="fileUrl"></ion-img>
     <ion-button (click)="clearimg()" color="danger" ><ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon></ion-button>
   </ion-item>
- 
+  -->
   <ion-progress-bar *ngIf="working" color="secondary" type="indeterminate"></ion-progress-bar>
   <ion-grid>
     <ion-row class="ion-align-items-center">
