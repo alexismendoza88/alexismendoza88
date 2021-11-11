@@ -5,7 +5,6 @@ import { HttpEventType,HttpResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AutoprovinceService } from '../../services/autoprovince.service';
 
-
 // import {Storage}from '@ionic/storage';
 @Component({
   selector: 'app-solicitude',
@@ -54,6 +53,7 @@ ionViewWillEnter(){
      let province=JSON.parse(window.localStorage.getItem("province"));
      this.provinceId=province.id;
      this.provinceName=province.name;
+     console.log(this.provinceName);
   }
   if(localStorage.getItem("item")!=null)
   {

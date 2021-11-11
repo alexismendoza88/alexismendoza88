@@ -21,7 +21,14 @@
     <ion-input [(ngModel)]="categoryDescr" placeholder="Seleccionar Categoría" (click)="onFocus($event)"></ion-input>
     <!-- <ion-select-option  *ngFor="let item of items" [value]="item.id">{{item.name}}</ion-select-option> -->
 </ion-item>
+
+<ion-item>
+  <ion-label style="color: white; font-size: 16px;">Ciudad:&nbsp;</ion-label>
+  <p style="color: yellow; font-size: 12px; font-weight: lighter; font-family: Verdana, Geneva, Tahoma, sans-serif;" >{{provinceName}}</p> 
+</ion-item>
+
   <ion-auto-complete [(ngModel)]="provinceName" (itemSelected)="selectedItem($event)" (ionClear)="itemRemoved($event)" [dataProvider]="autoprovinceService" [options]="{ placeholder : 'Buscar Ciudad' }" required></ion-auto-complete>
+  
   <ion-item style="display:none;">
     <ion-label position="floating">Descripción</ion-label>
     <ion-input [(ngModel)]="description" placeholder="Describe que buscas ó deseas"></ion-input>
