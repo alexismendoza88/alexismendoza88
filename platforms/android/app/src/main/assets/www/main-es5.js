@@ -872,7 +872,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
             icon: 'person',
             available: true
           }, {
-            title: 'Desarrollador',
+            title: 'Acerca de QPRICE',
             url: '/about',
             icon: 'code-working',
             available: true
@@ -2429,8 +2429,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
     var environment = {
       production: true,
-      apiurl: 'http://apicotvend.aujaminversiones.com/api/',
-      fileurl: 'http://apicotvend.aujaminversiones.com/' //apiurl:'https://localhost:44352/api/',
+      apiurl: 'http://apicotvend.colamejoropcion.com/api/',
+      fileurl: 'http://apicotvend.colamejoropcion.com/' //apiurl:'https://localhost:44352/api/',
       //fileurl:'https://localhost:44352/'
 
     };

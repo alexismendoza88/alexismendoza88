@@ -699,7 +699,7 @@ let AppComponent = class AppComponent {
                 available: true
             },
             {
-                title: 'Desarrollador',
+                title: 'Acerca de QPRICE',
                 url: '/about',
                 icon: 'code-working',
                 available: true
@@ -1576,8 +1576,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: true,
-    apiurl: 'http://apicotvend.aujaminversiones.com/api/',
-    fileurl: 'http://apicotvend.aujaminversiones.com/'
+    apiurl: 'http://apicotvend.colamejoropcion.com/api/',
+    fileurl: 'http://apicotvend.colamejoropcion.com/'
     //apiurl:'https://localhost:44352/api/',
     //fileurl:'https://localhost:44352/'
 };

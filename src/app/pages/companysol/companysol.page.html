@@ -6,9 +6,9 @@
           <ion-icon name="menu-outline"></ion-icon>
         </ion-button>
       </ion-menu-toggle>
-      <ion-button (click)="cancel()" *ngIf="selecctedItems.length > 0">
+      <!-- <ion-button (click)="cancel()" *ngIf="selecctedItems.length > 0">
         <ion-icon name="close-circle-outline"></ion-icon>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
     <ion-title class="ion-text-center">
       <p style="color: white; font-size: 16px; font-weight: bold;" >PEDIDOS</p>      
@@ -17,10 +17,10 @@
       <ion-button *ngIf="selecctedItems.length == 0" style="display: none;">
         <ion-icon slot="icon-only" style="font-size:18px !important" src="assets/icon/filter.svg"></ion-icon>
       </ion-button>
-      <ion-button (click)="delete()" *ngIf="selecctedItems.length > 0">
+      <!-- <ion-button (click)="delete()" *ngIf="selecctedItems.length > 0">
         <ion-icon name="trash-outline"></ion-icon>
         <ion-badge color="secondary">{{selecctedItems.length}}</ion-badge>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

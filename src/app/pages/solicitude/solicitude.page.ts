@@ -82,7 +82,7 @@ async send(){
   }
   if(this.file==null && this.note==null)
   {
-    await this.busyService.presentAlert("¡Información!","¡Describa lo que busca o Adjunte un PDF / Imágen.");
+    await this.busyService.presentAlert("¡Información!","¡Describa que busca o Adjunte un PDF / Imágen.");
    return;
   }
  this.working=true;

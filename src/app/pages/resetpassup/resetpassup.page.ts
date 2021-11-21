@@ -21,7 +21,7 @@ export class ResetpassupPage implements OnInit {
   async send(){
     if(this.confirm!=this.passWord)
     {
-      await  this.busyService.presentAlert("¡Información!","La clave y confirmar clave no son iguales");
+      await  this.busyService.presentAlert("¡Información!","La clave y confirmar clave no son iguales.");
       return;
     } 
   this.working=true;

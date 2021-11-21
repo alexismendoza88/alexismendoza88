@@ -7,7 +7,7 @@ import { MenuController } from '@ionic/angular';
   selector: 'app-companysol',
   templateUrl: './companysol.page.html',
   styleUrls: ['./companysol.page.scss'],
-})
+}) 
 export class CompanysolPage implements OnInit {
 
   items:any=[];

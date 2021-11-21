@@ -131,9 +131,7 @@ this.firebaseX.onTokenRefresh()
         icon: 'clipboard',
         available:true
       },*/
-   
-      
-  
+    
       {
         title: 'Categorías',
         url: null,
@@ -181,7 +179,7 @@ this.firebaseX.onTokenRefresh()
         available:true
       },
       {
-        title: 'Desarrollador',
+        title: 'Acerca de QPRICE',
         url: '/about',
         icon: 'code-working',
         available:true

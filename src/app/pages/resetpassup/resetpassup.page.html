@@ -10,6 +10,12 @@
 </ion-header>
 
 <ion-content class="backgeneral">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <p style="color: yellow; font-size: 14px; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Ingresa la siguiente Información</p>
+      <hr style="background-color: white;">
+    </ion-col>
+  </ion-row>   
   <ion-item class="itemcolor1">
     <ion-input [(ngModel)]="code"     placeholder="Código" ></ion-input>
   </ion-item>
@@ -23,7 +29,7 @@
   <ion-grid>
     <ion-row class="ion-align-items-center">
   <ion-col size="12"  class="ion-text-center">
-   <ion-button [disabled]="working || mail=='' || password=='' || confirm=='' || code==''" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Cambiar Clave</ion-button>
+   <ion-button [disabled]="working || passWord=='' || confirm=='' || code==''" shape="round" color="secondary" (click)="send()" ><ion-icon slot="start" name="send"></ion-icon>Cambiar Clave</ion-button>
   </ion-col>
 </ion-row>
 </ion-grid>

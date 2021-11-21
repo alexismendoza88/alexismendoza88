@@ -13,7 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header class=\"ion-no-border backgeneral\">\r\n  <ion-toolbar>\r\n    <!-- Side Menu Option -->\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n\r\n    <ion-searchbar [(ngModel)]=\"paramSearch\" \r\n    (ngModelChange)=\"change()\"\r\n  \r\n    (ionCancel)=\"onCancel($event)\" placeholder=\"Buscar\"></ion-searchbar>\r\n  \r\n  </ion-toolbar>\r\n</ion-header >\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-item button class=\"itemcolor1\" (click)=\"seleccionar(item)\" *ngFor=\"let item of categories\" >\r\n    <ion-label>\r\n        {{item.name}}\r\n    </ion-label>    \r\n  </ion-item>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header class=\"ion-no-border backgeneral\">\r\n  <ion-toolbar >\r\n    <!-- Side Menu Option -->\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button style=\"color: white;\" ></ion-back-button>\r\n    </ion-buttons>\r\n\r\n    <ion-searchbar [(ngModel)]=\"paramSearch\" \r\n    (ngModelChange)=\"change()\"\r\n  \r\n    (ionCancel)=\"onCancel($event)\" placeholder=\"Buscar\"></ion-searchbar>\r\n  \r\n  </ion-toolbar>\r\n</ion-header >\r\n\r\n<ion-content class=\"backgeneral\">\r\n  <ion-item button class=\"itemcolor1\" (click)=\"seleccionar(item)\" *ngFor=\"let item of categories\" >\r\n    <ion-label>\r\n        {{item.name}}\r\n    </ion-label>    \r\n  </ion-item>\r\n</ion-content>\r\n";
     /***/
   },
 
