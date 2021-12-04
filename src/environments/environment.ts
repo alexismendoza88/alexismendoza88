@@ -4,10 +4,10 @@
 
 export const environment = {
   production: true,
-    apiurl:'http://apicotvend.colamejoropcion.com/api/',
-    fileurl:'http://apicotvend.colamejoropcion.com/' 
-  //apiurl:'https://localhost:44352/api/',
-  //fileurl:'https://localhost:44352/'
+    // apiurl:'http://apicotvend.colamejoropcion.com/api/',
+    // fileurl:'http://apicotvend.colamejoropcion.com/' 
+  apiurl:'https://localhost:44352/api/',
+  fileurl:'https://localhost:44352/'
 };
 
 /*

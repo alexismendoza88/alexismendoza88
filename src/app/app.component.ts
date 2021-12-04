@@ -179,6 +179,12 @@ this.firebaseX.onTokenRefresh()
         available:true
       },
       {
+        title: 'Versión',
+        url: null,
+        icon: 'person',
+        available:true
+      },
+      {
         title: 'Acerca de QPRICE',
         url: '/about',
         icon: 'code-working',
@@ -240,6 +246,11 @@ this.firebaseX.onTokenRefresh()
     {
       await  this.busyService.presentAlert("¡Aviso!","¡Acción Fin De Semana Proximamente Disponible!");
       this.router.navigate(['/weekend']);
+    }
+    async version()
+    {
+      // await  this.busyService.presentAlert("¡Aviso!","¡Acción version Proximamente Disponible!");
+      this.router.navigate(['/version']);
     }
 
     account(){

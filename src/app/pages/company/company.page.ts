@@ -106,7 +106,7 @@ export class CompanyPage implements OnInit {
     }
   }
   async tryRegister(form){
-    
+
     if(form.confirm!=form.password)
     {
       await  this.busyService.presentAlert("¡Información!","La clave y confirmar clave no son iguales");
@@ -119,6 +119,7 @@ export class CompanyPage implements OnInit {
       this.working=false;
        this.errorMessage = "";     
         this.busyService.presentAlert("¡Información!","Registro creado exitosamente");
+        
        this.router.navigate(['/login']);
      }, err => {
       this.working=false;
@@ -135,8 +136,40 @@ export class CompanyPage implements OnInit {
        }
        else
        {
-         this.ms="No fue posible crear la cuenta.";
+         if(this.ms.length("facebook")>800)
+         {
+           this.ms="se ha superado el minimo de caracteres permitidos";
+         }
+         else
+         {
+          if(this.ms.length("youtube")>800)
+          {
+            this.ms="se ha superado el minimo de caracteres permitidos";
+          }
+          else
+          {
+            if(this.ms.length("instagram")>800)
+            {
+              this.ms="se ha superado el minimo de caracteres permitidos";
+            }
+            else
+            {
+              if(this.ms.length("instagram")>800)
+              {
+                this.ms="se ha superado el minimo de caracteres permitidos";
+              }
+              else
+              {
+                 this.ms="No fue posible crear la cuenta.";
+              }
+            }
+          }
+          
+         }
+        
        }
+       
+   
       }
       this.busyService.presentAlert("¡Información!",this.ms);
     });
@@ -146,5 +179,6 @@ export class CompanyPage implements OnInit {
       this.router.navigate(['/search-category-esp']);        
     }   
   }
+
 
 
