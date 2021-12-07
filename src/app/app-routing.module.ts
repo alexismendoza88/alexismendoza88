@@ -143,6 +143,10 @@ const routes: Routes = [
   {
     path: 'weekend',
     loadChildren: () => import('./pages/weekend/weekend.module').then( m => m.WeekendPageModule)
+  },
+  {
+    path: 'version',
+    loadChildren: () => import('./pages/version/version.module').then( m => m.VersionPageModule)
   }
 
 ];

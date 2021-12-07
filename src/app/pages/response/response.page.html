@@ -26,7 +26,7 @@
   </ion-row> 
   
   <ion-item class="itemcolor1">
-    <ion-input [(ngModel)]="amount" placeholder="Precio. Sin punto(.) ni coma(,)" (ngModelChange)="tocurrency($event)"></ion-input>
+    <ion-input [(ngModel)]="amount" placeholder="Precio. Sin Punto, Sin Comas, Sin $" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
 

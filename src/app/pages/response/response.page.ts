@@ -114,10 +114,21 @@ get(event)
     await this.busyService.presentAlert("¡Información!","El campo Precio del Producto ó Servicio es Requerido.");
    return;
   }
+  if ((this.amount.indexOf("$")>0) || (this.amount.indexOf(".")>0) || (this.amount.indexOf(",")>0) || (this.amount.indexOf(" ")>0) )
+  {   
+   this.busyService.presentAlert("¡Información!","El Precio no debe tener ni puntos, ni comas, ni signo $ u otro caracter extraño");
+   return;
+  }
   if(this.finalamount==null)
   {
     this.finalamount=this.amount;
   }
+  if ((this.finalamount.indexOf("$")>0) || (this.finalamount.indexOf(".")>0) || (this.finalamount.indexOf(",")>0) || (this.finalamount.indexOf(" ")>0) )
+  {   
+   this.busyService.presentAlert("¡Información!","El Descuento no debe tener ni puntos, ni comas, ni signo $ u otro caracter extraño");
+   return;
+  }
+
   if(parseInt( this.finalamount)>parseInt( this.amount))
   {
     await this.busyService.presentAlert("¡Información!","El campo Último Precio o Descuento debe ser menor ó igual al Precio Original.");

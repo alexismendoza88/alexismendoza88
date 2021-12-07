@@ -11,6 +11,7 @@ import { BusyService } from '../../services/busy.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
   validations_form: FormGroup;
   errorMessage: string = '';
   working:boolean;
@@ -28,6 +29,8 @@ export class LoginPage implements OnInit {
     var pass=  window.localStorage.getItem("passwordMoney");
     var mail=  window.localStorage.getItem("emailMoney");
     var remember=  window.localStorage.getItem("remember");
+    
+    
     if(remember=='no')
     {
       recordar=false;
@@ -83,10 +86,16 @@ export class LoginPage implements OnInit {
       window.localStorage.setItem("userinfo",JSON.stringify(res.data));
      
       console.log("ivancho..." + res.data.createCategory)
+      var usuario_ =localStorage.getItem("user");
+      var contraseña_ =localStorage.getItem("contraseña");
+      console.log("el usuario es: ", usuario_)
+      console.log("y la contraseña es: ",contraseña_)
+      
 
       if(res.data.createCategory!=1)
       {
         document.getElementById("categorias").style.display = 'none'; //codigo de categoria        
+        document.getElementById("version").style.display = 'none';
       }
       
       if(res.data.role=="Customer")
@@ -119,3 +128,4 @@ export class LoginPage implements OnInit {
   }
   
 }
+
