@@ -54,9 +54,8 @@ export class CustomerPage implements OnInit {
      }, err => {
       this.working=false;
       this.errorMessage = err.message;
-      this.ms = JSON.stringify(err.error.message.Message);   
-      console.log("VANCHO: " + this.ms)   ;
-      if (this.ms.indexOf("EMAIL")>0)
+      this.ms = JSON.stringify(err.error.message.Message);
+      if (this.ms.indexOf("EMAIL")>0 || (this.ms.indexOf("Email")>0))
       {
        this.ms="La dirección de correo electrónico ya se encuentra registrada.";
       }
