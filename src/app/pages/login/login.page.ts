@@ -27,8 +27,17 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     var recordar=true;
     var pass=  window.localStorage.getItem("passwordMoney");
-    var mail=  window.localStorage.getItem("emailMoney");
+    // var mail=  window.localStorage.getItem("emailMoney");
     var remember=  window.localStorage.getItem("remember");
+
+    var mail =localStorage.getItem("user");
+    // var pass =localStorage.getItem("contraseña");
+      if(pass!=null){
+
+         (<HTMLInputElement>document.getElementById("email__")).value=mail;
+         console.log("el usuario  es: ",mail)
+      }
+  
     
     
     if(remember=='no')
@@ -85,17 +94,15 @@ export class LoginPage implements OnInit {
       window.localStorage.removeItem("userinfo");
       window.localStorage.setItem("userinfo",JSON.stringify(res.data));
      
-      console.log("ivancho..." + res.data.createCategory)
-      var usuario_ =localStorage.getItem("user");
-      var contraseña_ =localStorage.getItem("contraseña");
-      console.log("el usuario es: ", usuario_)
-      console.log("y la contraseña es: ",contraseña_)
+      // console.log("ivancho..." + res.data.createCategory)
       
 
       if(res.data.createCategory!=1)
       {
         document.getElementById("categorias").style.display = 'none'; //codigo de categoria        
-        document.getElementById("version").style.display = 'none';
+        
+        document.getElementById("Balances").style.display='none';
+        
       }
       
       if(res.data.role=="Customer")

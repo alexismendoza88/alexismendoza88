@@ -20,13 +20,13 @@
       </ion-col>
     </ion-row>    
     <!-- SignIn Form -->
-    <form class="ion-padding" #form="ngForm" [formGroup]="validations_form"  (ngSubmit)="login(validations_form.value)">
+    <form class="ion-padding" #form="ngForm" [formGroup]="validations_form"  (ngSubmit)="login(validations_form.value)" name="user" id="email">
       <!-- Email -->
       <ion-item class="itemcolor1">
         <ion-label>
           <div class="divide" id="lgcorreo"><ion-icon class="allicon" name="mail-outline" style="color:white"></ion-icon></div>
         </ion-label>
-        <ion-input type="email"  formControlName="email" id="usuario"  placeholder="Correo Electrónico" ></ion-input>
+        <ion-input type="email"  formControlName="email" id="usuario"  placeholder="Correo Electrónico" name="user__" id="email__"></ion-input>
       </ion-item>
 
       <!-- Password -->
@@ -55,5 +55,5 @@
       </ion-button>
       </div>
     </form>
-
+ 
 </ion-content>

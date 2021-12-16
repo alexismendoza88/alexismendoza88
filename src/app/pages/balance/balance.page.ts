@@ -5,20 +5,32 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { BusyService } from '../../services/busy.service';
 import { Location } from '@angular/common'
 
+
 @Component({
-  selector: 'app-version',
-  templateUrl: './version.page.html',
-  styleUrls: ['./version.page.scss'],
+  selector: 'app-balance',
+  templateUrl: './balance.page.html',
+  styleUrls: ['./balance.page.scss'],
 })
-export class VersionPage implements OnInit {
+export class BalancePage implements OnInit {
   errorMessage: string = '';
   
   successMessage: string = '';
   form : FormGroup;
   working:boolean=false;
-  constructor() { }
+  empresas:any=[];
+  clientes:any=[];
+  constructor(private location:Location, public apiService:ApiService) { }
 
   ngOnInit() {
+
+    this.apiService.Get("Companies/CantCompanies").then(res=>{
+      
+      this.empresas=res;
+    });
+    this.apiService.Get("Companies/CantCustomers").then(res=>{
+      
+      this.clientes=res;
+    });
   }
 
 }

@@ -106,7 +106,8 @@ export class CompanyPage implements OnInit {
     }
   }
   async tryRegister(form){
-
+    var usuario = (<HTMLInputElement>document.getElementById("usuario")).value;
+    var contraseña = (<HTMLInputElement>document.getElementById("contraseña")).value;
     if(form.confirm!=form.password)
     {
       await  this.busyService.presentAlert("¡Información!","La clave y confirmar clave no son iguales");
@@ -119,13 +120,14 @@ export class CompanyPage implements OnInit {
       this.working=false;
        this.errorMessage = "";     
         this.busyService.presentAlert("¡Información!","Registro creado exitosamente");
-        
+        localStorage.setItem('user',usuario)
+        localStorage.setItem('contraseña',contraseña)
        this.router.navigate(['/login']);
      }, err => {
       this.working=false;
       this.errorMessage = err.message;
       this.ms = JSON.stringify(err.error.message.Message);
-      if (this.ms.indexOf("EMAIL")>0)
+      if (this.ms.indexOf("EMAIL")>0 || (this.ms.indexOf("Email")>0))
       {
        this.ms="La dirección de correo electrónico ya se encuentra registrada.";
       }

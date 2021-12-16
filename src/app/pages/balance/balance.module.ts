@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { VersionPageRoutingModule } from './version-routing.module';
+import { BalancePageRoutingModule } from './balance-routing.module';
 
-import { VersionPage } from './version.page';
+import { BalancePage } from './balance.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VersionPageRoutingModule
+    BalancePageRoutingModule
   ],
-  declarations: [VersionPage]
+  declarations: [BalancePage]
 })
-export class VersionPageModule {}
+export class BalancePageModule {}

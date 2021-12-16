@@ -120,7 +120,8 @@ const routes: Routes = [
   {
     path: 'search-category-esp',
     loadChildren: () => import('./pages/search-category-esp/search-category-esp.module').then( m => m.SearchCategoryEspPageModule)
-  },  {
+  },
+  {
     path: 'categories',
     loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
   },
@@ -143,11 +144,12 @@ const routes: Routes = [
   {
     path: 'weekend',
     loadChildren: () => import('./pages/weekend/weekend.module').then( m => m.WeekendPageModule)
+  },  {
+    path: 'balance',
+    loadChildren: () => import('./pages/balance/balance.module').then( m => m.BalancePageModule)
   },
-  {
-    path: 'version',
-    loadChildren: () => import('./pages/version/version.module').then( m => m.VersionPageModule)
-  }
+
+ 
 
 ];
 

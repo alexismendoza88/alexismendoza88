@@ -178,12 +178,14 @@ this.firebaseX.onTokenRefresh()
         icon: 'person',
         available:true
       },
+
       {
-        title: 'Versión',
+        title: 'Balances',
         url: null,
         icon: 'person',
         available:true
       },
+
       {
         title: 'Acerca de QPRICE',
         url: '/about',
@@ -247,11 +249,12 @@ this.firebaseX.onTokenRefresh()
       await  this.busyService.presentAlert("¡Aviso!","¡Acción Fin De Semana Proximamente Disponible!");
       this.router.navigate(['/weekend']);
     }
-    async version()
+    async balance()
     {
-      // await  this.busyService.presentAlert("¡Aviso!","¡Acción version Proximamente Disponible!");
-      this.router.navigate(['/version']);
+      // await  this.busyService.presentAlert("¡Aviso!","¡Acción Fin De Semana Proximamente Disponible!");
+      this.router.navigate(['/balance']);
     }
+ 
 
     account(){
       let userinfo= JSON.parse(window.localStorage.getItem("userinfo"));
