@@ -31,7 +31,7 @@ export class CompanyPage implements OnInit {
         email: ['' , 
         Validators.compose([
           Validators.minLength(6),
-          Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
+          Validators.required,Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")
         ])      
       ],
         password: ['', Validators.compose([
@@ -127,7 +127,8 @@ export class CompanyPage implements OnInit {
       this.working=false;
       this.errorMessage = err.message;
       this.ms = JSON.stringify(err.error.message.Message);
-      if (this.ms.indexOf("EMAIL")>0 || (this.ms.indexOf("Email")>0))
+
+      if ((this.ms.indexOf("EMAIL")>0)||(this.ms.indexOf("Email")>0))
       {
        this.ms="La dirección de correo electrónico ya se encuentra registrada.";
       }
