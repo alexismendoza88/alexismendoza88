@@ -48,12 +48,13 @@ selectedItem(value){
 }
 
 ionViewWillEnter(){
+  console.log('a: ' + this.provinceName);
+  console.log('b: ' + localStorage.getItem("province"));
   if(localStorage.getItem("province")!=null)
   {
      let province=JSON.parse(window.localStorage.getItem("province"));
      this.provinceId=province.id;
-     this.provinceName=province.name;
-     console.log(this.provinceName);
+     this.provinceName=province.name;     
   }
   if(localStorage.getItem("item")!=null)
   {

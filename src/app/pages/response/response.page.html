@@ -24,23 +24,24 @@
       <hr style="background-color: white;">
     </ion-col>
   </ion-row> 
-  
+  <p style="color: white; font-size: 14px; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Precio. Sin Punto, Sin Comas, Sin $</p>
   <ion-item class="itemcolor1">
-    <ion-input [(ngModel)]="amount" placeholder="Precio. Sin Punto, Sin Comas, Sin $" (ngModelChange)="tocurrency($event)"></ion-input>
+    <ion-input [(ngModel)]="amount" placeholder="Ingrese Valor" (ngModelChange)="tocurrency($event)"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
-
+  <p style="color: white; font-size: 14px; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;" >Último Precio ó Descuento</p>
   <ion-item *ngIf="descuento == '1'" class="itemcolor1">
-    <ion-input  [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Último Precio ó Descuento"></ion-input>
+    <ion-input  [(ngModel)]="finalamount" (ngModelChange)="tocurrency2($event)"  placeholder="Ingrese Valor"></ion-input>
     <p  style="color: yellow; font-weight: bold;">{{currency2 | currency:'USD':'symbol':'1.0-0'}}</p>
   </ion-item>
+  <hr style="background-color: white;">
   <ion-item class="itemcolor1">
     <ion-textarea [(ngModel)]="note" maxlength="800" (ngModelChange)="get($event)" rows="6" cols="20" placeholder="¿Alguna Observación o Sugerencia?"></ion-textarea>
   </ion-item>
   <ion-item class="itemcolor1" *ngIf="note != '' && note !=null" >
     <p>{{leng}}</p><p>/800</p>
   </ion-item>
-
+  <hr style="background-color: white;">
   <ion-item class="itemcolor1">
     <ion-label position="floating">Tiempo De Entrega</ion-label>
     <ion-input  [(ngModel)]="delivery" placeholder="Entrega Inmediata" ></ion-input>

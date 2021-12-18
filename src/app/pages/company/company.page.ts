@@ -54,6 +54,7 @@ export class CompanyPage implements OnInit {
         seleccion_categoria:[''],        
       },);
     }
+
     async presentMap() {
       const modal = await this.modalController.create({
       component: MapComponent
@@ -66,6 +67,13 @@ export class CompanyPage implements OnInit {
          }
        });
      return await modal.present();
+     }
+     passwordType: string = 'password';
+     passwordIcon: string = 'eye-off';
+    
+     hideShowPassword() {
+         this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+         this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
      }
   ngOnInit() {
   
